@@ -1,0 +1,1130 @@
+{
+ "format": "botdokon-menu-1",
+ "name": "Chust Burger menyusi",
+ "images": {},
+ "categories": [
+  {
+   "name": "Kombolar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c42.jpg",
+   "tabs": [
+    "Kombo",
+    "Juftlik",
+    "Oilaviy",
+    "Bolajon"
+   ],
+   "items": [
+    {
+     "name": "Xaggi kombo",
+     "price": 35000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c00.jpg",
+     "desc": "1x xaggi, 1x mini fri, 1x kofe",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Burger kombo",
+     "price": 40000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c01.jpg",
+     "desc": "1x gamburger, 1x mini fri, 1x kofe",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "TOP",
+     "active": true
+    },
+    {
+     "name": "Baquvvat kombo",
+     "price": 45000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c02.jpg",
+     "desc": "1x tandir lavash, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Chiken kombo",
+     "price": 33000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c03.jpg",
+     "desc": "1x chiken burger, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Longer kombo",
+     "price": 28000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c04.jpg",
+     "desc": "1x longer, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Tovuq kombo",
+     "price": 30000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c10.jpg",
+     "desc": "1x tovuq, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Twister kombo",
+     "price": 35000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c11.jpg",
+     "desc": "1x twister, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Tabi nozik kombo",
+     "price": 47000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c12.jpg",
+     "desc": "1x klab sendvich, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Tovuq doner kombo",
+     "price": 32000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c13.jpg",
+     "desc": "1x tovuqli doner, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Big chess kombo",
+     "price": 50000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c14.jpg",
+     "desc": "1x dabl big chess, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Chiken kombo naggets bilan",
+     "price": 45000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c32.jpg",
+     "desc": "1x chiken burger, 4x naggets, 1x mini fri, 1x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Mix kombo",
+     "price": 95000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c42.jpg",
+     "desc": "1x gamburger, 1x lavash, 4x naggets, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Kombo",
+     "label": "HIT",
+     "active": true
+    },
+    {
+     "name": "Juftlik kombo 1",
+     "price": 71000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c20.jpg",
+     "desc": "2x chiken burger, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Juftlik",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Juftlik kombo 2",
+     "price": 85000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c21.jpg",
+     "desc": "2x lavash, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Juftlik",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Juftlik kombo 3",
+     "price": 83000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c22.jpg",
+     "desc": "2x gamburger, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Juftlik",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Juftlik kombo 4",
+     "price": 83000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c23.jpg",
+     "desc": "2x doner, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Juftlik",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Juftlik kombo 5",
+     "price": 90000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c24.jpg",
+     "desc": "2x klab sendvich, 2x mini fri, 2x 0,3 kola",
+     "unit": "",
+     "tab": "Juftlik",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Oilaviy kombo 1",
+     "price": 110000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c30.jpg",
+     "desc": "2x tovuqli lavash, 2x hot dog, 2x mini fri, 2x 0,3 kola, 2x sharbat",
+     "unit": "",
+     "tab": "Oilaviy",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Oilaviy kombo 2",
+     "price": 145000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c40.jpg",
+     "desc": "2x lavash, 2x longer, 4x mini fri, 2x 0,3 kola, 2x sharbat",
+     "unit": "",
+     "tab": "Oilaviy",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Oilaviy kombo 3",
+     "price": 155000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c31.jpg",
+     "desc": "2x klab sendvich, 2x mini lavash, 2x mini fri, 4x 0,3 kola",
+     "unit": "",
+     "tab": "Oilaviy",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Oilaviy kombo 4",
+     "price": 170000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c41.jpg",
+     "desc": "2x tandir lavash, 2x doner, 2x mini fri, 4x 0,3 kola",
+     "unit": "",
+     "tab": "Oilaviy",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Bolajon kombo 1",
+     "price": 22000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c33.jpg",
+     "desc": "1x hot dog, 1x sok, 1x mini fri",
+     "unit": "",
+     "tab": "Bolajon",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Bolajon kombo 2",
+     "price": 30000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/c43.jpg",
+     "desc": "1x mini lavash, 1x sok, 1x mini fri",
+     "unit": "",
+     "tab": "Bolajon",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Burgerlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/dabl.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Gamburger",
+     "price": 33000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/gamburger.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Chizburger",
+     "price": 36000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/chizburger.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Bir burger",
+     "price": 42000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/birburger.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Dabl big chess",
+     "price": 45000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/dabl.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "TOP",
+     "active": true
+    },
+    {
+     "name": "Chiken burger",
+     "price": 26000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/ch_orig.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Original",
+       "price": 26000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 28000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Lavashlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/lavash.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Lavash",
+     "price": 24000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/lavash.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "TOP",
+     "active": true,
+     "variants": [
+      {
+       "name": "Kids",
+       "price": 24000
+      },
+      {
+       "name": "Oddiy",
+       "price": 35000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 38000
+      },
+      {
+       "name": "Maxsus",
+       "price": 40000
+      },
+      {
+       "name": "Maxsus pishloqli",
+       "price": 42000
+      }
+     ]
+    },
+    {
+     "name": "Tovuqli lavash",
+     "price": 26000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/lav_tovuq.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Oddiy",
+       "price": 26000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 29000
+      }
+     ]
+    },
+    {
+     "name": "Tandir lavash",
+     "price": 38000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/tandir.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Standart",
+       "price": 38000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 40000
+      },
+      {
+       "name": "Maxsus",
+       "price": 42000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Doner",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/doner.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Doner",
+     "price": 28000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/doner.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Standart",
+       "price": 33000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 35000
+      },
+      {
+       "name": "Maxsus",
+       "price": 38000
+      },
+      {
+       "name": "Tovuqli",
+       "price": 28000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hot dog",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/hotdog.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Hot dog",
+     "price": 12000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/hotdog.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Oddiy",
+       "price": 12000
+      },
+      {
+       "name": "Dabl",
+       "price": 14000
+      },
+      {
+       "name": "Kanada",
+       "price": 15000
+      },
+      {
+       "name": "Kanada dabl",
+       "price": 18000
+      },
+      {
+       "name": "Go'shtli",
+       "price": 22000
+      },
+      {
+       "name": "Qazili",
+       "price": 25000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Twister va xaggi",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/twister.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Twister",
+     "price": 25000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/twister.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Standart",
+       "price": 25000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 28000
+      }
+     ]
+    },
+    {
+     "name": "Xaggi",
+     "price": 28000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/xaggi.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Standart",
+       "price": 28000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 30000
+      }
+     ]
+    },
+    {
+     "name": "Longer",
+     "price": 22000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/longer.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Klab sendvich",
+     "price": 38000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/klab.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Pitsalar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_pep.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Pitsa Peperoni",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_pep.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    },
+    {
+     "name": "Pitsa Tovuq va qo'ziqorin",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_tovuq.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    },
+    {
+     "name": "Pitsa Qazili",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_qazi.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    },
+    {
+     "name": "Pitsa Go'shtli",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_gosht.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    },
+    {
+     "name": "Pitsa Margarita",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_marg.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    },
+    {
+     "name": "Pitsa Assorti",
+     "price": 75000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pz_asso.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "30 sm",
+       "price": 75000
+      },
+      {
+       "name": "35 sm",
+       "price": 85000
+      },
+      {
+       "name": "40 sm",
+       "price": 95000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pide",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pide_qiy.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Pide qiymali",
+     "price": 45000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pide_qiy.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Pide go'shtli",
+     "price": 50000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pide_gosh.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Pide pishloqli",
+     "price": 40000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/pide_pish.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Kaboblar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/iskandar.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Iskandar",
+     "price": 48000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/iskandar.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Beyti kabob",
+     "price": 45000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/beyti.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Donar servis",
+     "price": 42000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/donarservis.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Salatlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/sezar.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Sezar",
+     "price": 25000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/sezar.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Mujskoy kapriz",
+     "price": 25000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/kapriz.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Gazaklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/fri.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Fri",
+     "price": 10000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/fri.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Mini",
+       "price": 10000
+      },
+      {
+       "name": "Standart",
+       "price": 15000
+      }
+     ]
+    },
+    {
+     "name": "Jaydari kartoshka",
+     "price": 10000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/jaydari.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Mini",
+       "price": 10000
+      },
+      {
+       "name": "Standart",
+       "price": 15000
+      }
+     ]
+    },
+    {
+     "name": "Tovuq",
+     "price": 20000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/tovuq.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Standart",
+       "price": 20000
+      },
+      {
+       "name": "1 kg",
+       "price": 90000
+      }
+     ]
+    },
+    {
+     "name": "Pishloqli sharchalar",
+     "price": 15000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/sharcha.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    },
+    {
+     "name": "Nagetslar",
+     "price": 15000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/nagets.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "5 ta",
+       "price": 15000
+      },
+      {
+       "name": "8 ta",
+       "price": 23000
+      }
+     ]
+    },
+    {
+     "name": "Piyoz halqalari",
+     "price": 13000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/piyoz.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "5 ta",
+       "price": 13000
+      },
+      {
+       "name": "7 ta",
+       "price": 15000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Souslar",
+   "image": "",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Sous",
+     "price": 3000,
+     "image": "",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Ketchup",
+       "price": 3000
+      },
+      {
+       "name": "Ketchup chili",
+       "price": 3000
+      },
+      {
+       "name": "Sarimsoqli",
+       "price": 3000
+      },
+      {
+       "name": "Pishloqli",
+       "price": 3000
+      },
+      {
+       "name": "Xalapeno",
+       "price": 3000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ichimliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/moxito.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Kola",
+     "price": 6000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/kola.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "0,5 l",
+       "price": 10000
+      },
+      {
+       "name": "0,3 l",
+       "price": 6000
+      }
+     ]
+    },
+    {
+     "name": "Kofe",
+     "price": 10000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/kofe.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true,
+     "variants": [
+      {
+       "name": "Qora",
+       "price": 10000
+      },
+      {
+       "name": "Sutli",
+       "price": 10000
+      },
+      {
+       "name": "Kapuchino",
+       "price": 12000
+      }
+     ]
+    },
+    {
+     "name": "Moxito",
+     "price": 15000,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/moxito.jpg",
+     "desc": "",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": true
+    }
+   ]
+  },
+  {
+   "name": "Shirinliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_shok.jpg",
+   "tabs": [],
+   "items": [
+    {
+     "name": "Shokoladli tort",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_shok.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Shokoladli rulet",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_rulet.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Medovik",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_medovik.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Smetanli tort",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_smetan.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Mevali tort",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_meva.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Qora o'rmon",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_qora.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Yong'oqli pirojniy",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_yongoq.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Oreo rulet",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_oreo.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Malinali tort",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_malina.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Malinali pirojniy",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_malina2.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    },
+    {
+     "name": "Rulet bo'laklari",
+     "price": 0,
+     "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/img/k_rolls.jpg",
+     "desc": "Narxini admin panelda qo'ying",
+     "unit": "",
+     "tab": "",
+     "label": "",
+     "active": false
+    }
+   ]
+  }
+ ]
+}
