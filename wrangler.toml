@@ -1,0 +1,17 @@
+name = "botdokon"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+keep_vars = true
+
+# Ma'lumotlar bazasi (botlar, taomlar, buyurtmalar)
+[[kv_namespaces]]
+binding = "DB"
+id = "c6fcfe6dd30e4444a255bf2c8377f771"
+
+# Sun'iy intellekt (bot yordamchisi, rasmdan menyu o'qish)
+[ai]
+binding = "AI"
+
+[observability]
+enabled = true
