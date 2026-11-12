@@ -237,24 +237,30 @@ function importInto(bot, cats, replace) {
 }
 /* Egasining so'rovi bilan tayyor menyuni bir marta avtomatik joylash */
 const SEEDS = [{ user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' }];
-let seedDone = false;
-async function autoSeed(env) {
-  if (seedDone) return; seedDone = true;
+let seedDone = false, seedLog = [];
+async function autoSeed(env, force) {
+  if (seedDone && !force) return; seedDone = true; seedLog = [];
   for (const sd of SEEDS) {
     if (await kv(env).get(sd.key)) continue;
     let bot = null;
     for (const id of await botIds(env)) { const b = await getBot(env, id); if (b && String(b.username || '').toLowerCase() === sd.user) { bot = b; break; } }
-    if (!bot) { seedDone = false; continue; }
+    if (!bot) { seedDone = false; seedLog.push('bot topilmadi: ' + sd.user); continue; }
     await kv(env).put(sd.key, now());
     try {
       const d = await (await fetch(sd.url, { headers: { 'User-Agent': 'BotDokon' } })).json();
       const r = importInto(bot, d.categories || [], false); await putBot(env, bot);
-      await kv(env).put(sd.key, JSON.stringify({ at: now(), ...r }));
-    } catch (e) { await kv(env).delete(sd.key); seedDone = false; console.log('seed', e.message); }
+      await kv(env).put(sd.key, JSON.stringify({ at: now(), ...r })); seedLog.push(`yuklandi: ${r.nc} kategoriya, ${r.np} taom`);
+    } catch (e) { await kv(env).delete(sd.key); seedDone = false; seedLog.push('xato: ' + e.message); }
   }
 }
 
 async function route(req, env) {
+  if (new URL(req.url).pathname === '/seed') {
+    await autoSeed(env, true);
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' — ' + b.products.length + ' ta taom'); }
+    const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
+    return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+  }
   if (new URL(req.url).pathname === '/version') return new Response("BotDo'kon YANGI versiya: 12-noyabr (AI shar, yangi menyu)", { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   const url = new URL(req.url), origin = url.origin, M = req.method;
   const p = url.pathname.split('/').filter(Boolean);
