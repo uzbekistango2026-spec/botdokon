@@ -6,6 +6,6 @@ jobs:
     steps:
       - run: |
           curl -s https://botdokon.oltinshoh2026.workers.dev/version; echo
-          curl -s "https://botdokon.oltinshoh2026.workers.dev/api/geo/rev?lat=40.9978&lng=71.2378"; echo
+          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1500; echo
           curl -s "https://botdokon.oltinshoh2026.workers.dev/api/geo/search?q=Chust&lat=41&lng=71.2" | head -c 400; echo
           curl -s -o /dev/null -w "yandex tile: %{http_code} %{content_type}\n" "https://core-renderer-tiles.maps.yandex.net/tiles?l=map&x=2780&y=1530&z=12&scale=2&lang=ru_RU"
