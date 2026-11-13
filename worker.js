@@ -263,7 +263,7 @@ async function autoSeed(env, force) {
 async function route(req, env) {
   if (new URL(req.url).pathname === '/seed') {
     await autoSeed(env, true);
-    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' — ' + b.products.length + ' ta taom'); }
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' — ' + b.products.length + ' ta taom · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
     const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
     return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
