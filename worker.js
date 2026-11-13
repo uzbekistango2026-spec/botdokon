@@ -237,6 +237,8 @@ function importInto(bot, cats, replace) {
 }
 /* Egasining so'rovi bilan tayyor menyuni bir marta avtomatik joylash */
 const SEEDS = [{ user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' }, { user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-icons-1', icons: { kombo: 'kombo', burger: 'burger', lavash: 'lavash', doner: 'doner', 'hot dog': 'hotdog', twister: 'twister', pitsa: 'pitsa', pide: 'pide', kabob: 'kabob', salat: 'salat', gazak: 'gazak', ichimlik: 'ichimlik', shirin: 'shirin', tovuq: 'tovuq' } }];
+SEEDS.push({ user: 'chust_burgerbot', key: 'seed:chustburger-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' },
+  { user: 'chust_burgerbot', key: 'seed:chustburger-icons-1', icons: SEEDS[1].icons });
 const ICON_CDN = 'https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/cut/';
 let seedDone = false, seedLog = [];
 async function autoSeed(env, force) {
