@@ -45,7 +45,6 @@ jobs:
           dch1 photo-1518780664697-55e3ad937233
           dch2 photo-1564013799919-ab600027ffc6
           LIST
-          sed -i 's/^ *//' /dev/null
           ls menu/realty | wc -l
           git config user.name github-actions; git config user.email actions@github.com
           git add menu/realty && git commit -m "Demo ko'chmas mulk rasmlari (Unsplash)" && git push || echo nothing
