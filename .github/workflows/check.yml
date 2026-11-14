@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -s https://botdokon.oltinshoh2026.workers.dev/version; echo
+          curl -s -o /dev/null -w "admin: %{http_code}\n" https://botdokon.oltinshoh2026.workers.dev/admin; curl -s https://botdokon.oltinshoh2026.workers.dev/version; echo
           curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1500; echo
