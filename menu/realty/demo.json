@@ -1,0 +1,324 @@
+{
+ "settings": {
+  "shopName": "Chust Uy-Joy",
+  "phone": "+998 90 000 00 00",
+  "workHours": "09:00–19:00",
+  "address": "Chust, Mustaqillik ko'chasi 12",
+  "lat": 40.9984,
+  "lng": 71.2372,
+  "userPost": true,
+  "postPrice": 50000,
+  "topPrice": 100000,
+  "color": "#0E7C66",
+  "about": "DEMO rejim: bu namunaviy e'lonlar. Haqiqiy agentlik ma'lumotlari admin paneldan o'zgartiriladi.",
+  "welcomeText": "Assalomu alaykum! 🏠 Chust Uy-Joy botiga xush kelibsiz.\nPastdagi tugmani bosib uy, kvartira va ijara e'lonlarini ko'ring."
+ },
+ "listings": [
+  {
+   "title": "3 xonali kvartira, yevroremont, yangi bino",
+   "deal": "sale",
+   "kind": "kvartira",
+   "price": 46000,
+   "currency": "USD",
+   "rooms": 3,
+   "area": 86,
+   "floor": 5,
+   "floors": 9,
+   "repair": "Yevroremont",
+   "address": "Chust, Mustaqillik ko'chasi, 14-uy",
+   "lat": 40.9991,
+   "lng": 71.2368,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bld1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int5.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bed1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int6.jpg"
+   ],
+   "top": true,
+   "desc": "Yangi qurilgan binoda, 5-qavat. Mebel va maishiy texnika bilan sotiladi. Ikki balkon, hojatxona va vanna alohida. Kadastr hujjatlari tayyor, ipotekaga ham to'g'ri keladi."
+  },
+  {
+   "title": "Zamonaviy hovli uy, basseyn bilan",
+   "deal": "sale",
+   "kind": "uy",
+   "price": 128000,
+   "currency": "USD",
+   "rooms": 6,
+   "area": 320,
+   "repair": "Dizaynerlik",
+   "address": "Chust, Olmazor mahallasi",
+   "lat": 41.0068,
+   "lng": 71.2452,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext4.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext5.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int4.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int8.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int2.jpg"
+   ],
+   "top": true,
+   "desc": "8 sotix yer, 2 qavatli uy. Basseyn, garaj (2 mashina), yozgi oshxona. Gaz, suv, svet — hammasi bor. Markazga 5 daqiqa."
+  },
+  {
+   "title": "2 xonali kvartira, markazda",
+   "deal": "sale",
+   "kind": "kvartira",
+   "price": 29500,
+   "currency": "USD",
+   "rooms": 2,
+   "area": 54,
+   "floor": 3,
+   "floors": 4,
+   "repair": "O'rtacha",
+   "address": "Chust markaz, bozor yonida",
+   "lat": 40.9962,
+   "lng": 71.2312,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bld3.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int3.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bed2.jpg"
+   ],
+   "desc": "Markazda, maktab va bozor yaqin. Isitish — avtonom qozon. Darhol ko'chib kirsa bo'ladi."
+  },
+  {
+   "title": "Hovli uy, 6 sotix, mevali bog'",
+   "deal": "sale",
+   "kind": "uy",
+   "price": 58000,
+   "currency": "USD",
+   "rooms": 5,
+   "area": 180,
+   "repair": "Yaxshi",
+   "address": "Chust, G'ishtko'prik mahallasi",
+   "lat": 41.0105,
+   "lng": 71.2289,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext2.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int2.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int5.jpg"
+   ],
+   "top": true,
+   "desc": "Mevali daraxtlar, ayvon, alohida mehmonxona. Hujjatlari to'liq, kelishiladi."
+  },
+  {
+   "title": "1 xonali kvartira, ta'mirlangan",
+   "deal": "sale",
+   "kind": "kvartira",
+   "price": 19500,
+   "currency": "USD",
+   "rooms": 1,
+   "area": 36,
+   "floor": 2,
+   "floors": 5,
+   "repair": "Kosmetik",
+   "address": "Chust, Navoiy ko'chasi",
+   "lat": 40.9935,
+   "lng": 71.2401,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int7.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int6.jpg"
+   ]
+  },
+  {
+   "title": "2 xonali kvartira ijaraga, mebel bilan",
+   "deal": "rent",
+   "kind": "kvartira",
+   "price": 3500000,
+   "currency": "UZS",
+   "rooms": 2,
+   "area": 58,
+   "floor": 4,
+   "floors": 9,
+   "repair": "Yevroremont",
+   "address": "Chust, Mustaqillik ko'chasi",
+   "lat": 40.9984,
+   "lng": 71.2381,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int4.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bed1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int5.jpg"
+   ],
+   "top": true,
+   "desc": "Konditsioner, kir yuvish mashinasi, muzlatgich bor. Oila uchun. Oldindan 1 oy to'lov."
+  },
+  {
+   "title": "3 xonali kvartira ijaraga",
+   "deal": "rent",
+   "kind": "kvartira",
+   "price": 4500000,
+   "currency": "UZS",
+   "rooms": 3,
+   "area": 80,
+   "floor": 2,
+   "floors": 5,
+   "repair": "Yaxshi",
+   "address": "Chust, Bobur ko'chasi",
+   "lat": 41.0021,
+   "lng": 71.2335,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bed2.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int3.jpg"
+   ]
+  },
+  {
+   "title": "Hovli uy ijaraga, uzoq muddatga",
+   "deal": "rent",
+   "kind": "uy",
+   "price": 6000000,
+   "currency": "UZS",
+   "rooms": 4,
+   "area": 150,
+   "repair": "O'rtacha",
+   "address": "Chust, Kosonsoy yo'li",
+   "lat": 41.0152,
+   "lng": 71.2498,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext7.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int2.jpg"
+   ]
+  },
+  {
+   "title": "Ofis, 65 m², 1-qavat, alohida kirish",
+   "deal": "rent",
+   "kind": "ofis",
+   "price": 450,
+   "currency": "USD",
+   "area": 65,
+   "floor": 1,
+   "floors": 4,
+   "repair": "Yevroremont",
+   "address": "Chust, Markaziy ko'cha",
+   "lat": 40.9971,
+   "lng": 71.2349,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/off2.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/off1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bld2.jpg"
+   ],
+   "desc": "Qizil chiziqda, alohida kirish, 2 xona + kutish zali. Internet ulangan."
+  },
+  {
+   "title": "Do'kon uchun joy, 90 m²",
+   "deal": "sale",
+   "kind": "tijorat",
+   "price": 72000,
+   "currency": "USD",
+   "area": 90,
+   "floor": 1,
+   "floors": 2,
+   "repair": "Yangi",
+   "address": "Chust, bozor ko'chasi",
+   "lat": 40.9952,
+   "lng": 71.2425,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/shp1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bld3.jpg"
+   ],
+   "desc": "Gavjum joy, vitrinali. Har qanday savdo uchun."
+  },
+  {
+   "title": "Yer uchastka, 10 sotix",
+   "deal": "sale",
+   "kind": "yer",
+   "price": 15000,
+   "currency": "USD",
+   "area": 1000,
+   "address": "Chust tumani, Varzik qishlog'i",
+   "lat": 41.0315,
+   "lng": 71.2602,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/land1.jpg"
+   ],
+   "desc": "Uy qurish uchun. Gaz va svet yaqin, asfalt yo'l yonida."
+  },
+  {
+   "title": "Dacha, tog' yonida, basseyn",
+   "deal": "sale",
+   "kind": "dacha",
+   "price": 54000,
+   "currency": "USD",
+   "rooms": 3,
+   "area": 140,
+   "repair": "Yaxshi",
+   "address": "Chust tumani, G'ova",
+   "lat": 41.0525,
+   "lng": 71.2802,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/dch2.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/dch1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int8.jpg"
+   ],
+   "desc": "Toza havo, mevali bog', basseyn, mangal joyi. Dam olish uchun ajoyib."
+  },
+  {
+   "title": "Kottej, 3 qavatli, garaj",
+   "deal": "sale",
+   "kind": "uy",
+   "price": 95000,
+   "currency": "USD",
+   "rooms": 7,
+   "area": 280,
+   "repair": "Yevroremont",
+   "address": "Chust, Yangiobod",
+   "lat": 41.0089,
+   "lng": 71.2195,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext8.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int4.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bed1.jpg"
+   ],
+   "desc": "Yangi qurilgan, 3 qavat, issiq pol, garaj. Oilaviy hayot uchun."
+  },
+  {
+   "title": "2 xonali kvartira, sotildi",
+   "deal": "sale",
+   "kind": "kvartira",
+   "price": 27000,
+   "currency": "USD",
+   "rooms": 2,
+   "area": 50,
+   "floor": 4,
+   "floors": 4,
+   "address": "Chust",
+   "lat": 40.9947,
+   "lng": 71.2366,
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/bld1.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int6.jpg"
+   ],
+   "status": "sold"
+  }
+ ],
+ "banners": [
+  {
+   "title": "Orzuingizdagi uy shu yerda",
+   "subtitle": "Chustdagi eng yaxshi e'lonlar bir joyda",
+   "badge": "TOP",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext4.jpg",
+   "color": "#0E7C66"
+  },
+  {
+   "title": "Ipoteka bo'yicha yordam",
+   "subtitle": "Hujjatlarni bepul tayyorlab beramiz",
+   "badge": "0 so'm",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int1.jpg",
+   "color": "#1E5BD6"
+  },
+  {
+   "title": "Ijaraga uylar",
+   "subtitle": "Oyiga 3 mln so'mdan — mebel bilan",
+   "badge": "Ijara",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/int4.jpg",
+   "color": "#C2410C"
+  },
+  {
+   "title": "Uyingizni tez soting",
+   "subtitle": "E'lon bering — rieltor o'zi bog'lanadi",
+   "badge": "+",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/realty/ext2.jpg",
+   "color": "#7C3AED"
+  }
+ ]
+}
