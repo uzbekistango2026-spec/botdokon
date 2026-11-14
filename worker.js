@@ -286,18 +286,24 @@ function importInto(bot, cats, replace) {
 }
 /* Egasining so'rovi bilan tayyor menyuni bir marta avtomatik joylash */
 const SEEDS = [{ user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' }, { user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-icons-1', icons: { kombo: 'kombo', burger: 'burger', lavash: 'lavash', doner: 'doner', 'hot dog': 'hotdog', twister: 'twister', pitsa: 'pitsa', pide: 'pide', kabob: 'kabob', salat: 'salat', gazak: 'gazak', ichimlik: 'ichimlik', shirin: 'shirin', tovuq: 'tovuq' } }];
+SEEDS.push({ tgId: 8541042615, user: 'realty-demo', key: 'seed:realty-demo-1', realty: true });
 SEEDS.push({ user: 'chust_burgerbot', key: 'seed:chustburger-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' },
   { user: 'chust_burgerbot', key: 'seed:chustburger-icons-1', icons: SEEDS[1].icons });
 const ICON_CDN = 'https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/cut/';
 let seedDone = false, seedLog = [];
-async function autoSeed(env, force) {
+async function autoSeed(env, force, origin) {
   if (seedDone && !force) return; seedDone = true; seedLog = [];
   for (const sd of SEEDS) {
     if (await kv(env).get(sd.key)) continue;
     let bot = null;
-    for (const id of await botIds(env)) { const b = await getBot(env, id); if (b && String(b.username || '').toLowerCase() === sd.user) { bot = b; break; } }
+    for (const id of await botIds(env)) { const b = await getBot(env, id); if (b && (sd.tgId ? b.tgId === sd.tgId : String(b.username || '').toLowerCase() === sd.user)) { bot = b; break; } }
     if (!bot) { seedDone = false; seedLog.push('bot topilmadi: ' + sd.user); continue; }
     await kv(env).put(sd.key, now());
+    if (sd.realty) {
+      await applyRealtyDemo(bot, false);
+      if (bot.type !== 'realty') { bot.type = 'realty'; if (origin) await setupBot(origin, bot); }
+      await putBot(env, bot); await kv(env).put(sd.key, JSON.stringify({ at: now(), listings: bot.listings.length })); seedLog.push(`ko'chmas mulk demo: ${bot.listings.length} ta e'lon`); continue;
+    }
     if (sd.icons) {
       let n = 0;
       for (const c of bot.categories) { const k = Object.keys(sd.icons).find((k) => String(c.name || '').toLowerCase().includes(k)); if (k && !c.icon) { c.icon = ICON_CDN + sd.icons[k] + '.png'; n++; } }
@@ -522,6 +528,7 @@ async function route(req, env) {
           ownerChatId: '', createdAt: now(), settings: newSettings(), categories: [], products: [], banners: [] };
         ids.push(bot.id); await kv(env).put('bots', JSON.stringify(ids));
       }
+      if (DEMO_BOTS.includes(bot.tgId) && bot.type === 'realty') { try { await applyRealtyDemo(bot, false); await kv(env).put('seed:realty-demo-1', JSON.stringify({ at: now(), listings: bot.listings.length })); } catch (e) {} }
       const r = await setupBot(origin, bot);
       bot.error = r.ok ? '' : 'Bot sozlanmadi: ' + (r.description || '');
       await putBot(env, bot);
@@ -627,7 +634,7 @@ async function route(req, env) {
 export default {
   async fetch(req, env, ctx) {
     try { if (ctx) Object.defineProperty(env, '__ctx', { value: ctx, configurable: true, writable: true }); } catch {}
-    if (ctx && ctx.waitUntil && !seedDone) ctx.waitUntil(autoSeed(env).catch(() => {}));
+    if (ctx && ctx.waitUntil && !seedDone) ctx.waitUntil(autoSeed(env, false, new URL(req.url).origin).catch(() => {}));
     try { return await route(req, env); }
     catch (e) { return err('Server xatosi: ' + e.message, 500); }
   },
@@ -636,6 +643,14 @@ export default {
 
 /* ---------- Ko'chmas mulk demo boti (faqat ruxsat etilgan bot uchun) ---------- */
 const DEMO_BOTS = [8541042615];
+async function applyRealtyDemo(bot, reset) {
+  bot.listings = bot.listings || [];
+  if (bot.listings.length && !reset) return;
+  const d = await (await fetch('https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/realty/demo.json?' + Date.now())).json();
+  Object.assign(bot.settings, d.settings);
+  bot.listings = d.listings.map((x, i) => ({ id: uid(), ...COLL.listings({ ...x, createdAt: new Date(Date.now() - i * 3600e3 * 7).toISOString() }) }));
+  bot.banners = d.banners.map((x) => ({ id: uid(), ...COLL.banners(x) }));
+}
 async function demoRealty(req, env) {
   const origin = new URL(req.url).origin;
   let b = {}; try { b = await req.json(); } catch {}
@@ -647,13 +662,7 @@ async function demoRealty(req, env) {
     ids.push(bot.id); await kv(env).put('bots', JSON.stringify(ids));
   }
   Object.assign(bot, { token, type: 'realty', username: me.result.username });
-  bot.listings = bot.listings || [];
-  if (!bot.listings.length || b.reset) {
-    const d = await (await fetch('https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/realty/demo.json?' + Date.now())).json();
-    Object.assign(bot.settings, d.settings);
-    bot.listings = d.listings.map((x, i) => ({ id: uid(), ...COLL.listings({ ...x, createdAt: new Date(Date.now() - i * 3600e3 * 7).toISOString() }) }));
-    bot.banners = d.banners.map((x) => ({ id: uid(), ...COLL.banners(x) }));
-  }
+  await applyRealtyDemo(bot, b.reset);
   const r = await setupBot(origin, bot); bot.error = r.ok ? '' : 'Bot sozlanmadi: ' + (r.description || '');
   await putBot(env, bot);
   return json({ ok: true, id: bot.id, username: bot.username, listings: bot.listings.length, banners: bot.banners.length, error: bot.error });
