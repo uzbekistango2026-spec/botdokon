@@ -1,0 +1,337 @@
+{
+ "categories": [
+  "Meva va sabzavotlar",
+  "Sut mahsulotlari",
+  "Go‘sht va baliq",
+  "Non va shirinliklar",
+  "Bakaleya",
+  "Ichimliklar"
+ ],
+ "catImages": {
+  "Meva va sabzavotlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/veggies.jpg",
+  "Sut mahsulotlari": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/yogurt.jpg",
+  "Go‘sht va baliq": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/meat.jpg",
+  "Non va shirinliklar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/bread.jpg",
+  "Bakaleya": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/pasta.jpg",
+  "Ichimliklar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/juice.jpg"
+ },
+ "products": [
+  {
+   "name": "Olma, qizil",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/apples.jpg",
+   "price": 18990,
+   "oldPrice": 22990,
+   "unit": "1 kg",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Banan",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/bananas.jpg",
+   "price": 24990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Apelsin",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/oranges.jpg",
+   "price": 21990,
+   "oldPrice": 26990,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Qulupnay",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/strawberries.jpg",
+   "price": 39990,
+   "oldPrice": 0,
+   "unit": "500 g",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Uzum, qora",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/grapes.jpg",
+   "price": 27990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Pomidor",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/tomatoes.jpg",
+   "price": 14990,
+   "oldPrice": 17990,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Bodring",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/cucumbers.jpg",
+   "price": 11990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Sabzi",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/carrots.jpg",
+   "price": 5990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Kartoshka",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/potatoes.jpg",
+   "price": 6990,
+   "oldPrice": 7990,
+   "unit": "1 kg",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Avokado",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/avocado.jpg",
+   "price": 12990,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Limon",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/lemons.jpg",
+   "price": 19990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Tarvuz",
+   "category": "Meva va sabzavotlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/honey.jpg",
+   "price": 4990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Yogurt, qulupnayli",
+   "category": "Sut mahsulotlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/yogurt.jpg",
+   "price": 8990,
+   "oldPrice": 10990,
+   "unit": "4 × 120 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Pishloq, qattiq",
+   "category": "Sut mahsulotlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/cheese.jpg",
+   "price": 89990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Sariyog‘ 82%",
+   "category": "Sut mahsulotlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/butter.jpg",
+   "price": 32990,
+   "oldPrice": 36990,
+   "unit": "200 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Tuxum, C1",
+   "category": "Sut mahsulotlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/eggs.jpg",
+   "price": 19990,
+   "oldPrice": 0,
+   "unit": "10 dona",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Mol go‘shti, assorti",
+   "category": "Go‘sht va baliq",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/meat.jpg",
+   "price": 119990,
+   "oldPrice": 129990,
+   "unit": "1 kg",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Tovuq filesi",
+   "category": "Go‘sht va baliq",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/chicken.jpg",
+   "price": 54990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Losos filesi",
+   "category": "Go‘sht va baliq",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/fish.jpg",
+   "price": 249990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "Premium",
+   "desc": ""
+  },
+  {
+   "name": "Javdar noni",
+   "category": "Non va shirinliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/bread.jpg",
+   "price": 7990,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Shokoladli pechenye",
+   "category": "Non va shirinliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/cookies.jpg",
+   "price": 18990,
+   "oldPrice": 22990,
+   "unit": "300 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Qora shokolad 70%",
+   "category": "Non va shirinliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/chocolate.jpg",
+   "price": 24990,
+   "oldPrice": 0,
+   "unit": "100 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Muzqaymoq, plombir",
+   "category": "Non va shirinliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/icecream.jpg",
+   "price": 12990,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Guruch, devzira",
+   "category": "Bakaleya",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/rice.jpg",
+   "price": 29990,
+   "oldPrice": 0,
+   "unit": "1 kg",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Makaron, rigatoni",
+   "category": "Bakaleya",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/pasta.jpg",
+   "price": 11990,
+   "oldPrice": 13990,
+   "unit": "500 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Zaytun moyi",
+   "category": "Bakaleya",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/oil.jpg",
+   "price": 89990,
+   "oldPrice": 0,
+   "unit": "500 ml",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Ko‘k choy",
+   "category": "Bakaleya",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/tea.jpg",
+   "price": 16990,
+   "oldPrice": 0,
+   "unit": "100 g",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Kofe, donador",
+   "category": "Bakaleya",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/coffee.jpg",
+   "price": 99990,
+   "oldPrice": 119990,
+   "unit": "250 g",
+   "label": "Premium",
+   "desc": ""
+  },
+  {
+   "name": "Apelsin sharbati",
+   "category": "Ichimliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/juice.jpg",
+   "price": 17990,
+   "oldPrice": 0,
+   "unit": "1 l",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Mineral suv",
+   "category": "Ichimliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/water.jpg",
+   "price": 3990,
+   "oldPrice": 0,
+   "unit": "1,5 l",
+   "label": "",
+   "desc": ""
+  }
+ ],
+ "banners": [
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo1.jpg",
+   "color": "#E31E24"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo2.jpg",
+   "color": "#FFD600"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo3.jpg",
+   "color": "#00A050"
+  }
+ ]
+}
