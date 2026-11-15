@@ -8,5 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cd menu/tech && python3 fetch2.py; ls cand | wc -l
-          cd ../.. && git add menu/tech && git -c user.name=bot -c user.email=bot@x commit -qm "Maishiy texnika demo rasmlari (Unsplash)" && git pull -q --rebase && git push -q
+          pip install -q pillow
+          cd menu/tech && python3 dl.py; ls raw | wc -l
+          cd ../.. && git add menu/tech && git -c user.name=bot -c user.email=bot@x commit -qm "Maishiy texnika: xom rasmlar (Unsplash)" && git pull -q --rebase && git push -q
