@@ -301,6 +301,7 @@ const SEEDS = [{ user: 'zuwoo_zakazlar_bot', key: 'seed:zuwoo-1', url: 'https://
 SEEDS.push({ tgId: 8541042615, user: 'realty-demo', key: 'seed:realty-demo-1', realty: true });
 SEEDS.push({ user: 'chust_burgerbot', key: 'seed:chustburger-1', url: 'https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/zuwoo.json' },
   { user: 'chust_burgerbot', key: 'seed:chustburger-icons-1', icons: SEEDS[1].icons });
+SEEDS.push({ user: 'chust_burgerbot', key: 'seed:chustburger-market-1', market: 'https://raw.githubusercontent.com/uzbekistano2026-spec/botdokon/main/menu/market/demo.json' });
 const ICON_CDN = 'https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/cut/';
 let seedDone = false, seedLog = [];
 async function autoSeed(env, force, origin) {
@@ -315,6 +316,21 @@ async function autoSeed(env, force, origin) {
       await applyRealtyDemo(bot, false);
       if (bot.type !== 'realty') { bot.type = 'realty'; if (origin) await setupBot(origin, bot); }
       await putBot(env, bot); await kv(env).put(sd.key, JSON.stringify({ at: now(), listings: bot.listings.length })); seedLog.push(`ko'chmas mulk demo: ${bot.listings.length} ta e'lon`); continue;
+    }
+    if (sd.market) {
+      try {
+        const d = await (await fetch(sd.market + '?' + Date.now(), { headers: { 'User-Agent': 'BotDokon' } })).json();
+        await kv(env).put('backup:' + bot.id, JSON.stringify({ at: now(), type: bot.type, categories: bot.categories, products: bot.products, banners: bot.banners }));
+        bot.type = 'shop'; bot.categories = []; bot.products = []; bot.banners = [];
+        const cid = {};
+        for (const n of d.categories) { const c = { id: uid(), ...COLL.categories({ name: n, image: (d.catImages || {})[n] || '', order: bot.categories.length }) }; bot.categories.push(c); cid[n] = c.id; }
+        for (const x of d.products) bot.products.push({ id: uid(), ...COLL.products({ ...x, categoryId: cid[x.category], active: true }) });
+        bot.banners = d.banners.map((x) => ({ id: uid(), ...COLL.banners(x) }));
+        Object.assign(bot.settings, d.settings || {}, { shopName: 'Chust Market' });
+        if (origin) await setupBot(origin, bot);
+        await putBot(env, bot); await kv(env).put(sd.key, JSON.stringify({ at: now(), products: bot.products.length })); seedLog.push(`market: ${bot.products.length} ta mahsulot`);
+      } catch (e) { await kv(env).delete(sd.key); seedDone = false; seedLog.push('xato: ' + e.message); }
+      continue;
     }
     if (sd.icons) {
       let n = 0;
