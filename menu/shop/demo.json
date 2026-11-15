@@ -320,18 +320,25 @@
  "banners": [
   {
    "title": "",
-   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo1.jpg",
-   "color": "#E31E24"
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/banner-g1.jpg",
+   "color": "#D61420"
   },
   {
    "title": "",
-   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo2.jpg",
-   "color": "#FFD600"
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/banner-g2.jpg",
+   "color": "#FFCE00"
   },
   {
    "title": "",
-   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/promo3.jpg",
-   "color": "#00A050"
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/shop/banner-g3.jpg",
+   "color": "#00804A"
   }
- ]
+ ],
+ "settings": {
+  "theme": "korzinka",
+  "color": "#E31E24",
+  "installMonths": 0,
+  "deliveryDays": 0,
+  "deliveryTime": "30–60 daqiqa"
+ }
 }
