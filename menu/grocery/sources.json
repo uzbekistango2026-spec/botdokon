@@ -158,5 +158,133 @@
  "pedigree": {
   "src": "https://world.openpetfoodfacts.org/product/5998749127322",
   "name": "Biscrok Multi Mix"
+ },
+ "cola": {
+  "src": "https://world.openfoodfacts.org/product/5000112544633",
+  "name": "Cola Regular - Coca-cola - 1.5 Liters"
+ },
+ "sprite": {
+  "src": "https://world.openfoodfacts.org/product/8901764032400",
+  "name": "Sprite Lemon Lime flv Coke Brand 2ltr"
+ },
+ "icetea": {
+  "src": "https://world.openfoodfacts.org/product/5000118047817",
+  "name": "Peach Ice Tea"
+ },
+ "jacobs": {
+  "src": "https://world.openfoodfacts.org/product/4607001771548",
+  "name": "Кофе натуральный растворимый сублимированный"
+ },
+ "yogurt": {
+  "src": "https://world.openfoodfacts.org/product/6111246953181",
+  "name": "Jibal yugurt à boire"
+ },
+ "butter": {
+  "src": "https://world.openfoodfacts.org/product/4750467000049",
+  "name": "82.5% sviests, saldkrējuma"
+ },
+ "chicken": {
+  "src": "https://world.openfoodfacts.org/product/5057008920361",
+  "name": "ROAST CHICKEN SLICES"
+ },
+ "sausage": {
+  "src": "https://world.openfoodfacts.org/product/4250370500013",
+  "name": "Doktorskaya"
+ },
+ "sosiska": {
+  "src": "https://world.openfoodfacts.org/product/20149710",
+  "name": "Hot Dog saucisses fumées"
+ },
+ "bread": {
+  "src": "https://world.openfoodfacts.org/product/5010044000121",
+  "name": "Original Toastie Soft & Sliced White Loaf"
+ },
+ "croissant": {
+  "src": "https://world.openfoodfacts.org/product/8410087012018",
+  "name": ""
+ },
+ "rice": {
+  "src": "https://world.openfoodfacts.org/product/8901537071018",
+  "name": "Daawat Biryani Basmati Rice 1kg"
+ },
+ "buckwheat": {
+  "src": "https://world.openfoodfacts.org/product/4056489614081",
+  "name": "Chips de Sarrasin au Sel de Guérande"
+ },
+ "pasta": {
+  "src": "https://world.openfoodfacts.org/product/8076800195057",
+  "name": "Spaghetti Nº5"
+ },
+ "salt": {
+  "src": "https://world.openfoodfacts.org/product/8904043901015",
+  "name": "Tata Salt"
+ },
+ "oliveoil": {
+  "src": "https://world.openfoodfacts.org/product/8437009466131",
+  "name": "Aceite de oliva virgen extra Arbequina botella 500 ml"
+ },
+ "mayo": {
+  "src": "https://world.openfoodfacts.org/product/6111184004129",
+  "name": "Mayonnaise recette originale"
+ },
+ "tomatopaste": {
+  "src": "https://world.openfoodfacts.org/product/6111021090056",
+  "name": "Aicha Tomato Paste"
+ },
+ "honey": {
+  "src": "https://world.openfoodfacts.org/product/3263620212063",
+  "name": "French Lavender Honey - 8.8 Oz Jar"
+ },
+ "peas": {
+  "src": "https://world.openfoodfacts.org/product/5000232901422",
+  "name": "Original Mushy Peas"
+ },
+ "cornflakes": {
+  "src": "https://world.openfoodfacts.org/product/3159470000120",
+  "name": "CORN FLAKES"
+ },
+ "noodles": {
+  "src": "https://world.openfoodfacts.org/product/0089686120073",
+  "name": "Indomie instant noodles baladi chicken flavor"
+ },
+ "snickers": {
+  "src": "https://world.openfoodfacts.org/product/5900951311505",
+  "name": "SNICKERS"
+ },
+ "twix": {
+  "src": "https://world.openfoodfacts.org/product/5900951313592",
+  "name": "Twix"
+ },
+ "milka": {
+  "src": "https://world.openfoodfacts.org/product/76222276",
+  "name": "Leo"
+ },
+ "oreo": {
+  "src": "https://world.openfoodfacts.org/product/7622300336738",
+  "name": "OREO ORIGINAL"
+ },
+ "haribo": {
+  "src": "https://world.openfoodfacts.org/product/3103220009802",
+  "name": "Goldbears 300g"
+ },
+ "chips": {
+  "src": "https://world.openfoodfacts.org/product/8901491101837",
+  "name": "Lays Classics Salted 20rs"
+ },
+ "icecream": {
+  "src": "https://world.openfoodfacts.org/product/8711327318373",
+  "name": "Cornetto Eis"
+ },
+ "pizza": {
+  "src": "https://world.openfoodfacts.org/product/4002084344113",
+  "name": "Pizza delamama la royale pouleto"
+ },
+ "fries": {
+  "src": "https://world.openfoodfacts.org/product/8710438123784",
+  "name": "Alumettes Just au Four"
+ },
+ "babyfood": {
+  "src": "https://world.openfoodfacts.org/product/3560071281175",
+  "name": "Gourdes pomme, fraise, banane"
  }
 }
