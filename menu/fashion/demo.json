@@ -1,10 +1,10 @@
 {
  "categories": [
-  "Ko‘ylak va futbolkalar",
+  "Ko‘ylaklar",
   "Kostyumlar",
   "Ustki kiyim",
   "Shimlar",
-  "Ko‘ylaklar (ayollar)",
+  "Ayollar uchun",
   "Trikotaj",
   "Aksessuarlar"
  ],
@@ -14,7 +14,7 @@
    "brand": "Maison",
    "price": 349000,
    "oldPrice": 0,
-   "category": "Ko‘ylak va futbolkalar",
+   "category": "Ko‘ylaklar",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/shirts.jpg"
    ],
@@ -65,7 +65,7 @@
    "brand": "Atelier",
    "price": 389000,
    "oldPrice": 459000,
-   "category": "Ko‘ylak va futbolkalar",
+   "category": "Ko‘ylaklar",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/denim.jpg"
    ],
@@ -98,7 +98,7 @@
    "brand": "Maison",
    "price": 149000,
    "oldPrice": 0,
-   "category": "Ko‘ylak va futbolkalar",
+   "category": "Ko‘ylaklar",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/tee.jpg",
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/tee2.jpg"
@@ -530,7 +530,7 @@
    "brand": "Atelier",
    "price": 1190000,
    "oldPrice": 0,
-   "category": "Ko‘ylaklar (ayollar)",
+   "category": "Ayollar uchun",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg"
    ],
@@ -572,7 +572,7 @@
    "brand": "Atelier",
    "price": 1390000,
    "oldPrice": 1690000,
-   "category": "Ko‘ylaklar (ayollar)",
+   "category": "Ayollar uchun",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/gown_red.jpg"
    ],
@@ -605,7 +605,7 @@
    "brand": "Maison",
    "price": 590000,
    "oldPrice": 0,
-   "category": "Ko‘ylaklar (ayollar)",
+   "category": "Ayollar uchun",
    "images": [
     "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_red.jpg"
    ],
@@ -799,11 +799,11 @@
   }
  ],
  "catImages": {
-  "Ko‘ylak va futbolkalar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/shirts.jpg",
+  "Ko‘ylaklar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/shirts.jpg",
   "Kostyumlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/suit_navy.jpg",
   "Ustki kiyim": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/trench.jpg",
   "Shimlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/jeans.jpg",
-  "Ko‘ylaklar (ayollar)": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg",
+  "Ayollar uchun": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg",
   "Trikotaj": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/sweat.jpg",
   "Aksessuarlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/bag.jpg"
  }
