@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          pip install -q pillow
+          true
           cd menu/tech && python3 dl.py; ls raw | wc -l
           cd ../.. && git add menu/tech && git -c user.name=bot -c user.email=bot@x commit -qm "Maishiy texnika: xom rasmlar (Unsplash)" && git pull -q --rebase && git push -q
