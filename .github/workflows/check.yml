@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cd menu/shop
-          while read k id; do [ -z "$k" ] && continue; curl -sf -o "$k.jpg" "https://images.unsplash.com/photo-$id?w=800&q=78&auto=format&fm=jpg&fit=crop" || echo "MISS $k"; done < ids.txt
+          cd menu/market
+          while read k id; do [ -z "$k" ] && continue; curl -sf -o "$k.jpg" "https://images.unsplash.com/photo-$id?w=700&q=78&auto=format&fm=jpg&fit=crop" || echo "MISS $k"; done < ids.txt
           ls *.jpg | wc -l
-          cd ../.. && git add menu/shop && git -c user.name=bot -c user.email=bot@x commit -qm "Do'kon demo rasmlari (Unsplash)" && git push -q
+          cd ../.. && git add menu/market && git -c user.name=bot -c user.email=bot@x commit -qm "Market demo rasmlari (Unsplash)" && git push -q
