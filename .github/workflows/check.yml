@@ -3,7 +3,10 @@ on: workflow_dispatch
 jobs:
   c:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
       - run: |
-          curl -s https://botdokon.oltinshoh2026.workers.dev/version >/dev/null; sleep 25
-          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 2500; echo
+          cd menu/tech && python3 fetch.py && ls *.jpg | wc -l
+          cd ../.. && git add menu/tech && git -c user.name=bot -c user.email=bot@x commit -qm "Maishiy texnika demo rasmlari (Unsplash)" && git pull -q --rebase && git push -q
