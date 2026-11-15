@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Education Platform</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--n:#0F1E3D;--n2:#1B2D57;--a:#3B82F6;--a2:#E8F0FE;--bg:#F5F7FB;--t:#0F172A;--t2:#64748B;--t3:#94A3B8;--line:#E7EBF2;--ok:#16A34A;--okb:#E8F7EE;--bad:#DC2626;--badb:#FDECEC;--warn:#B45309;--warnb:#FEF3E2}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--bg);color:var(--t);font-family:Manrope,system-ui,-apple-system,sans-serif;font-size:15px;-webkit-font-smoothing:antialiased}
+button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+#view{min-height:100vh;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+.fade{animation:fd .28s cubic-bezier(.2,.8,.2,1)}@keyframes fd{from{opacity:0;transform:translateY(8px)}}
+/* header */
+.hd{background:var(--n);color:#fff;padding:calc(16px + env(safe-area-inset-top)) 18px 70px;position:relative;overflow:hidden}
+.hd:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-120px;top:-170px;background:radial-gradient(circle,#3B82F633,#3B82F600 70%)}
+.hd .top{display:flex;align-items:center;gap:10px;position:relative}
+.hd .lg{width:38px;height:38px;border-radius:11px;background:#ffffff1a;display:grid;place-items:center;font-weight:800;overflow:hidden}
+.hd .lg img{width:100%;height:100%;object-fit:cover}
+.hd .cn{flex:1;font-weight:700;font-size:14px;opacity:.85}
+.hd .bell{width:38px;height:38px;border-radius:50%;background:#ffffff14;display:grid;place-items:center;position:relative}
+.hd h1{position:relative;font-size:24px;font-weight:800;letter-spacing:-.5px;margin-top:22px}
+.hd p{position:relative;color:#C7D2FE;font-weight:600;font-size:14px;margin-top:4px}
+.idp{display:inline-flex;align-items:center;gap:6px;background:#ffffff14;border:1px solid #ffffff24;border-radius:10px;padding:5px 10px;font-weight:700;font-size:13px;margin-top:12px;position:relative;letter-spacing:.4px}
+.wrap{margin-top:-46px;position:relative;padding:0 14px}
+.card{background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 2px #0f172a0a,0 8px 24px -16px #0f172a26;margin-bottom:12px}
+.card h3{font-size:16px;font-weight:800;letter-spacing:-.2px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.card h3 button{font-size:13.5px;font-weight:700;color:var(--a)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.st{background:#fff;border-radius:18px;padding:14px;text-align:left;align-items:flex-start;box-shadow:0 1px 2px #0f172a0a,0 8px 24px -16px #0f172a26;display:flex;flex-direction:column;gap:8px}
+.st i{width:36px;height:36px;border-radius:11px;background:var(--a2);color:var(--a);display:grid;place-items:center}
+.st b{font-size:26px;font-weight:800;letter-spacing:-.6px;line-height:1}
+.st small{color:var(--t2);font-weight:600;font-size:12.5px}
+.les{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--line)}
+.les:first-of-type{border-top:0}
+.les .tm{width:62px;flex:0 0 62px;font-weight:800;font-size:14px}.les .tm small{display:block;color:var(--t3);font-weight:600;font-size:12px}
+.les .bar{width:3px;align-self:stretch;border-radius:2px;background:var(--a)}
+.les .in{flex:1;min-width:0}.les .in b{display:block;font-size:14.5px}.les .in small{color:var(--t2);font-size:12.5px;font-weight:600}
+.empty{text-align:center;color:var(--t2);padding:22px 10px;font-weight:600;font-size:14px}
+.empty svg{color:var(--t3);margin-bottom:8px}
+.act{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.act:first-of-type{border-top:0}.act i{width:8px;height:8px;border-radius:50%;background:var(--a);margin-top:6px;flex:0 0 8px}.act small{display:block;color:var(--t3);font-size:12px;font-weight:600}
+/* page */
+.ph{padding:calc(14px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:10px}
+.ph h2{flex:1;font-size:24px;font-weight:800;letter-spacing:-.5px}
+.ph .add{height:40px;padding:0 14px;border-radius:12px;background:var(--n);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px}
+.srch{margin:0 16px 10px;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 12px;height:46px;color:var(--t3)}
+.srch input{flex:1;border:0;outline:0;background:none;font-size:15px;color:var(--t)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:0 16px 12px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;height:34px;padding:0 13px;border-radius:17px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:13px;color:var(--t2)}
+.chip.on{background:var(--n);border-color:var(--n);color:#fff}
+.list{padding:0 16px}
+.row{display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:12px;margin-bottom:8px;box-shadow:0 1px 2px #0f172a08}
+.av{width:44px;height:44px;border-radius:14px;background:var(--a2);color:var(--n2);display:grid;place-items:center;font-weight:800;flex:0 0 44px}
+.av.t{background:#EEF2FF;color:#4338CA}.av.a{background:var(--n);color:#fff}
+.row .in{flex:1;min-width:0}.row .in b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .in small{color:var(--t2);font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.tag{font-size:11px;font-weight:800;padding:3px 8px;border-radius:8px;white-space:nowrap}
+.tag.ok{background:var(--okb);color:var(--ok)}.tag.bad{background:var(--badb);color:var(--bad)}.tag.w{background:var(--warnb);color:var(--warn)}.tag.g{background:#F1F5F9;color:var(--t2)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.5px}
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#ffffffee;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;padding:7px 4px calc(7px + env(safe-area-inset-bottom))}
+.nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;color:var(--t3);transition:color .2s}
+.nav button.on{color:var(--n)}
+.nav button.on svg{stroke:var(--a)}
+/* forms */
+.ov{position:fixed;inset:0;background:#0f172a80;z-index:60;opacity:0;pointer-events:none;transition:.25s}.ov.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;background:#fff;border-radius:24px 24px 0 0;max-height:92vh;overflow-y:auto;transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.2,1);padding:10px 18px calc(18px + env(safe-area-inset-bottom))}
+.sheet.on{transform:none}
+.grip{width:40px;height:4px;border-radius:2px;background:#D9DEE7;margin:0 auto 16px}
+.sheet h3{font-size:20px;font-weight:800;letter-spacing:-.4px;margin-bottom:14px}
+.f{display:block;margin-bottom:12px}.f>span{display:block;font-size:12.5px;font-weight:700;color:var(--t2);margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;height:48px;border:1.5px solid var(--line);border-radius:13px;padding:0 13px;font-size:15.5px;outline:0;background:#fff;transition:border-color .2s}
+.f textarea{height:auto;padding:12px 13px;resize:none}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--a)}
+.btn{width:100%;height:52px;border-radius:15px;background:var(--n);color:#fff;font-weight:800;font-size:15.5px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,opacity .2s}
+.btn:active{transform:scale(.98)}.btn:disabled{opacity:.5}
+.btn.l{background:var(--a2);color:var(--n2)}.btn.r{background:var(--badb);color:var(--bad)}.btn.s{height:42px;font-size:14px;border-radius:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:flex;background:#F1F5F9;border-radius:12px;padding:3px}.seg button{flex:1;height:38px;border-radius:10px;font-weight:700;font-size:13.5px;color:var(--t2)}.seg button.on{background:#fff;color:var(--n);box-shadow:0 1px 4px #0f172a1a}
+.pick{display:flex;flex-wrap:wrap;gap:6px}.pick button{height:36px;padding:0 12px;border-radius:11px;border:1.5px solid var(--line);font-weight:700;font-size:13px;color:var(--t2)}.pick button.on{border-color:var(--a);background:var(--a2);color:var(--n2)}
+.sch{display:grid;grid-template-columns:70px 1fr 1fr 34px;gap:6px;margin-bottom:6px}.sch select,.sch input{height:42px;border:1.5px solid var(--line);border-radius:11px;padding:0 8px;font-size:14px;background:#fff;min-width:0}
+.sch button{color:var(--bad);font-size:20px}
+.cred{background:var(--n);color:#fff;border-radius:18px;padding:18px;margin:4px 0 14px;position:relative;overflow:hidden}
+.cred:before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;right:-80px;top:-100px;background:radial-gradient(circle,#3B82F655,#3B82F600 70%)}
+.cred small{color:#C7D2FE;font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase;position:relative}
+.cred b{display:block;font-size:24px;font-weight:800;letter-spacing:2px;margin:2px 0 10px;position:relative}
+.cred p{font-size:13px;color:#C7D2FE;position:relative;line-height:1.45}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:14px}.kv:first-child{border-top:0}.kv span{color:var(--t2);font-weight:600}.kv b{text-align:right}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+/* login */
+.login{min-height:100vh;display:flex;flex-direction:column;background:var(--n);color:#fff;padding:calc(40px + env(safe-area-inset-top)) 22px calc(24px + env(safe-area-inset-bottom));position:relative;overflow:hidden}
+.login:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;top:-160px;background:radial-gradient(circle,#3B82F640,#3B82F600 70%)}
+.login .lg{width:64px;height:64px;border-radius:20px;background:#ffffff14;display:grid;place-items:center;font-weight:800;font-size:26px;overflow:hidden;position:relative}
+.login .lg img{width:100%;height:100%;object-fit:cover}
+.login h1{font-size:28px;font-weight:800;letter-spacing:-.6px;margin-top:22px;position:relative}
+.login p{color:#C7D2FE;font-weight:600;margin-top:8px;line-height:1.5;position:relative}
+.login .box{background:#fff;color:var(--t);border-radius:22px;padding:20px 18px;margin-top:auto;position:relative}
+.login .f input{text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.err{background:var(--badb);color:var(--bad);border-radius:12px;padding:10px 12px;font-weight:700;font-size:13.5px;margin-bottom:12px}
+.toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translate(-50%,-150%);background:var(--n);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;z-index:99;transition:.3s;max-width:90%;text-align:center;font-size:14px;box-shadow:0 10px 30px -10px #0f172a80}
+.toast.on{transform:translate(-50%,0)}
+.sk{background:linear-gradient(90deg,#EEF1F6 25%,#F6F8FB 50%,#EEF1F6 75%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:14px}@keyframes sk{to{background-position:-200% 0}}
+.spin{width:22px;height:22px;border-radius:50%;border:2.5px solid #ffffff55;border-top-color:#fff;animation:rot .8s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.soon{display:flex;gap:10px;align-items:center;background:var(--a2);color:var(--n2);border-radius:14px;padding:12px;font-size:13.5px;font-weight:600;line-height:1.4}
+</style>
+</head>
+<body>
+<div id="view"></div>
+<nav class="nav" id="nav" style="display:none"></nav>
+<div class="ov" id="ov" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet"></div>
+<div class="toast" id="toast"></div>
+<script>
+const TG = window.Telegram && Telegram.WebApp;
+const BOT_ID = location.pathname.split('/').filter(Boolean)[1];
+const $ = (q) => document.querySelector(q);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const I = (p, s = 22, w = 1.8) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const ic = {
+  home: I('<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'), stu: I('<path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>'),
+  tch: I('<circle cx="9" cy="7" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5S14.7 16.4 15.5 20"/><path d="M16 4h6v8h-6M16 8h3"/>'), cls: I('<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v5"/>'),
+  user: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c1.6-4 4.6-6 8-6s6.4 2 8 6"/>'), bell: I('<path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/>', 20),
+  plus: I('<path d="M12 5v14M5 12h14"/>', 18, 2.4), search: I('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>', 20), copy: I('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>', 18),
+  cal: I('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>', 20), lock: I('<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>', 20),
+  chev: I('<path d="m9 6 6 6-6 6"/>', 18, 2), info: I('<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/>', 20),
+};
+const DAYS = ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba', 'Yakshanba'], DS = ['Du', 'Se', 'Ch', 'Pa', 'Ju', 'Sh', 'Ya'];
+const ROLE = { admin: 'Administrator', teacher: "O‘qituvchi", student: "O‘quvchi" };
+const ST = { active: ['Faol', 'ok'], blocked: ['Bloklangan', 'bad'], archived: ['Arxivda', 'g'] };
+let C = null, ME = null, MYC = [], D = { users: [], classes: [] }, page = 'home', q = '', filt = 'all';
+const hap = (t = 'light') => { try { TG.HapticFeedback.impactOccurred(t); } catch {} };
+function toast(t) { const e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => e.classList.remove('on'), 2600); }
+function openSheet() { $('#ov').classList.add('on'); $('#sheet').classList.add('on'); try { TG.BackButton.show(); } catch {} }
+function closeSheet() { $('#ov').classList.remove('on'); $('#sheet').classList.remove('on'); try { TG.BackButton.hide(); } catch {} }
+async function api(act, data = {}) {
+  const r = await fetch(`/api/edu/${BOT_ID}/${act}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ initData: TG ? TG.initData : '', ...data }) });
+  let d = {}; try { d = await r.json(); } catch {} if (!r.ok) throw new Error(d.error || 'Server bilan aloqa yo‘q. Qayta urinib ko‘ring'); return d;
+}
+const initials = (n) => String(n || '?').split(/\s+/).map((x) => x[0]).slice(0, 2).join('').toUpperCase();
+const lg = () => (C && C.logo ? `<img src="${esc(C.logo)}" alt="">` : esc(initials(C ? C.name : '')));
+function nowDay() { return (new Date().getDay() + 6) % 7; }
+function nextLesson(classes) {
+  const now = new Date(), d0 = nowDay(), mins = now.getHours() * 60 + now.getMinutes(); let best = null;
+  for (const c of classes) for (const s of c.schedule || []) {
+    const [h, m] = s.start.split(':').map(Number); let dd = (s.day - d0 + 7) % 7; if (dd === 0 && h * 60 + m < mins) dd = 7;
+    const k = dd * 1440 + h * 60 + m; if (!best || k < best.k) best = { k, dd, c, s };
+  }
+  return best;
+}
+function whenTxt(n) { return n.dd === 0 ? 'Bugun' : n.dd === 1 ? 'Ertaga' : DAYS[n.s.day]; }
+/* ---------- start ---------- */
+async function boot() {
+  try { TG.ready(); TG.expand(); TG.BackButton.onClick(closeSheet); TG.setHeaderColor('#0F1E3D'); TG.setBackgroundColor('#F5F7FB'); } catch {}
+  $('#view').innerHTML = `<div class="login" style="align-items:center;justify-content:center"><div class="spin"></div></div>`;
+  try { applyMe(await api('me')); } catch (e) { $('#view').innerHTML = `<div class="login"><h1>Ulanib bo‘lmadi</h1><p>${esc(e.message)}</p><button class="btn l" style="margin-top:24px" onclick="boot()">Qayta urinish</button></div>`; }
+}
+function applyMe(r) {
+  C = r.center; document.documentElement.style.setProperty('--n', C.color || '#0F1E3D');
+  if (!r.linked) return renderLogin();
+  if (r.blocked) return renderBlocked();
+  ME = r.me; MYC = r.classes || []; page = 'home'; render();
+}
+function renderLogin(errMsg) {
+  $('#nav').style.display = 'none';
+  $('#view').innerHTML = `<div class="login fade"><div class="lg">${lg()}</div><h1>${esc(C.name)}</h1><p>Shaxsiy kabinetga kirish uchun ID raqamingiz va bir martalik aktivatsiya kodini kiriting.</p>
+    <div class="box">${errMsg ? `<div class="err">${esc(errMsg)}</div>` : ''}
+      <label class="f"><span>Shaxsiy ID</span><input id="lid" placeholder="STU-1001" autocomplete="off" autocapitalize="characters"></label>
+      <label class="f"><span>Aktivatsiya kodi</span><input id="lcode" placeholder="8 belgili kod" autocomplete="one-time-code" autocapitalize="characters" maxlength="12"></label>
+      <button class="btn" id="lbtn" onclick="doLogin()">${ic.lock}Kabinetga kirish</button>
+      <p style="color:var(--t2);font-size:12.5px;margin-top:12px;line-height:1.5;text-align:center">ID va kodni o‘quv markazi administratori beradi. Kod faqat bir marta ishlatiladi va Telegram akkauntingizga bog‘lanadi.</p></div></div>`;
+}
+async function doLogin() {
+  const id = $('#lid').value.trim(), code = $('#lcode').value.trim(); if (!id || !code) return renderLoginErr('ID va kodni kiriting');
+  const b = $('#lbtn'); b.disabled = true; b.innerHTML = '<div class="spin"></div>';
+  try { const r = await api('link', { id, code }); try { TG.HapticFeedback.notificationOccurred('success'); } catch {} applyMe(r); toast('Xush kelibsiz, ' + r.me.name.split(' ')[0] + '!'); }
+  catch (e) { try { TG.HapticFeedback.notificationOccurred('error'); } catch {} renderLoginErr(e.message, id); }
+}
+function renderLoginErr(m, id) { renderLogin(m); if (id) $('#lid').value = id; }
+function renderBlocked() { $('#nav').style.display = 'none'; $('#view').innerHTML = `<div class="login fade"><div class="lg">${ic.lock}</div><h1>Akkaunt bloklangan</h1><p>Kabinetingizga kirish vaqtincha cheklangan. Batafsil ma’lumot uchun o‘quv markazi administratoriga murojaat qiling.</p></div>`; }
+/* ---------- navigatsiya ---------- */
+function navItems() { return ME.role === 'admin' ? [['home', ic.home, 'Asosiy'], ['students', ic.stu, "O‘quvchilar"], ['teachers', ic.tch, "O‘qituvchilar"], ['classes', ic.cls, 'Sinflar'], ['profile', ic.user, 'Profil']] : [['home', ic.home, 'Asosiy'], ['classes', ic.cls, ME.role === 'teacher' ? 'Sinflarim' : 'Sinfim'], ['profile', ic.user, 'Profil']]; }
+function go(p) { if (p === page) return; hap(); page = p; q = ''; filt = 'all'; scrollTo(0, 0); render(); }
+function render() {
+  const n = $('#nav'); n.style.display = ''; n.innerHTML = navItems().map(([k, i, t]) => `<button class="${page === k ? 'on' : ''}" onclick="go('${k}')">${i}${t}</button>`).join('');
+  ({ home: ME.role === 'admin' ? renderDash : renderHome, students: () => renderUsers('student'), teachers: () => renderUsers('teacher'), classes: ME.role === 'admin' ? renderClassesAdmin : renderMyClasses, profile: renderProfile })[page]();
+}
+const header = (title, sub) => `<div class="hd"><div class="top"><div class="lg">${lg()}</div><div class="cn">${esc(C.name)}</div><button class="bell" onclick="toast('Yangi bildirishnomalar yo‘q')">${ic.bell}</button></div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}<div class="idp mono">${esc(ME.id)} · ${ROLE[ME.role]}</div></div>`;
+const greet = () => { const h = new Date().getHours(); return h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech'; };
+/* ---------- ADMIN: dashboard ---------- */
+async function renderDash() {
+  $('#view').innerHTML = header(`${greet()}, ${esc(ME.name.split(' ')[0])}`, 'O‘quv markazi boshqaruv paneli') + `<div class="wrap fade"><div class="stats">${[0, 1, 2, 3].map(() => '<div class="st sk" style="height:112px"></div>').join('')}</div><div class="card sk" style="height:160px"></div></div>`;
+  try {
+    const s = await api('dashboard'); if (page !== 'home') return;
+    const st = (i, n, t, on) => `<button class="st" ${on ? `onclick="${on}"` : ''}><i>${i}</i><b>${n}</b><small>${t}</small></button>`;
+    $('#view').innerHTML = header(`${greet()}, ${esc(ME.name.split(' ')[0])}`, 'O‘quv markazi boshqaruv paneli') + `<div class="wrap fade">
+      <div class="stats">${st(ic.stu, s.students, "O‘quvchilar", "go('students')")}${st(ic.tch, s.teachers, "O‘qituvchilar", "go('teachers')")}${st(ic.cls, s.classes, 'Sinflar', "go('classes')")}${st(ic.user, `${s.linked}<small style="font-size:14px;color:var(--t3)"> / ${s.students + s.teachers + s.admins}</small>`, 'Kabinetga ulangan')}</div>
+      <div class="card"><h3>Bugungi darslar <span class="tag g">${DAYS[nowDay()]}</span></h3>${s.todayLessons.length ? s.todayLessons.map((l) => `<div class="les"><div class="tm">${l.start}<small>${l.end}</small></div><div class="bar"></div><div class="in"><b>${esc(l.className)}</b><small>${esc(l.teacherName || 'O‘qituvchi biriktirilmagan')}${l.room ? ' · ' + esc(l.room) + '-xona' : ''}</small></div></div>`).join('') : `<div class="empty">${ic.cal}<br>Bugun dars yo‘q</div>`}</div>
+      <div class="card"><h3>So‘nggi 7 kun</h3><div class="kv"><span>Yangi qo‘shilganlar</span><b>${s.newUsers}</b></div><div class="kv"><span>Bloklanganlar</span><b>${s.blocked}</b></div><div class="kv"><span>Davomat va to‘lov statistikasi</span><b style="color:var(--t3)">4–5-bosqich</b></div></div>
+      <div class="card"><h3>So‘nggi amallar</h3>${s.audit.length ? s.audit.map((a) => `<div class="act"><i></i><div>${esc(auditTxt(a))}<small>${new Date(a.at).toLocaleString('ru-RU', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })} · ${esc(a.actor)}</small></div></div>`).join('') : '<div class="empty">Hali amal bajarilmagan</div>'}</div></div>`;
+  } catch (e) { $('#view').innerHTML = header('Xatolik', esc(e.message)) + `<div class="wrap"><button class="btn" onclick="render()">Qayta yuklash</button></div>`; }
+}
+function auditTxt(a) { return ({ 'user-create': "Yangi foydalanuvchi qo‘shildi", 'user-update': "Ma’lumotlar o‘zgartirildi", 'user-delete': "Foydalanuvchi o‘chirildi", 'user-code': 'Yangi aktivatsiya kodi', 'user-relink': 'Telegram qayta bog‘lash', link: 'Kabinetga ulandi', 'class-create': 'Yangi sinf yaratildi', 'class-update': "Sinf o‘zgartirildi", 'class-delete': "Sinf o‘chirildi", 'admin-create': 'Administrator yaratildi', 'admin-code': 'Administrator kodi' })[a.action] + ': ' + a.target + (a.info ? ' — ' + a.info : ''); }
+/* ---------- ADMIN: o'quvchilar / o'qituvchilar ---------- */
+async function loadAll() { D = await api('list', { archived: filt === 'archived' }); }
+async function renderUsers(role) {
+  const T = role === 'student' ? "O‘quvchilar" : "O‘qituvchilar";
+  $('#view').innerHTML = `<div class="ph"><h2>${T}</h2><button class="add" onclick="userForm('${role}')">${ic.plus}Qo‘shish</button></div><div class="list">${[0, 1, 2, 3].map(() => '<div class="row sk" style="height:68px"></div>').join('')}</div>`;
+  try { await loadAll(); } catch (e) { return toast(e.message); }
+  if (page !== (role === 'student' ? 'students' : 'teachers')) return;
+  $('#view').innerHTML = `<div class="ph fade"><h2>${T}</h2><button class="add" onclick="userForm('${role}')">${ic.plus}Qo‘shish</button></div>
+    <div class="srch">${ic.search}<input id="q" placeholder="Ism, ID yoki telefon" value="${esc(q)}" oninput="q=this.value;userList('${role}')"></div>
+    <div class="chips">${[['all', 'Hammasi'], ['active', 'Faol'], ['pending', 'Ulanmagan'], ['blocked', 'Bloklangan'], ['archived', 'Arxiv']].map(([k, t]) => `<button class="chip ${filt === k ? 'on' : ''}" onclick="setFilt('${k}','${role}')">${t}</button>`).join('')}</div>
+    <div class="list" id="ul"></div>`;
+  userList(role);
+}
+async function setFilt(k, role) { const wasA = filt === 'archived'; filt = k; if (wasA !== (k === 'archived')) await loadAll(); renderUsers.cache = 1; const y = scrollY; userListPage(role); scrollTo(0, y); }
+function userListPage(role) { document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('on', c.getAttribute('onclick').includes(`'${filt}'`))); userList(role); }
+function userList(role) {
+  const w = q.trim().toLowerCase(), cls = (u) => u.classIds.map((id) => (D.classes.find((c) => c.id === id) || {}).name).filter(Boolean).join(', ');
+  let a = D.users.filter((u) => u.role === role);
+  if (filt === 'archived') a = a.filter((u) => u.status === 'archived'); else a = a.filter((u) => u.status !== 'archived');
+  if (filt === 'active') a = a.filter((u) => u.status === 'active'); if (filt === 'blocked') a = a.filter((u) => u.status === 'blocked'); if (filt === 'pending') a = a.filter((u) => !u.linked);
+  if (w) a = a.filter((u) => (u.name + ' ' + u.id + ' ' + u.phone).toLowerCase().includes(w));
+  $('#ul').innerHTML = a.length ? a.map((u) => `<button class="row" style="width:100%;text-align:left" onclick="userView('${u.id}')"><div class="av ${role === 'teacher' ? 't' : ''}">${esc(initials(u.name))}</div><div class="in"><b>${esc(u.name)}</b><small><span class="mono">${u.id}</span> · ${esc(cls(u) || 'Sinf biriktirilmagan')}</small></div>${u.status !== 'active' ? `<span class="tag ${ST[u.status][1]}">${ST[u.status][0]}</span>` : !u.linked ? '<span class="tag w">Ulanmagan</span>' : ''}</button>`).join('')
+    : `<div class="empty">${role === 'student' ? ic.stu : ic.tch}<br>${w || filt !== 'all' ? 'Hech kim topilmadi' : (role === 'student' ? "Hali o‘quvchi yo‘q. «Qo‘shish» tugmasini bosing" : "Hali o‘qituvchi yo‘q. «Qo‘shish» tugmasini bosing")}</div>`;
+}
+let F = null;
+function userForm(role, id) {
+  const u = id ? D.users.find((x) => x.id === id) : null; F = { role, classIds: u ? [...u.classIds] : [], status: u ? u.status : 'active' };
+  const cls = D.classes.filter((c) => c.status !== 'archived');
+  $('#sheet').innerHTML = `<div class="grip"></div><h3>${u ? 'Tahrirlash' : role === 'student' ? "Yangi o‘quvchi" : "Yangi o‘qituvchi"}</h3>
+    <label class="f"><span>Ism-familiya</span><input id="fn" value="${esc(u ? u.name : '')}" placeholder="Masalan: Aziza Karimova"></label>
+    <label class="f"><span>Telefon</span><input id="fp" type="tel" value="${esc(u ? u.phone : '+998 ')}"></label>
+    <div class="f"><span>${role === 'student' ? 'Sinflar' : 'Biriktirilgan sinflar'}</span>${cls.length ? `<div class="pick">${cls.map((c) => `<button type="button" class="${F.classIds.includes(c.id) ? 'on' : ''}" onclick="togC(this,'${c.id}')">${esc(c.name)}</button>`).join('')}</div>` : '<small style="color:var(--t3);font-weight:600">Avval «Sinflar» bo‘limida sinf yarating</small>'}</div>
+    ${u ? `<div class="f"><span>Holati</span><div class="seg">${Object.entries(ST).map(([k, [t]]) => `<button type="button" class="${F.status === k ? 'on' : ''}" onclick="F.status='${k}';this.parentNode.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===this))">${t}</button>`).join('')}</div></div>
+      <label class="f"><span>Izoh (faqat admin ko‘radi)</span><textarea id="fnote" rows="2">${esc(u.note || '')}</textarea></label>` : ''}
+    <button class="btn" id="fsave" onclick="userSave('${role}','${id || ''}')">Saqlash</button>`;
+  openSheet();
+}
+function togC(el, id) { hap(); F.classIds = F.classIds.includes(id) ? F.classIds.filter((x) => x !== id) : [...F.classIds, id]; el.classList.toggle('on'); }
+async function userSave(role, id) {
+  const name = $('#fn').value.trim(); if (!name) return toast('Ism-familiyani kiriting');
+  const b = $('#fsave'); b.disabled = true;
+  try {
+    const r = await api('user-save', { id: id || undefined, role, name, phone: $('#fp').value.trim(), classIds: F.classIds, ...(id ? { status: F.status, note: $('#fnote').value } : {}) });
+    await loadAll(); if (r.code) showCred(r.user, r.code); else { closeSheet(); toast('Saqlandi'); } userList(role);
+  } catch (e) { toast(e.message); b.disabled = false; }
+}
+function showCred(u, code) {
+  const txt = `${C.name}\n\nShaxsiy kabinetga kirish:\nID: ${u.id}\nKod: ${code}\n\nBotni oching, «Kabinetni ochish» tugmasini bosing va ID hamda kodni kiriting. Kod bir marta ishlatiladi (7 kun amal qiladi).`;
+  $('#sheet').innerHTML = `<div class="grip"></div><h3>Kirish ma’lumotlari</h3>
+    <div class="cred"><small>Shaxsiy ID</small><b class="mono">${u.id}</b><small>Aktivatsiya kodi</small><b class="mono">${code.slice(0, 4)}-${code.slice(4)}</b><p>${esc(u.name)} uchun. Kod faqat hozir ko‘rsatiladi, 7 kun amal qiladi va bir marta ishlatiladi.</p></div>
+    <div class="two"><button class="btn l" onclick="copyT(${esc(JSON.stringify(txt))})">${ic.copy}Nusxalash</button><button class="btn" onclick="shareT(${esc(JSON.stringify(txt))})">Yuborish</button></div>
+    <button class="btn l" style="margin-top:10px;background:#F1F5F9;color:var(--t2)" onclick="closeSheet()">Yopish</button>`;
+  openSheet();
+}
+function copyT(t) { try { navigator.clipboard.writeText(t); toast('Nusxalandi'); } catch { toast('Nusxalab bo‘lmadi'); } }
+function shareT(t) { try { TG.openTelegramLink('https://t.me/share/url?url=' + encodeURIComponent(' ') + '&text=' + encodeURIComponent(t)); } catch { copyT(t); } }
+function userView(id) {
+  const u = D.users.find((x) => x.id === id); if (!u) return; hap();
+  const cls = u.classIds.map((cid) => D.classes.find((c) => c.id === cid)).filter(Boolean);
+  $('#sheet').innerHTML = `<div class="grip"></div><div style="display:flex;gap:12px;align-items:center;margin-bottom:14px"><div class="av ${u.role === 'teacher' ? 't' : u.role === 'admin' ? 'a' : ''}" style="width:56px;height:56px;border-radius:18px;font-size:18px">${esc(initials(u.name))}</div><div><h3 style="margin:0">${esc(u.name)}</h3><span class="mono" style="color:var(--t2);font-weight:700">${u.id}</span></div></div>
+    <div class="card" style="box-shadow:none;border:1px solid var(--line)"><div class="kv"><span>Rol</span><b>${ROLE[u.role]}</b></div><div class="kv"><span>Telefon</span><b>${esc(u.phone || '—')}</b></div>
+      <div class="kv"><span>Holati</span><b><span class="tag ${ST[u.status][1]}">${ST[u.status][0]}</span></b></div>
+      <div class="kv"><span>Telegram</span><b>${u.linked ? `✓ ulangan${u.tgUsername ? ' · @' + esc(u.tgUsername) : ''}` : u.codePending ? 'Kod berilgan, kutilmoqda' : 'Ulanmagan'}</b></div>
+      <div class="kv"><span>Sinflar</span><b>${cls.length ? cls.map((c) => esc(c.name)).join(', ') : '—'}</b></div>${u.note ? `<div class="kv"><span>Izoh</span><b>${esc(u.note)}</b></div>` : ''}
+      <div class="kv"><span>Qo‘shilgan</span><b>${new Date(u.createdAt).toLocaleDateString('ru-RU')}</b></div></div>
+    <div class="acts"><button class="btn s l" onclick="userForm('${u.role}','${u.id}')">Tahrirlash</button>
+      <button class="btn s l" onclick="newCode('${u.id}',${u.linked})">${u.linked ? 'Qayta bog‘lash' : 'Yangi kod'}</button>
+      <button class="btn s ${u.status === 'blocked' ? 'l' : 'r'}" onclick="quickSt('${u.id}','${u.status === 'blocked' ? 'active' : 'blocked'}')">${u.status === 'blocked' ? 'Blokdan chiqarish' : 'Bloklash'}</button>
+      <button class="btn s r" onclick="delUser('${u.id}')">O‘chirish</button></div>`;
+  openSheet();
+}
+async function newCode(id, linked) {
+  if (linked && !confirm('Telegram akkaunt bilan bog‘lanish uziladi va yangi kod beriladi. Davom etasizmi?')) return;
+  try { const r = await api('user-code', { id, unlink: !!linked }); await loadAll(); showCred(r.user, r.code); } catch (e) { toast(e.message); }
+}
+async function quickSt(id, status) {
+  const u = D.users.find((x) => x.id === id);
+  try { await api('user-save', { id, name: u.name, phone: u.phone, note: u.note, status, classIds: u.classIds }); await loadAll(); closeSheet(); toast(status === 'blocked' ? 'Bloklandi' : 'Faollashtirildi'); render(); } catch (e) { toast(e.message); }
+}
+async function delUser(id) {
+  if (!confirm('Butunlay o‘chirilsinmi? Buning o‘rniga «Arxiv» holatini tanlash ham mumkin.')) return;
+  try { await api('user-delete', { id }); closeSheet(); toast('O‘chirildi'); render(); } catch (e) { toast(e.message); }
+}
+/* ---------- ADMIN: sinflar ---------- */
+async function renderClassesAdmin() {
+  $('#view').innerHTML = `<div class="ph"><h2>Sinflar</h2><button class="add" onclick="classForm()">${ic.plus}Yangi sinf</button></div><div class="list">${[0, 1, 2].map(() => '<div class="row sk" style="height:84px"></div>').join('')}</div>`;
+  try { await loadAll(); } catch (e) { return toast(e.message); }
+  if (page !== 'classes') return;
+  const act = D.classes.filter((c) => c.status !== 'archived'), arc = D.classes.filter((c) => c.status === 'archived');
+  const card = (c) => `<button class="row" style="width:100%;text-align:left;align-items:flex-start" onclick="classForm('${c.id}')"><div class="av" style="background:var(--n);color:#fff">${ic.cls}</div><div class="in"><b>${esc(c.name)}</b><small>${esc(c.course || 'Kurs ko‘rsatilmagan')} · ${c.studentCount} o‘quvchi</small><small>${esc(c.teacherName || "O‘qituvchi biriktirilmagan")}</small><small style="color:var(--a)">${(c.schedule || []).map((s) => `${DS[s.day]} ${s.start}`).join(' · ') || 'Jadval yo‘q'}</small></div>${c.status === 'archived' ? '<span class="tag g">Arxiv</span>' : ''}</button>`;
+  $('#view').innerHTML = `<div class="ph fade"><h2>Sinflar</h2><button class="add" onclick="classForm()">${ic.plus}Yangi sinf</button></div><div class="list fade">${act.length ? act.map(card).join('') : `<div class="empty">${ic.cls}<br>Hali sinf yo‘q. Birinchi sinfni yarating</div>`}${arc.length ? `<p style="color:var(--t3);font-weight:800;font-size:12px;letter-spacing:.6px;margin:16px 4px 8px">ARXIV</p>${arc.map(card).join('')}` : ''}</div>`;
+}
+let CF = null;
+function classForm(id) {
+  const c = id ? D.classes.find((x) => x.id === id) : null; CF = { schedule: c ? JSON.parse(JSON.stringify(c.schedule || [])) : [{ day: 0, start: '09:00', end: '10:30', room: '' }], studentIds: c ? [...c.studentIds] : [], status: c ? c.status : 'active', sq: '' };
+  const T = D.users.filter((u) => u.role === 'teacher' && u.status !== 'archived');
+  $('#sheet').innerHTML = `<div class="grip"></div><h3>${c ? 'Sinfni tahrirlash' : 'Yangi sinf'}</h3>
+    <label class="f"><span>Sinf nomi</span><input id="cn" value="${esc(c ? c.name : '')}" placeholder="Masalan: IELTS 7.0 — A1 guruh"></label>
+    <div class="two"><label class="f"><span>Kurs turi</span><input id="cc" value="${esc(c ? c.course : '')}" placeholder="Ingliz tili"></label><label class="f"><span>Xona</span><input id="cr" value="${esc(c ? c.room : '')}" placeholder="204"></label></div>
+    <label class="f"><span>O‘qituvchi</span><select id="ct"><option value="">— Tanlanmagan —</option>${T.map((t) => `<option value="${t.id}" ${c && c.teacherId === t.id ? 'selected' : ''}>${esc(t.name)} (${t.id})</option>`).join('')}</select></label>
+    <div class="f"><span>Dars jadvali</span><div id="sch"></div><button type="button" class="btn s l" onclick="CF.schedule.push({day:0,start:'09:00',end:'10:30',room:''});schDraw()">${ic.plus}Dars qo‘shish</button></div>
+    <div class="f"><span>O‘quvchilar · <b id="scnt">${CF.studentIds.length}</b> ta</span><div class="srch" style="margin:0 0 8px">${ic.search}<input placeholder="Qidirish" oninput="CF.sq=this.value;stuDraw()"></div><div id="stl" style="max-height:240px;overflow-y:auto"></div></div>
+    ${c ? `<div class="f"><span>Holati</span><div class="seg"><button type="button" class="${CF.status === 'active' ? 'on' : ''}" onclick="CF.status='active';this.parentNode.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===this))">Faol</button><button type="button" class="${CF.status === 'archived' ? 'on' : ''}" onclick="CF.status='archived';this.parentNode.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===this))">Arxivlangan</button></div></div>` : ''}
+    <button class="btn" id="csave" onclick="classSave('${id || ''}')">Saqlash</button>${c ? `<button class="btn r" style="margin-top:8px" onclick="classDel('${c.id}')">Sinfni o‘chirish</button>` : ''}`;
+  schDraw(); stuDraw(); openSheet();
+}
+function schDraw() { $('#sch').innerHTML = CF.schedule.map((s, i) => `<div class="sch"><select onchange="CF.schedule[${i}].day=+this.value">${DS.map((d, k) => `<option value="${k}" ${s.day === k ? 'selected' : ''}>${d}</option>`).join('')}</select><input type="time" value="${s.start}" onchange="CF.schedule[${i}].start=this.value"><input type="time" value="${s.end}" onchange="CF.schedule[${i}].end=this.value"><button type="button" onclick="CF.schedule.splice(${i},1);schDraw()">×</button></div>`).join('') || '<small style="color:var(--t3);font-weight:600;display:block;margin-bottom:8px">Jadval qo‘shilmagan</small>'; }
+function stuDraw() {
+  const w = CF.sq.trim().toLowerCase(), S = D.users.filter((u) => u.role === 'student' && u.status !== 'archived' && (!w || (u.name + ' ' + u.id).toLowerCase().includes(w)));
+  $('#stl').innerHTML = S.length ? S.map((u) => `<label class="row" style="margin-bottom:6px;box-shadow:none;border:1px solid var(--line)"><div class="in"><b style="font-size:14px">${esc(u.name)}</b><small class="mono">${u.id}</small></div><input type="checkbox" style="width:22px;height:22px;accent-color:var(--a)" ${CF.studentIds.includes(u.id) ? 'checked' : ''} onchange="CF.studentIds=this.checked?[...CF.studentIds,'${u.id}']:CF.studentIds.filter(x=>x!=='${u.id}');$('#scnt').textContent=CF.studentIds.length"></label>`).join('') : `<small style="color:var(--t3);font-weight:600">${w ? 'Topilmadi' : "Avval o‘quvchilar qo‘shing"}</small>`;
+}
+async function classSave(id) {
+  const name = $('#cn').value.trim(); if (!name) return toast('Sinf nomini kiriting');
+  for (const s of CF.schedule) if (s.end <= s.start) return toast('Dars tugash vaqti boshlanishidan keyin bo‘lsin');
+  const b = $('#csave'); b.disabled = true;
+  try { await api('class-save', { id: id || undefined, name, course: $('#cc').value, room: $('#cr').value, teacherId: $('#ct').value, schedule: CF.schedule, studentIds: CF.studentIds, status: CF.status }); closeSheet(); toast('Sinf saqlandi'); renderClassesAdmin(); }
+  catch (e) { toast(e.message); b.disabled = false; }
+}
+async function classDel(id) { if (!confirm('Sinf o‘chirilsinmi? O‘quvchilar o‘chirilmaydi, faqat sinfdan chiqariladi.')) return; try { await api('class-delete', { id }); closeSheet(); toast('O‘chirildi'); renderClassesAdmin(); } catch (e) { toast(e.message); } }
+/* ---------- O'QITUVCHI / O'QUVCHI ---------- */
+function renderHome() {
+  const n = nextLesson(MYC), isT = ME.role === 'teacher', today = MYC.flatMap((c) => (c.schedule || []).filter((s) => s.day === nowDay()).map((s) => ({ c, s }))).sort((a, b) => a.s.start.localeCompare(b.s.start));
+  $('#view').innerHTML = header(`${greet()}, ${esc(ME.name.split(' ')[0])}`, isT ? `${MYC.length} ta sinf biriktirilgan` : MYC[0] ? `${esc(MYC[0].name)} · ${esc(MYC[0].teacherName || '')}` : 'Sinfga hali biriktirilmagansiz') + `<div class="wrap fade">
+    <div class="card"><h3>Keyingi dars</h3>${n ? `<div class="les"><div class="tm">${n.s.start}<small>${whenTxt(n)}</small></div><div class="bar"></div><div class="in"><b>${esc(n.c.name)}</b><small>${esc(isT ? n.c.course || '' : n.c.teacherName || '')}${n.s.room || n.c.room ? ' · ' + esc(n.s.room || n.c.room) + '-xona' : ''} · ${n.s.start}–${n.s.end}</small></div></div>` : `<div class="empty">${ic.cal}<br>Dars jadvali hali kiritilmagan</div>`}</div>
+    ${isT ? `<div class="card"><h3>Bugungi darslar</h3>${today.length ? today.map(({ c, s }) => `<div class="les"><div class="tm">${s.start}<small>${s.end}</small></div><div class="bar"></div><div class="in"><b>${esc(c.name)}</b><small>${(c.students || []).length} o‘quvchi${s.room || c.room ? ' · ' + esc(s.room || c.room) + '-xona' : ''}</small></div></div>`).join('') : '<div class="empty">Bugun dars yo‘q</div>'}</div>` : ''}
+    <div class="card"><h3>Yangi xabarlar</h3><div class="empty">${ic.bell}<br>Yangi xabar yo‘q</div></div>
+    <div class="soon">${ic.info}<span>Sinf chati, e’lonlar, uy vazifalari, baholar, davomat va to‘lovlar keyingi bosqichlarda qo‘shiladi.</span></div></div>`;
+}
+function renderMyClasses() {
+  $('#view').innerHTML = `<div class="ph fade"><h2>${ME.role === 'teacher' ? 'Sinflarim' : 'Mening sinfim'}</h2></div><div class="list fade">${MYC.length ? MYC.map((c) => `<div class="card"><h3>${esc(c.name)}<span class="tag g">${esc(c.course || '')}</span></h3>
+      <div class="kv"><span>O‘qituvchi</span><b>${esc(c.teacherName || '—')}</b></div><div class="kv"><span>Xona</span><b>${esc(c.room || '—')}</b></div>
+      <div class="kv" style="display:block"><span>Dars jadvali</span>${(c.schedule || []).length ? (c.schedule || []).map((s) => `<div class="les"><div class="tm" style="width:90px;flex-basis:90px">${DAYS[s.day]}</div><div class="bar"></div><div class="in"><b>${s.start}–${s.end}</b>${s.room ? `<small>${esc(s.room)}-xona</small>` : ''}</div></div>`).join('') : '<p style="color:var(--t3);margin-top:6px">Kiritilmagan</p>'}</div>
+      <div class="kv" style="display:block"><span>O‘quvchilar · ${(c.students || []).length}</span>${(c.students || []).map((s) => `<div class="row" style="box-shadow:none;border:1px solid var(--line);margin:8px 0 0"><div class="av" style="width:36px;height:36px;flex-basis:36px;border-radius:11px;font-size:13px">${esc(initials(s.name))}</div><div class="in"><b style="font-size:14px">${esc(s.name)}${s.id === ME.id ? ' (siz)' : ''}</b>${ME.role === 'teacher' ? `<small class="mono">${s.id}${s.phone ? ' · ' + esc(s.phone) : ''}</small>` : ''}</div></div>`).join('')}</div></div>`).join('')
+    : `<div class="empty">${ic.cls}<br>${ME.role === 'teacher' ? 'Sizga hali sinf biriktirilmagan' : 'Siz hali sinfga biriktirilmagansiz'}. Administratorga murojaat qiling.</div>`}</div>`;
+}
+function renderProfile() {
+  const u = (TG && TG.initDataUnsafe && TG.initDataUnsafe.user) || {};
+  $('#view').innerHTML = `<div class="ph fade"><h2>Profil</h2></div><div class="list fade"><div class="card" style="text-align:center;padding:22px"><div class="av ${ME.role === 'teacher' ? 't' : ME.role === 'admin' ? 'a' : ''}" style="width:72px;height:72px;border-radius:22px;font-size:24px;margin:0 auto 12px">${esc(initials(ME.name))}</div><h3 style="justify-content:center;font-size:20px;margin-bottom:4px">${esc(ME.name)}</h3><span class="mono" style="color:var(--t2);font-weight:700">${ME.id}</span></div>
+    <div class="card"><div class="kv"><span>Rol</span><b>${ROLE[ME.role]}</b></div><div class="kv"><span>O‘quv markazi</span><b>${esc(C.name)}</b></div><div class="kv"><span>Telefon</span><b>${esc(ME.phone || '—')}</b></div><div class="kv"><span>Telegram</span><b>${u.username ? '@' + esc(u.username) : '✓ bog‘langan'}</b></div><div class="kv"><span>Sinflar</span><b>${MYC.length}</b></div></div>
+    <div class="soon">${ic.lock}<span>Kabinetingiz faqat shu Telegram akkauntga bog‘langan. Boshqa qurilmadan kirish uchun administrator yangi kod beradi.</span></div></div>`;
+}
+boot();
+</script>
+</body>
+</html>
