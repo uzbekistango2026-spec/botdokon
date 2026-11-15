@@ -3,7 +3,12 @@ on: workflow_dispatch
 jobs:
   c:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
       - run: |
-          curl -s https://botdokon.oltinshoh2026.workers.dev/version >/dev/null; sleep 20
-          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1800; echo
+          cd menu/bakery
+          while read k id; do [ -z "$k" ] && continue; curl -sf -o "$k.jpg" "https://images.unsplash.com/photo-$id?w=800&q=78&auto=format&fm=jpg&fit=crop" || echo "MISS $k"; done < ids.txt
+          ls *.jpg | wc -l
+          cd ../.. && git add menu/bakery && git -c user.name=bot -c user.email=bot@x commit -qm "Tort do'koni demo rasmlari (Unsplash)" && git pull -q --rebase && git push -q
