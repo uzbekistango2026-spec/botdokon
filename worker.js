@@ -2048,14 +2048,14 @@ async function autoSeed(env, force, origin) {
   if (seedDone && !force) return; seedDone = true; seedLog = [];
   for (const id of await botIds(env)) {
     const b = await getBot(env, id);
-    if (!b || !['bakery', 'tech'].includes(b.type) || b.products.length || (await kv(env).get(b.type + 'seed:' + id))) continue;
+    if (!b || !['bakery', 'tech'].includes(b.type) || b.products.length || (await kv(env).get(b.type + (b.type === 'tech' ? 'seed2:' : 'seed:') + id))) continue;
     const d = b.type === 'tech' ? TECH_DEMO : BAKERY_DEMO, cid = {};
     for (const n of d.categories) { const c = { id: uid(), ...COLL.categories({ name: n, image: (d.catImages || {})[n] || '', order: b.categories.length }) }; b.categories.push(c); cid[n] = c.id; }
     for (const x of d.products) b.products.push({ id: uid(), ...COLL.products({ ...x, categoryId: cid[x.category], active: true }) });
     if (!b.banners.length) b.banners = d.banners.map((x) => ({ id: uid(), ...COLL.banners(x) }));
     Object.assign(b.settings, d.settings || {});
     if (origin) await setupBot(origin, b);
-    await putBot(env, b); await kv(env).put(b.type + 'seed:' + id, now()); seedLog.push(`${b.type} demo: @${b.username} ${b.products.length} ta`);
+    await putBot(env, b); await kv(env).put(b.type + (b.type === 'tech' ? 'seed2:' : 'seed:') + id, now()); seedLog.push(`${b.type} demo: @${b.username} ${b.products.length} ta`);
   }
   for (const sd of SEEDS) {
     if (await kv(env).get(sd.key)) continue;
