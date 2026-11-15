@@ -10,7 +10,7 @@ const S = await (await fetch(H + '/api/shop/' + b.id)).json();
 console.log("Uy-ro'zg'or");
 ok(S.type === 'home' && S.products.length === 36 && S.categories.length === 6 && S.banners.length === 3, 'demo: 36 mahsulot, 6 kategoriya, 3 banner');
 ok(Array.isArray(S.settings.plans) && S.settings.plans.length === 0 && S.products.every((p) => p.cost === undefined), 'bo‘lib to‘lash o‘chiq, tannarx yashirin');
-ok((await (await fetch(H + '/app/' + b.id)).text()).includes('Qozon, idish'), 'uy-ro‘zg‘or ilovasi ochiladi');
+ok((await (await fetch(H + '/app/' + b.id)).text()).includes('Uy uchun hammasi'), 'uy-ro‘zg‘or ilovasi ochiladi');
 const I = init(T, { id: 55 }), cust = { name: 'Ali', phone: '+998901234567', address: 'Chilonzor', location: { lat: 41.3, lng: 69.2 } };
 const ord = (x) => fetch(`${H}/api/shop/${b.id}/order`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ initData: I, customer: cust, ...x }) }).then(async (r) => ({ s: r.status, d: await r.json() }));
 const p = S.products.find((x) => x.qty >= 4), out = S.products.find((x) => x.qty === 0);

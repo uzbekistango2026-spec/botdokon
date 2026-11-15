@@ -182,6 +182,35 @@ svg{flex-shrink:0}
 body.hm{--soft:#F4F2EE;--line:#ECE8E1}
 body.hm .pc .mo{background:#E7F3F0;color:#0F766E}
 body.hm .btn.c{background:var(--c)}
+:root{--c:#7000FF;--pink:#F0136C;--yel:#FFF200;--lil:#EEE8FF}
+.uhero{background:#6A00F2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 90 30 60l30 30 30-30 30 30M0 40 30 10l30 30 30-30 30 30' stroke='%237B1AFF' stroke-width='14' fill='none'/%3E%3C/svg%3E");color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 64px}
+.srow{display:flex;gap:10px}.sp{flex:1;height:50px;border-radius:25px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 16px;color:#8B8F98;font-size:16px;text-align:left}.sp svg{color:#8B8F98}
+.hb{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--ink)}
+.ht{padding:22px 2px 0}.ht h1{font-size:27px;font-weight:800;letter-spacing:-.6px;line-height:1.15;max-width:85%}.ht p{color:#ffffffc8;margin-top:6px;font-size:15px}
+.ht button{margin-top:14px;height:38px;padding:0 14px;border-radius:11px;background:#ffffff33;color:#fff;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:4px}
+.usheet{background:#fff;border-radius:28px 28px 0 0;margin-top:-40px;padding-top:14px;position:relative}
+.ucats{display:flex;gap:10px;overflow-x:auto;padding:16px 16px 4px;scrollbar-width:none}.ucats::-webkit-scrollbar{display:none}
+.ucats button{flex:0 0 74px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12.5px;font-weight:600;line-height:1.2;text-align:center}
+.ucats .ci{width:74px;height:62px;border-radius:16px;background:#F1EEF8 center/cover}.ucats .ci.pct{background:linear-gradient(135deg,#7000FF,#B23BFF);color:#fff;display:grid;place-items:center;font-size:30px;font-weight:800}
+.usec{margin-top:18px;border-radius:28px;padding:18px 0 16px}.usec.pu{background:#7B3FF7}.usec.pe{background:#FFD8B0}.usec.li{background:#EDE4FF}
+.uh{display:flex;align-items:center;justify-content:space-between;padding:0 16px 14px}.uh h2{font-size:22px;font-weight:800;letter-spacing:-.6px}.uh button{display:flex;align-items:center;gap:2px;font-size:15px;font-weight:600}
+.usec.pu .uh{color:#fff}
+.usec .hs .pc{flex:0 0 46%;background:#fff;border-radius:22px;padding:8px 8px 10px}
+.pc .im{border-radius:16px;background-color:#F2F3F6}
+.pc .fav{position:absolute;right:8px;top:8px;width:34px;height:34px;border-radius:50%;background:#ffffffd9;display:grid;place-items:center;color:var(--ink)}.pc .fav svg{width:19px;height:19px}.pc .fav.on{color:var(--pink)}.pc .fav.on svg{fill:var(--pink)}
+.pc .bdg{position:absolute;left:8px;bottom:8px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.pc .bdg i{white-space:nowrap;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.2px;padding:4px 7px;border-radius:7px;display:flex;align-items:center;gap:4px;line-height:1}
+.pc .bdg .og{background:#fff;color:var(--ink);box-shadow:0 1px 4px #0002}.pc .bdg .mt{background:#FF7A00;color:#fff}.pc .bdg .an{background:#FF3D7F;color:#fff}.pc .bdg .mh{background:#12A150;color:#fff}.pc .bdg .ht{background:#7000FF;color:#fff}
+.pc .pr{margin-top:8px}.pc .pr b{font-size:19px;font-weight:800;letter-spacing:-.5px}.pc .pr b.sl{color:var(--c)}
+.pc .old{display:flex;gap:6px;align-items:baseline;margin-top:1px}.pc .old s{color:var(--t3);font-size:13px}.pc .old em{font-style:normal;color:var(--pink);font-weight:700;font-size:14px}
+.pc .yl{display:inline-block;background:var(--yel);color:var(--ink);font-size:13px;font-weight:600;padding:2px 6px;border-radius:5px;margin-top:5px}
+.pc .nm{font-size:13.5px;margin-top:6px}.pc .rt{min-height:18px;color:var(--t2);font-size:12.5px;gap:4px}.pc .rt svg{color:#FFA800}.pc .rt span{margin-right:6px}
+.pc .cb{margin-top:8px;height:40px;border-radius:12px;background:var(--lil);color:var(--c);font-weight:600;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:6px;width:100%}
+.pc .cb.in{background:var(--c);color:#fff}.pc .cb.dis{background:#F2F2F4;color:var(--t3)}
+.nav button.on{color:var(--c)}
+.cbar{background:var(--c)}.cbar button{color:var(--c)}
+.chip.on{background:var(--c)}.btn{background:var(--c)}.btn.l{background:var(--soft);color:var(--ink)}
+body.hm{--c:#7000FF}
 </style>
 </head>
 <body>
@@ -202,7 +231,9 @@ const ic = {
   cmp: I('<path d="M8 3v18M16 3v18M3 8h5M16 16h5M3 16h5M16 8h5"/>', 22), cart: I('<path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20.5 8H6"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/>'),
   user: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c1.6-4 4.6-6 8-6s6.4 2 8 6"/>'), search: I('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>', 20, 2),
   back: I('<path d="M15 5l-7 7 7 7"/>', 22, 2.2), plus: I('<path d="M12 5v14M5 12h14"/>', 20, 2.4), check: I('<path d="m5 12 5 5 9-10"/>', 20, 2.6), x: I('<path d="M6 6l12 12M18 6 6 18"/>', 16, 2.4),
-  filter: I('<path d="M4 6h16M7 12h10M10 18h4"/>', 18, 2), star: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.1l-5.7 3.2 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>',
+  filter: I('<path d="M4 6h16M7 12h10M10 18h4"/>', 18, 2), heart: I('<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/>', 22, 1.9),
+  bag: I('<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8M12 12v4M10 14h4"/>', 20, 1.9), ok: '<svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#12A150"/><path d="m7 12.5 3.2 3 6.5-7" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  like: '<svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M2 10h4v11H2zM8 21h9.5a2 2 0 0 0 2-1.6l1.4-7A2 2 0 0 0 19 10h-5l.8-4.2A2 2 0 0 0 12.8 3L8 10z"/></svg>', msg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="#C9CCD3"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4.5 21l4.3-2.3c1 .2 2.1.3 3.2.3 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>', chev: I('<path d="m9 6 6 6-6 6"/>', 16, 2.4), star: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.1l-5.7 3.2 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>',
   shield: I('<path d="M12 3 4.5 6v6c0 4.4 3.2 7.8 7.5 9 4.3-1.2 7.5-4.6 7.5-9V6z"/><path d="m9 12 2 2 4-4"/>', 20), truck: I('<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.7"/><circle cx="17.5" cy="17.5" r="1.7"/>', 20),
   card: I('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/>', 20), pin: I('<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>', 22, 2),
   store: I('<path d="M4 9.5 5.5 4h13L20 9.5M4 9.5V20h16V9.5M4 9.5c0 1.4 1.2 2.5 2.7 2.5S9.3 10.9 9.3 9.5c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.2 2.5 2.7 2.5S20 10.9 20 9.5M10 20v-5h4v5"/>', 20),
@@ -214,7 +245,7 @@ const LS = (k, d) => { try { const v = localStorage.getItem(BOT_ID + '_t_' + k);
 const SS = (k, v) => { try { localStorage.setItem(BOT_ID + '_t_' + k, JSON.stringify(v)); } catch {} };
 const fmt = (n) => Math.round(n || 0).toLocaleString('ru-RU').replace(/[\s,]/g, ' ') + ' so‘m';
 const hap = (t = 'light') => { try { TG.HapticFeedback.impactOccurred(t); } catch {} };
-let S = null, page = 'home', stack = [], cart = LS('cart', []), cmp = LS('cmp', []), me = LS('me', {}), geo = LS('geo', null), recent = LS('recent', []);
+let S = null, page = 'home', stack = [], favs = LS('favs', []), cart = LS('cart', []), cmp = LS('cmp', []), me = LS('me', {}), geo = LS('geo', null), recent = LS('recent', []);
 let cur = null, curCat = '', q = '', F = { brands: [], min: '', max: '', stock: false, sale: false }, sort = 'pop', months = null, pay = 'cash', pickup = false, diffOnly = false, bnT = null;
 const HM = () => S.type === 'home';
 const plans = () => (Array.isArray(S.settings.plans) ? S.settings.plans : HM() ? [] : [{ m: 3, p: 0 }, { m: 6, p: 9 }, { m: 12, p: 19 }, { m: 24, p: 38 }]);
@@ -229,7 +260,7 @@ function openSheet(h) { $('#sheet').innerHTML = '<div class="grip"></div>' + h; 
 function closeSheet() { $('#ov').classList.remove('on'); $('#sheet').classList.remove('on'); if (!stack.length) try { TG.BackButton.hide(); } catch {} }
 function show(p, push) { if (push) stack.push(page); else stack = []; page = p; scrollTo(0, 0); render(); try { stack.length ? TG.BackButton.show() : TG.BackButton.hide(); } catch {} }
 function back() { if ($('#sheet').classList.contains('on')) return closeSheet(); page = stack.pop() || 'home'; render(); try { stack.length ? TG.BackButton.show() : TG.BackButton.hide(); } catch {} }
-function render() { clearInterval(bnT); ({ home: renderHome, catalog: renderCat, search: renderSearch, prod: renderProd, compare: renderCmp, cart: renderCart, checkout: renderCheckout, profile: renderProfile })[page](); renderNav(); }
+function render() { clearInterval(bnT); try { TG.setHeaderColor(page === 'home' ? '#6A00F2' : '#ffffff'); } catch {} ({ home: renderHome, favs: renderFavs, catalog: renderCat, search: renderSearch, prod: renderProd, compare: renderCmp, cart: renderCart, checkout: renderCheckout, profile: renderProfile })[page](); renderNav(); }
 const cartN = () => cart.reduce((a, x) => a + x.qty, 0);
 function renderNav() {
   const full = ['prod', 'checkout'].includes(page); $('#nav').style.display = full ? 'none' : '';
@@ -239,16 +270,21 @@ function renderNav() {
   cb.classList.toggle('on', !!showBar); if (showBar) cb.innerHTML = `<span>${n} ta mahsulot · ${fmt(subtotal())}</span><button onclick="show('cart')">Savatga</button>`;
 }
 /* ---------- kartochka ---------- */
+const fmtN = (n) => Math.round(n || 0).toLocaleString('ru-RU').replace(/[\s,]/g, ' ');
+const dlvTxt = () => { const h = new Date().getHours(); return h < 15 ? 'Bugun' : 'Ertaga'; };
 function pcard(p) {
-  const inC = cart.some((x) => x.id === p.id), so = !inStock(p), mp = maxPlan(), lab = p.oldPrice > p.price ? `−${Math.round((1 - p.price / p.oldPrice) * 100)}%` : p.label;
-  return `<div class="pc"><div class="imw"><button class="im ${so ? 'so' : ''}" style="background-image:url('${esc(imgs(p)[0] || '')}')" onclick="openP('${p.id}')">${lab ? `<span class="lb ${p.oldPrice > p.price ? 's' : p.label === 'Mahalliy' ? 'l' : ''}">${esc(lab)}</span>` : ''}</button>
-    ${HM() ? '' : `<button class="cmp ${cmp.includes(p.id) ? 'on' : ''}" onclick="togCmp('${p.id}',this)">${I('<path d="M8 3v18M16 3v18M3 8h5M16 16h5M3 16h5M16 8h5"/>', 16, 2)}</button>`}
-    ${so ? '' : `<button class="add ${inC ? 'in' : ''}" onclick="quickAdd('${p.id}',this)">${inC ? ic.check : ic.plus}</button>`}</div>
-    <div class="pr"><b>${fmt(p.price)}</b>${p.oldPrice > p.price ? `<s>${fmt(p.oldPrice)}</s>` : ''}</div>
-    ${so ? '<div class="lf" style="color:var(--t3)">Sotuvda yo‘q</div>' : hasPl() ? `<span class="mo">${fmt(monthly(p.price, mp))} × ${mp.m} oy</span>` : ''}
+  const inC = cart.find((x) => x.id === p.id), so = !inStock(p), mp = maxPlan(), off = p.oldPrice > p.price ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
+  const bd = []; if (!HM() || p.brand) bd.push('<i class="og">' + ic.ok + 'ORIGINAL</i>'); if (hasPl() && p.price >= 1500000) bd.push(`<i class="mt">${ic.like}MUDDATLI TO‘LOV 0%</i>`); else if (off >= 10) bd.push('<i class="an">ARZON NARX</i>'); else if (p.label === 'Mahalliy') bd.push('<i class="mh">MAHALLIY</i>'); else if (p.label === 'Hit') bd.push('<i class="ht">HIT SAVDO</i>');
+  return `<div class="pc"><div class="imw"><button class="im ${so ? 'so' : ''}" style="background-image:url('${esc(imgs(p)[0] || '')}')" onclick="openP('${p.id}')"></button>
+    <button class="fav ${favs.includes(p.id) ? 'on' : ''}" onclick="togFav('${p.id}',this)">${ic.heart}</button><div class="bdg">${bd.slice(0, 2).join('')}</div></div>
+    <div class="pr" onclick="openP('${p.id}')"><b class="${off ? 'sl' : ''}">${fmtN(p.price)}</b></div>
+    ${off ? `<div class="old"><s>${fmtN(p.oldPrice)}</s><em>↓${off}%</em></div>` : ''}
+    ${!so && hasPl() ? `<span class="yl">${fmtN(monthly(p.price, mp))} so‘mdan</span>` : ''}
     <div class="nm" onclick="openP('${p.id}')">${esc(p.name)}</div>
-    ${p.rating ? `<div class="rt">${ic.star}<b style="color:var(--ink)">${p.rating.toFixed(1)}</b> · ${p.reviews} sharh</div>` : ''}${!so && p.qty != null && p.qty <= 3 ? `<div class="lf">Faqat ${p.qty} ta qoldi</div>` : ''}</div>`;
+    <div class="rt">${p.rating ? `${ic.star}<span>${p.rating.toFixed(1)}</span>${ic.msg}<span>${p.reviews}</span>` : ''}</div>
+    ${so ? '<button class="cb dis" disabled>Sotuvda yo‘q</button>' : `<button class="cb ${inC ? 'in' : ''}" onclick="quickAdd('${p.id}',this)">${ic.bag}${inC ? `Savatda · ${inC.qty}` : dlvTxt()}</button>`}</div>`;
 }
+function togFav(id, el) { hap(); favs = favs.includes(id) ? favs.filter((x) => x !== id) : [...favs, id]; SS('favs', favs); if (el) el.classList.toggle('on', favs.includes(id)); }
 function togCmp(id, el) {
   hap(); const p = S.products.find((x) => x.id === id);
   if (cmp.includes(id)) cmp = cmp.filter((x) => x !== id);
@@ -258,27 +294,30 @@ function togCmp(id, el) {
 function quickAdd(id, el) {
   hap('medium'); const p = S.products.find((x) => x.id === id); const x = cart.find((y) => y.id === id);
   if (x) { if (p.qty != null && x.qty >= p.qty) return toast(`Omborda faqat ${p.qty} ta bor`); x.qty++; } else cart.push({ id, qty: 1 });
-  SS('cart', cart); if (el) { el.classList.add('in'); el.innerHTML = ic.check; } toast(`${ic.check} Savatga qo‘shildi`); renderNav();
+  SS('cart', cart); if (el) { const q = cart.find((y) => y.id === id).qty; el.classList.add('in'); el.innerHTML = el.classList.contains('cb') ? `${ic.bag}Savatda · ${q}` : ic.check; } toast(`${ic.check} Savatga qo‘shildi`); renderNav();
 }
 /* ---------- bosh sahifa ---------- */
 function renderHome() {
-  const s = S.settings, P = S.products, hit = P.filter((p) => p.label === 'Hit' || p.oldPrice > p.price).slice(0, 10), brands = [...new Set(P.map((p) => p.brand).filter(Boolean))];
-  const mp = plans().find((x) => !x.p);
-  $('#view').innerHTML = `<div class="fade"><div class="top"><div class="lg">${s.logo ? `<img src="${esc(s.logo)}">` : esc((s.shopName || 'T')[0])}</div><div class="nm"><b>${esc(s.shopName)}</b><small>${ic.truck.replace(/20/g, '14')}${s.freeFrom ? `${fmt(s.freeFrom).replace(' so‘m', '')} dan bepul yetkazish` : 'Tez yetkazib berish'}</small></div><button class="ib" onclick="show('profile')">${ic.user}</button></div>
-    <button class="sbar" onclick="show('search',true)">${ic.search}${HM() ? 'Qozon, idish, sochiq, savat…' : 'Televizor, muzlatkich, brend…'}</button>
-    ${S.banners.length ? `<div class="bn" id="bn">${S.banners.map((b) => `<a class="${b.title ? 'tx' : ''}" style="background-image:url('${esc(b.image)}')">${b.badge ? `<em>${esc(b.badge)}</em>` : ''}<b>${esc(b.title)}</b><span>${esc(b.subtitle)}</span></a>`).join('')}</div><div class="dots" id="dots">${S.banners.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
-    <div class="sh"><h2>Kategoriyalar</h2><button onclick="curCat='';show('catalog')">Barchasi</button></div>
-    <div class="cats">${S.categories.map((c) => `<button class="cat" style="background-image:url('${esc(c.image || (S.products.find((p) => p.categoryId === c.id) || {}).image || '')}')" onclick="hap();curCat='${c.id}';show('catalog')"><b>${esc(c.name)}</b><small>${P.filter((p) => p.categoryId === c.id).length}</small></button>`).join('')}</div>
-    ${HM() ? `<div class="adv"><div>${ic.shield}<b>Sifat kafolati</b><small>sertifikatlangan</small></div><div>${ic.truck}<b>Tez yetkazish</b><small>shu kuniyoq</small></div><div>${ic.ret}<b>Qaytarish</b><small>14 kun ichida</small></div></div>` : `<div class="adv"><div>${ic.shield}<b>Rasmiy kafolat</b><small>24 oygacha</small></div><div>${ic.card}<b>${mp ? '0% bo‘lib' : 'Bo‘lib to‘lash'}</b><small>${mp ? mp.m + ' oygacha' : maxPlan().m + ' oygacha'}</small></div><div>${ic.truck}<b>Yetkazish</b><small>o‘rnatish bepul</small></div></div>`}
-    ${hit.length ? `<div class="sh"><h2>Hit va aksiyalar</h2><button onclick="F.sale=true;curCat='';show('catalog')">Barchasi</button></div><div class="hs">${hit.map(pcard).join('')}</div>` : ''}
-    ${brands.length > 1 ? `<div class="sh"><h2>Brendlar</h2></div><div class="brands">${brands.map((b) => `<button onclick="F.brands=['${esc(b)}'];curCat='';show('catalog')">${esc(b)}</button>`).join('')}</div>` : ''}
-    <div class="sh"><h2>Siz uchun</h2></div><div class="grid">${P.filter(inStock).slice(0, 12).map(pcard).join('')}</div>
-    <div style="height:20px"></div></div>`;
+  const s = S.settings, P = S.products, sale = P.filter((p) => p.oldPrice > p.price && inStock(p)), hit = P.filter((p) => (p.label === 'Hit' || p.reviews > 200) && inStock(p)).slice(0, 10);
+  const inst = hasPl() ? P.filter((p) => p.price >= 1500000 && inStock(p)).slice(0, 10) : [];
+  const hs = (t, a, cls, on) => (a.length ? `<section class="usec ${cls}"><div class="uh"><h2>${t}</h2><button onclick="${on}">Hammasi ${ic.chev}</button></div><div class="hs">${a.map(pcard).join('')}</div></section>` : '');
+  $('#view').innerHTML = `<div class="fade"><header class="uhero"><div class="srow"><button class="sp" onclick="show('search',true)">${ic.search}<span>${HM() ? 'Mahsulotlar qidirish' : 'Mahsulotlar qidirish'}</span></button><button class="hb" onclick="show('favs',true)">${ic.heart}</button></div>
+      <div class="ht"><h1>${esc(s.promoText || (HM() ? 'Uy uchun hammasi bir joyda' : 'Yilning katta aksiyasi'))}</h1><p>${esc(s.promoDetail || 'Har kuni yangi takliflar')}</p><button onclick="F.sale=true;curCat='';show('catalog')">Chegirmalarni ko‘rish ${ic.chev}</button></div></header>
+    <div class="usheet">${S.banners.length ? `<div class="bn" id="bn">${S.banners.map((b) => `<a class="${b.title ? 'tx' : ''}" style="background-image:url('${esc(b.image)}')">${b.badge ? `<em>${esc(b.badge)}</em>` : ''}${b.title ? `<b>${esc(b.title)}</b><span>${esc(b.subtitle)}</span>` : ''}</a>`).join('')}</div><div class="dots" id="dots">${S.banners.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
+      <div class="ucats"><button onclick="hap();F.sale=true;curCat='';show('catalog')"><div class="ci pct">%</div><span>Chegirmalar</span></button>${S.categories.map((c) => `<button onclick="hap();curCat='${c.id}';show('catalog')"><div class="ci" style="background-image:url('${esc(c.image || (P.find((p) => p.categoryId === c.id) || {}).image || '')}')"></div><span>${esc(c.name)}</span></button>`).join('')}</div>
+      ${hs('Katta chegirmalar vaqti', sale, 'pu', "F.sale=true;curCat='';show('catalog')")}
+      ${hs('Muddatli to‘lov — 0%', inst, 'pe', "sort='exp';curCat='';show('catalog')")}
+      ${hs('Hit savdo', hit, 'li', "sort='pop';curCat='';show('catalog')")}
+      <div class="uh" style="padding:22px 16px 12px"><h2>Siz uchun</h2></div><div class="grid">${P.filter(inStock).map(pcard).join('')}</div><div style="height:20px"></div></div></div>`;
   const bn = $('#bn'); if (bn && S.banners.length > 1) {
     let i = 0; const go = (k) => { i = k; bn.scrollTo({ left: bn.children[i].offsetLeft - 16, behavior: 'smooth' }); };
     bn.addEventListener('scroll', () => { const k = Math.round(bn.scrollLeft / bn.children[0].offsetWidth); document.querySelectorAll('#dots i').forEach((d, j) => d.classList.toggle('on', j === k)); i = k; }, { passive: true });
     bnT = setInterval(() => go((i + 1) % S.banners.length), 4500);
   }
+}
+function renderFavs() {
+  const a = S.products.filter((p) => favs.includes(p.id));
+  $('#view').innerHTML = `<div class="ph"><button class="ib" onclick="back()">${ic.back}</button><h1>Saralangan</h1></div>${a.length ? `<div class="grid fade">${a.map(pcard).join('')}</div>` : `<div class="empty">${I('<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/>', 56, 1.2)}<h3>Hali hech narsa yo‘q</h3>Yoqqan mahsulotlardagi ♡ ni bosing<button class="btn" onclick="show('catalog')">Katalogga o‘tish</button></div>`}`;
 }
 /* ---------- katalog ---------- */
 function filtered(list) {
@@ -449,11 +488,11 @@ async function renderProfile() {
 }
 /* ---------- start ---------- */
 async function init() {
-  try { TG.ready(); TG.expand(); TG.BackButton.onClick(back); TG.setHeaderColor('#ffffff'); TG.setBackgroundColor('#ffffff'); } catch {}
+  try { TG.ready(); TG.expand(); TG.BackButton.onClick(back); TG.setHeaderColor('#6A00F2'); TG.setBackgroundColor('#ffffff'); } catch {}
   $('#view').innerHTML = `<div style="padding:60px 16px"><div class="sk" style="height:48px;border-radius:15px"></div><div class="sk" style="height:176px;border-radius:22px;margin-top:14px"></div><div class="grid" style="padding:0;margin-top:18px">${'<div class="sk" style="aspect-ratio:1;border-radius:18px"></div>'.repeat(4)}</div></div>`;
   try { const r = await fetch('/api/shop/' + BOT_ID); if (!r.ok) throw 0; S = await r.json(); }
   catch { $('#view').innerHTML = '<div class="empty"><h3>Yuklanmadi</h3>Internetni tekshirib, qayta oching<button class="btn" onclick="init()">Qayta urinish</button></div>'; return; }
-  if (HM()) { document.body.classList.add('hm'); document.documentElement.style.setProperty('--c', '#0F766E'); }
+  if (HM()) document.body.classList.add('hm');
   if (S.settings.color && !['#7000FF', '#0E7C66'].includes(S.settings.color)) document.documentElement.style.setProperty('--c', S.settings.color);
   document.title = S.settings.shopName || (HM() ? 'Uy-ro‘zg‘or' : 'Maishiy texnika');
   cart = cart.filter((x) => S.products.some((p) => p.id === x.id)); cmp = cmp.filter((id) => S.products.some((p) => p.id === id));
