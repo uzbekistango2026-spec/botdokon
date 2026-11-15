@@ -7,7 +7,7 @@ await fetch(H + '/api/admin/setup', { method: 'POST', headers: K, body: JSON.str
 const T = '9101:AATechtokenxxxxxxxxxxxxxxxxxxxxxxx'; const b = (await adm('/bots', 'POST', { token: T, type: 'tech' })).d;
 await fetch(H + '/seed');
 const S = await (await fetch(H + '/api/shop/' + b.id)).json();
-console.log('1. Katalog'); ok(S.products.length === 36 && S.categories.length === 6 && S.banners.length === 3, 'demo: 36 mahsulot, 6 kategoriya, 3 banner');
+console.log('1. Katalog'); ok(S.products.length === 36 && S.categories.length === 6 && S.banners.length === 4, 'demo: 36 mahsulot, 6 kategoriya, 4 banner');
 ok(S.products.every((p) => p.cost === undefined), 'tannarx mijozga ko‘rinmaydi'); ok(S.products[0].specs.length > 4 && S.products[0].warranty === 24, 'xususiyatlar va kafolat bor');
 const app = await (await fetch(H + '/app/' + b.id)).text(); ok(app.includes('Bo‘lib to‘lash kalkulyatori'), 'texnika Mini App ochiladi');
 const tv = S.products.find((p) => p.qty === 3), I = init(T, { id: 55, first_name: 'Ali' }), cust = { name: 'Ali', phone: '+998901234567', address: 'Chilonzor 5', location: { lat: 41.3, lng: 69.2 } };

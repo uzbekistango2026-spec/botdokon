@@ -35,6 +35,6 @@ mw01: https://images.unsplash.com/photo-1596552183299-000ef779e88d
 mw02: https://images.unsplash.com/photo-1630699293875-e56c25151c4b
 mw03: https://images.unsplash.com/photo-1610527003928-47afd5f470c6
 mw04: https://images.unsplash.com/photo-1720694035658-220bc2d2a3d1
-bn01: https://images.unsplash.com/photo-1646615759965-68db6f18c3d9
-bn02: https://images.unsplash.com/photo-1556911220-bff31c812dba
-bn03: https://images.unsplash.com/photo-1626806787461-102c1bfaaea1
+ad01: https://images.unsplash.com/photo-1646615759965-68db6f18c3d9
+ad02: https://images.unsplash.com/photo-1556911220-bff31c812dba
+ad03: https://images.unsplash.com/photo-1626806787461-102c1bfaaea1

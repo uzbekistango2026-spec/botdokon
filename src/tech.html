@@ -28,20 +28,21 @@ svg{flex-shrink:0}
 .sbar input{flex:1;border:0;outline:0;background:none;font-size:16px;color:var(--ink)}
 /* banners */
 .bn{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px;scrollbar-width:none}.bn::-webkit-scrollbar{display:none}
-.bn a{flex:0 0 calc(100% - 28px);scroll-snap-align:center;height:176px;border-radius:22px;position:relative;overflow:hidden;background:#111 center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
-.bn a:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 20%,#000c)}
+.bn a{flex:0 0 calc(100% - 28px);scroll-snap-align:center;aspect-ratio:2/1;border-radius:20px;background-size:cover!important;box-shadow:0 14px 30px -18px #0007;position:relative;overflow:hidden;background:#111 center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.bn a.tx:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 20%,#000c)}
 .bn a>*{position:relative}
 .bn em{font-style:normal;align-self:flex-start;background:var(--c);font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:8px;margin-bottom:8px;letter-spacing:.2px}
 .bn b{font-size:23px;font-weight:800;letter-spacing:-.8px;line-height:1.05}.bn span{font-size:13.5px;color:#ffffffcc;margin-top:4px}
-.dots{display:flex;justify-content:center;gap:5px;margin:10px 0 4px}.dots i{width:6px;height:6px;border-radius:3px;background:#D9DBE0;transition:.3s}.dots i.on{width:18px;background:var(--ink)}
+.dots{display:flex;justify-content:center;gap:5px;margin:12px 0 0}.dots i{width:6px;height:6px;border-radius:3px;background:#D9DBE0;transition:.3s}.dots i.on{width:18px;background:var(--ink)}
 /* sections */
 .sh{display:flex;align-items:baseline;justify-content:space-between;padding:22px 16px 12px}
 .sh h2{font-size:21px;font-weight:800;letter-spacing:-.7px}.sh button{color:var(--t2);font-weight:600;font-size:14px}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px}
-.cat{background:var(--soft);border-radius:18px;padding:12px 10px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;text-align:left;min-height:104px;position:relative;overflow:hidden}
-.cat b{font-size:13.5px;font-weight:600;letter-spacing:-.2px;line-height:1.2}
+.cat{background:var(--soft) center/cover;border-radius:18px;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-align:left;aspect-ratio:1/1.08;position:relative;overflow:hidden;color:#fff}
+.cat:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 35%,#000b)}.cat>*{position:relative}
+.cat b{font-size:12.5px;font-weight:700;letter-spacing:-.2px;line-height:1.15;overflow-wrap:anywhere;hyphens:auto}
 .cat .ci{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--ink)}
-.cat small{position:absolute;right:10px;top:12px;color:var(--t3);font-size:12px;font-weight:600}
+.cat small{position:absolute;right:8px;top:8px;background:#fffffff0;color:var(--ink);font-size:11.5px;font-weight:700;border-radius:8px;padding:2px 7px}
 .hs{display:flex;gap:10px;overflow-x:auto;padding:0 16px 4px;scrollbar-width:none}.hs::-webkit-scrollbar{display:none}
 .hs .pc{flex:0 0 46%}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 10px;padding:0 16px}
@@ -60,6 +61,9 @@ svg{flex-shrink:0}
 .pc .nm{font-size:14px;font-weight:500;line-height:1.3;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pc .rt{display:flex;align-items:center;gap:4px;color:var(--t2);font-size:12.5px;margin-top:4px}.pc .rt svg{color:#FFB300}
 .pc .lf{color:var(--bad);font-size:12px;font-weight:600;margin-top:3px}
+.adv{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 16px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.adv div{padding:13px 10px;display:flex;flex-direction:column;gap:3px;border-left:1px solid var(--line)}.adv div:first-child{border-left:0}
+.adv svg{width:20px;height:20px;margin-bottom:6px;color:var(--c)}.adv b{font-size:13px;font-weight:700;letter-spacing:-.2px}.adv small{font-size:11.5px;color:var(--t2)}
 .promo{margin:22px 16px 0;border-radius:22px;background:var(--ink);color:#fff;padding:18px;display:flex;align-items:center;gap:14px;position:relative;overflow:hidden;text-align:left;width:calc(100% - 32px)}
 .promo:after{content:"";position:absolute;right:-50px;top:-50px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,var(--c),#0000 70%);opacity:.55}
 .promo .pi{width:52px;height:52px;border-radius:16px;background:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;position:relative;z-index:1}
@@ -257,10 +261,10 @@ function renderHome() {
   const mp = plans().find((x) => !x.p);
   $('#view').innerHTML = `<div class="fade"><div class="top"><div class="lg">${s.logo ? `<img src="${esc(s.logo)}">` : esc((s.shopName || 'T')[0])}</div><div class="nm"><b>${esc(s.shopName)}</b><small>${ic.truck.replace(/20/g, '14')}${s.freeFrom ? `${fmt(s.freeFrom).replace(' so‘m', '')} dan bepul yetkazish` : 'Tez yetkazib berish'}</small></div><button class="ib" onclick="show('profile')">${ic.user}</button></div>
     <button class="sbar" onclick="show('search',true)">${ic.search}Televizor, muzlatkich, brend…</button>
-    ${S.banners.length ? `<div class="bn" id="bn">${S.banners.map((b) => `<a style="background-image:url('${esc(b.image)}')">${b.badge ? `<em>${esc(b.badge)}</em>` : ''}<b>${esc(b.title)}</b><span>${esc(b.subtitle)}</span></a>`).join('')}</div><div class="dots" id="dots">${S.banners.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
+    ${S.banners.length ? `<div class="bn" id="bn">${S.banners.map((b) => `<a class="${b.title ? 'tx' : ''}" style="background-image:url('${esc(b.image)}')">${b.badge ? `<em>${esc(b.badge)}</em>` : ''}<b>${esc(b.title)}</b><span>${esc(b.subtitle)}</span></a>`).join('')}</div><div class="dots" id="dots">${S.banners.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="sh"><h2>Kategoriyalar</h2><button onclick="curCat='';show('catalog')">Barchasi</button></div>
-    <div class="cats">${S.categories.map((c) => `<button class="cat" onclick="hap();curCat='${c.id}';show('catalog')"><div class="ci">${catIcon(c.name)}</div><b>${esc(c.name)}</b><small>${P.filter((p) => p.categoryId === c.id).length}</small></button>`).join('')}</div>
-    ${mp ? `<button class="promo" onclick="toast('Har bir mahsulot sahifasida kalkulyator bor')"><div class="pi">0%</div><div><b>${mp.m} oyga ustamasiz</b><small>Bo‘lib to‘lash: ${plans().map((x) => x.m).join(' · ')} oy. Pasport bilan, 5 daqiqada</small></div></button>` : ''}
+    <div class="cats">${S.categories.map((c) => `<button class="cat" style="background-image:url('${esc(c.image || (S.products.find((p) => p.categoryId === c.id) || {}).image || '')}')" onclick="hap();curCat='${c.id}';show('catalog')"><b>${esc(c.name)}</b><small>${P.filter((p) => p.categoryId === c.id).length}</small></button>`).join('')}</div>
+    <div class="adv"><div>${ic.shield}<b>Rasmiy kafolat</b><small>24 oygacha</small></div><div>${ic.card}<b>${mp ? '0% bo‘lib' : 'Bo‘lib to‘lash'}</b><small>${mp ? mp.m + ' oygacha' : maxPlan().m + ' oygacha'}</small></div><div>${ic.truck}<b>Yetkazish</b><small>o‘rnatish bepul</small></div></div>
     ${hit.length ? `<div class="sh"><h2>Hit va aksiyalar</h2><button onclick="F.sale=true;curCat='';show('catalog')">Barchasi</button></div><div class="hs">${hit.map(pcard).join('')}</div>` : ''}
     ${brands.length > 1 ? `<div class="sh"><h2>Brendlar</h2></div><div class="brands">${brands.map((b) => `<button onclick="F.brands=['${esc(b)}'];curCat='';show('catalog')">${esc(b)}</button>`).join('')}</div>` : ''}
     <div class="sh"><h2>Siz uchun</h2></div><div class="grid">${P.filter(inStock).slice(0, 12).map(pcard).join('')}</div>
