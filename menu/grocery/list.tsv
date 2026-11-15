@@ -1,0 +1,85 @@
+key	name	category	unit	price	old	db	query
+cola	Coca-Cola	Ichimliklar	1,5 l	14990	16990	food	coca-cola 1.5
+fanta	Fanta apelsin	Ichimliklar	1,5 l	13990	0	food	fanta orange
+pepsi	Pepsi	Ichimliklar	1,5 l	13990	0	food	pepsi cola
+sprite	Sprite	Ichimliklar	1 l	11990	0	food	sprite lemon lime
+redbull	Red Bull energetik ichimlik	Ichimliklar	250 ml	17990	0	food	red bull energy drink
+water	Mineral suv, gazsiz	Ichimliklar	1,5 l	3990	0	food	still mineral water 1.5
+juiceapple	Olma sharbati	Ichimliklar	1 l	15990	18990	food	apple juice 1l
+juiceorange	Apelsin sharbati	Ichimliklar	1 l	16990	0	food	orange juice 1l
+icetea	Muzli choy, shaftoli	Ichimliklar	1 l	9990	0	food	ice tea peach
+lipton	Lipton qora choy	Choy va kofe	100 paket	32990	36990	food	lipton yellow label tea
+greentea	Ko‘k choy	Choy va kofe	100 g	16990	0	food	green tea loose
+nescafe	Nescafé Gold	Choy va kofe	95 g	64990	72990	food	nescafe gold
+jacobs	Jacobs Monarch	Choy va kofe	95 g	58990	0	food	jacobs monarch instant
+coffeebeans	Kofe donador	Choy va kofe	1 kg	189990	0	food	coffee beans 1kg
+cocoa	Kakao kukuni	Choy va kofe	100 g	21990	0	food	cocoa powder
+milk	Sut 3,2%	Sut mahsulotlari	1 l	13990	0	food	milk 3.2 1l
+kefir	Kefir 2,5%	Sut mahsulotlari	1 l	12990	0	food	kefir
+yogurt	Yogurt, qulupnayli	Sut mahsulotlari	120 g	5990	6990	food	strawberry yogurt
+tvorog	Tvorog 9%	Sut mahsulotlari	200 g	15990	0	food	cottage cheese 9
+smetana	Smetana 20%	Sut mahsulotlari	400 g	17990	0	food	sour cream 20
+butter	Sariyog‘ 82,5%	Sut mahsulotlari	180 g	29990	33990	food	butter 82.5
+cheese	Pishloq "Gollandskiy"	Sut mahsulotlari	1 kg	99990	0	food	gouda cheese
+mozzarella	Motsarella	Sut mahsulotlari	125 g	24990	0	food	mozzarella 125
+eggs	Tuxum C1	Sut mahsulotlari	10 dona	19990	0	food	eggs 10
+chicken	Tovuq filesi	Go‘sht va parranda	1 kg	54990	0	food	chicken breast fillet
+beef	Mol go‘shti	Go‘sht va parranda	1 kg	119990	0	food	beef meat
+mince	Qiyma, mol go‘shti	Go‘sht va parranda	1 kg	109990	119990	food	minced beef
+sausage	Kolbasa "Doktorskaya"	Go‘sht va parranda	500 g	39990	0	food	doktorskaya sausage
+sosiska	Sosiska	Go‘sht va parranda	500 g	32990	0	food	sausages hot dog
+salmon	Losos filesi	Baliq	1 kg	249990	0	food	salmon fillet
+tuna	Tuna konservasi	Baliq	185 g	24990	0	food	tuna canned
+bread	Non, bug‘doy	Non va pishiriqlar	1 dona	4990	0	food	white bread loaf
+baguette	Baget	Non va pishiriqlar	1 dona	7990	0	food	baguette
+toast	Tost noni	Non va pishiriqlar	500 g	14990	0	food	toast bread sliced
+croissant	Kruassan	Non va pishiriqlar	1 dona	8990	0	food	croissant
+rice	Guruch, devzira	Bakaleya	1 kg	29990	0	food	rice long grain 1kg
+buckwheat	Grechka	Bakaleya	900 g	19990	0	food	buckwheat
+pasta	Spagetti Barilla	Bakaleya	500 g	19990	22990	food	barilla spaghetti
+oats	Suli yormasi	Bakaleya	500 g	12990	0	food	rolled oats
+flour	Un, oliy nav	Bakaleya	2 kg	17990	0	food	wheat flour 2kg
+sugar	Shakar	Bakaleya	1 kg	12990	0	food	white sugar 1kg
+salt	Osh tuzi	Bakaleya	1 kg	3990	0	food	table salt
+oil	Kungaboqar yog‘i	Bakaleya	1 l	21990	24990	food	sunflower oil 1l
+oliveoil	Zaytun yog‘i	Bakaleya	500 ml	89990	0	food	extra virgin olive oil 500
+ketchup	Ketchup Heinz	Bakaleya	460 g	22990	0	food	heinz tomato ketchup
+mayo	Mayonez	Bakaleya	400 g	15990	0	food	mayonnaise
+tomatopaste	Tomat pastasi	Bakaleya	380 g	14990	0	food	tomato paste
+honey	Asal	Bakaleya	500 g	59990	0	food	honey jar
+corn	Makkajo‘xori konservasi	Bakaleya	340 g	12990	0	food	sweet corn canned
+peas	Ko‘k no‘xat konservasi	Bakaleya	400 g	11990	0	food	green peas canned
+cornflakes	Makkajo‘xori yormasi	Bakaleya	375 g	29990	0	food	corn flakes kellogg
+noodles	Tez tayyor lag‘mon	Bakaleya	1 dona	3990	0	food	instant noodles
+snickers	Snickers	Shirinliklar	50 g	8990	0	food	snickers bar
+twix	Twix	Shirinliklar	55 g	8990	0	food	twix
+kitkat	KitKat	Shirinliklar	41 g	7990	0	food	kitkat 4 finger
+milka	Milka shokoladi	Shirinliklar	90 g	19990	22990	food	milka alpine milk
+nutella	Nutella	Shirinliklar	350 g	49990	0	food	nutella 350
+oreo	Oreo pechenye	Shirinliklar	228 g	19990	0	food	oreo original
+haribo	Haribo marmeladi	Shirinliklar	100 g	14990	0	food	haribo goldbears
+chips	Lay‘s chipslari	Gazaklar	150 g	19990	21990	food	lays classic
+pringles	Pringles	Gazaklar	165 g	32990	0	food	pringles original
+nuts	Yong‘oq aralashmasi	Gazaklar	150 g	29990	0	food	mixed nuts
+popcorn	Popkorn	Gazaklar	100 g	9990	0	food	popcorn
+icecream	Muzqaymoq plombir	Muzlatilgan	80 g	6990	0	food	ice cream vanilla cone
+pelmeni	Chuchvara	Muzlatilgan	800 g	39990	0	food	pelmeni
+pizza	Muzlatilgan pitsa	Muzlatilgan	350 g	34990	0	food	frozen pizza
+fries	Muzlatilgan kartoshka fri	Muzlatilgan	1 kg	32990	0	food	frozen french fries
+ariel	Ariel kir yuvish kukuni	Maishiy kimyo	3 kg	89990	99990	products	ariel washing powder
+persil	Persil gel	Maishiy kimyo	1,3 l	79990	0	products	persil gel
+fairy	Fairy idish yuvish vositasi	Maishiy kimyo	450 ml	19990	0	products	fairy dishwashing liquid
+domestos	Domestos	Maishiy kimyo	1 l	29990	0	products	domestos bleach
+lenor	Lenor kir yumshatgich	Maishiy kimyo	1 l	34990	0	products	lenor fabric softener
+napkins	Qog‘oz sochiq	Maishiy kimyo	2 rulon	14990	0	products	paper towels kitchen roll
+toiletpaper	Hojatxona qog‘ozi	Gigiyena	8 rulon	29990	32990	products	toilet paper 8 rolls
+colgate	Colgate tish pastasi	Gigiyena	100 ml	19990	0	beauty	colgate toothpaste
+shampoo	Head & Shoulders shampun	Gigiyena	400 ml	59990	0	beauty	head shoulders shampoo
+soap	Dove sovuni	Gigiyena	100 g	12990	0	beauty	dove soap bar
+gel	Dush geli	Gigiyena	250 ml	29990	0	beauty	shower gel
+deo	Rexona dezodorant	Gigiyena	150 ml	34990	0	beauty	rexona deodorant
+pampers	Pampers tagliklari	Bolalar uchun	54 dona	189990	219990	products	pampers diapers
+babyfood	Bolalar pyuresi	Bolalar uchun	100 g	9990	0	food	baby puree apple
+wipes	Nam salfetkalar	Bolalar uchun	72 dona	17990	0	products	baby wet wipes
+whiskas	Whiskas mushuk ozuqasi	Uy hayvonlari	75 g	5990	0	petfood	whiskas
+pedigree	Pedigree it ozuqasi	Uy hayvonlari	2,2 kg	89990	0	petfood	pedigree dry dog food
