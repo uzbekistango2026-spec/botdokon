@@ -1,0 +1,556 @@
+{
+ "categories": [
+  "Tortlar",
+  "Bayram tortlari",
+  "Desertlar",
+  "Kapkeyk va makaron",
+  "Pishiriqlar",
+  "Ichimliklar"
+ ],
+ "catImages": {
+  "Tortlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c01.jpg",
+  "Bayram tortlari": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c10.jpg",
+  "Desertlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c19.jpg",
+  "Kapkeyk va makaron": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c11.jpg",
+  "Pishiriqlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c12.jpg",
+  "Ichimliklar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c22.jpg"
+ },
+ "products": [
+  {
+   "name": "Shokoladli tort \"Trufel\"",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c01.jpg",
+   "price": 289000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Hit",
+   "desc": "Uch qavat shokoladli biskvit, trufel kremi va shokolad glazuri.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 289000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 419000
+    },
+    {
+     "name": "2 kg",
+     "price": 549000
+    }
+   ]
+  },
+  {
+   "name": "Malinali \"Napoleon\"",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c02.jpg",
+   "price": 259000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Yangi",
+   "desc": "Qatlamli xamir, vanilli krem va yangi malina.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 259000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 376000
+    },
+    {
+     "name": "2 kg",
+     "price": 492000
+    }
+   ]
+  },
+  {
+   "name": "Medovik",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c05.jpg",
+   "price": 219000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Top",
+   "desc": "Asalli korjlar va smetanali nozik krem — klassika.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 219000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 318000
+    },
+    {
+     "name": "2 kg",
+     "price": 416000
+    }
+   ]
+  },
+  {
+   "name": "Qora o‘rmon (Shvarsvald)",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c07.jpg",
+   "price": 279000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "Shokoladli biskvit, olcha va qaymoqli krem.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 279000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 405000
+    },
+    {
+     "name": "2 kg",
+     "price": 530000
+    }
+   ]
+  },
+  {
+   "name": "Ombre shokolad tort",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c06.jpg",
+   "price": 299000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "Uch xil shokolad kremi bilan.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 299000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 434000
+    },
+    {
+     "name": "2 kg",
+     "price": 568000
+    }
+   ]
+  },
+  {
+   "name": "Shokolad-muss tort",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c33.jpg",
+   "price": 319000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Hit",
+   "desc": "Belgiya shokoladidan muss va bodomli asos.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 319000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 463000
+    },
+    {
+     "name": "2 kg",
+     "price": 606000
+    }
+   ]
+  },
+  {
+   "name": "Rezavorli tort",
+   "category": "Tortlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c23.jpg",
+   "price": 299000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "Yengil qaymoqli krem va o‘rmon rezavorlari.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 299000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 434000
+    },
+    {
+     "name": "2 kg",
+     "price": 568000
+    }
+   ]
+  },
+  {
+   "name": "Rangli \"Rainbow\" tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c03.jpg",
+   "price": 349000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Yangi",
+   "desc": "Bolalar bayrami uchun 6 rangli biskvit.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 349000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 506000
+    },
+    {
+     "name": "2 kg",
+     "price": 663000
+    }
+   ]
+  },
+  {
+   "name": "Pushti drip tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c10.jpg",
+   "price": 339000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "Oq shokolad drip va sprinkls bilan.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 339000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 492000
+    },
+    {
+     "name": "2 kg",
+     "price": 644000
+    }
+   ]
+  },
+  {
+   "name": "Muzqaymoq bezakli tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c09.jpg",
+   "price": 359000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 359000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 521000
+    },
+    {
+     "name": "2 kg",
+     "price": 682000
+    }
+   ]
+  },
+  {
+   "name": "Makaron bezakli tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c32.jpg",
+   "price": 369000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Top",
+   "desc": "Fransuz makaronlari bilan bezatilgan.",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 369000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 535000
+    },
+    {
+     "name": "2 kg",
+     "price": 701000
+    }
+   ]
+  },
+  {
+   "name": "Ikki qavatli rezavorli tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c04.jpg",
+   "price": 489000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Limited",
+   "desc": "Yubiley va oilaviy bayramlar uchun.",
+   "variants": [
+    {
+     "name": "2 kg",
+     "price": 489000
+    },
+    {
+     "name": "3 kg",
+     "price": 709000
+    },
+    {
+     "name": "4 kg",
+     "price": 929000
+    }
+   ]
+  },
+  {
+   "name": "Uch qavatli to‘y torti",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c24.jpg",
+   "price": 990000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "Premium",
+   "desc": "Tirik gullar bilan bezatilgan. Kamida 3 kun oldin buyurtma bering.",
+   "variants": [
+    {
+     "name": "3 kg",
+     "price": 990000
+    },
+    {
+     "name": "5 kg",
+     "price": 1590000
+    },
+    {
+     "name": "7 kg",
+     "price": 2190000
+    }
+   ]
+  },
+  {
+   "name": "Oltin bezakli tort",
+   "category": "Bayram tortlari",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c28.jpg",
+   "price": 389000,
+   "oldPrice": 0,
+   "unit": "",
+   "label": "",
+   "desc": "",
+   "variants": [
+    {
+     "name": "1 kg",
+     "price": 389000
+    },
+    {
+     "name": "1.5 kg",
+     "price": 564000
+    },
+    {
+     "name": "2 kg",
+     "price": 739000
+    }
+   ]
+  },
+  {
+   "name": "Tiramisu",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c19.jpg",
+   "price": 39000,
+   "oldPrice": 0,
+   "unit": "1 porsiya",
+   "label": "Hit",
+   "desc": "Maskarpone, savoyardi va espresso.",
+   "variants": []
+  },
+  {
+   "name": "Chizkeyk \"Nyu-York\"",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c15.jpg",
+   "price": 42000,
+   "oldPrice": 0,
+   "unit": "1 bo‘lak",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Qorag‘atli chizkeyk",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c14.jpg",
+   "price": 42000,
+   "oldPrice": 0,
+   "unit": "1 bo‘lak",
+   "label": "Yangi",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Brauni",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c34.jpg",
+   "price": 28000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Mevali tartaletkalar",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c21.jpg",
+   "price": 24000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Olchali pirog",
+   "category": "Desertlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c29.jpg",
+   "price": 35000,
+   "oldPrice": 0,
+   "unit": "1 bo‘lak",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Fransuz makaronlari, 6 dona",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c11.jpg",
+   "price": 59000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Hit",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Shokoladli kapkeyk",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c30.jpg",
+   "price": 22000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Red Velvet kapkeyk",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c17.jpg",
+   "price": 24000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Top",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Vanilli kapkeyk",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c31.jpg",
+   "price": 19000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Oreo kapkeyk",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c20.jpg",
+   "price": 24000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Pushti kapkeyklar, 4 dona",
+   "category": "Kapkeyk va makaron",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c08.jpg",
+   "price": 79000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Kruassan",
+   "category": "Pishiriqlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c12.jpg",
+   "price": 18000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Hit",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Donut, sprinkls bilan",
+   "category": "Pishiriqlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c18.jpg",
+   "price": 15000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Shokoladli pechenye",
+   "category": "Pishiriqlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c36.jpg",
+   "price": 12000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": "",
+   "variants": []
+  },
+  {
+   "name": "Kapuchino",
+   "category": "Ichimliklar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/c22.jpg",
+   "price": 25000,
+   "oldPrice": 0,
+   "unit": "300 ml",
+   "label": "",
+   "desc": "",
+   "variants": []
+  }
+ ],
+ "banners": [
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/banner1.jpg",
+   "color": "#7A2E3B"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/banner2.jpg",
+   "color": "#F3E3CF"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/bakery/banner3.jpg",
+   "color": "#3E282C"
+  }
+ ],
+ "settings": {
+  "color": "#7A2E3B",
+  "leadHours": 24,
+  "deliveryTime": "1–2 soat",
+  "saleTitle": "Bugungi takliflar",
+  "topTitle": "Eng sevimli tortlar"
+ }
+}
