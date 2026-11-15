@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -s https://botdokon.oltinshoh2026.workers.dev/api/pubkey; echo; exit 0
+          sleep 5; curl -s https://botdokon.oltinshoh2026.workers.dev/version >/dev/null; sleep 20; curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1500; echo; exit 0
           cd menu/fashion
           while read k id; do curl -sf -o "$k.jpg" "https://images.unsplash.com/photo-$id?w=1000&q=78&auto=format&fm=jpg&fit=crop" || echo "MISS $k"; done < ids.txt
           ls *.jpg | wc -l

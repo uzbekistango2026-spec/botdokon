@@ -806,5 +806,23 @@
   "Ayollar uchun": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg",
   "Trikotaj": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/sweat.jpg",
   "Aksessuarlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/bag.jpg"
- }
+ },
+ "promoBanners": [
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/promo1.jpg"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/promo2.jpg"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/promo3.jpg"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/promo4.jpg"
+  }
+ ]
 }
