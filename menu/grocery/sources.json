@@ -1,0 +1,162 @@
+{
+ "fanta": {
+  "src": "https://world.openfoodfacts.org/product/5449000052926",
+  "name": "Fanta orange 1.5l"
+ },
+ "pepsi": {
+  "src": "https://world.openfoodfacts.org/product/3502110009357",
+  "name": "Pepsi Max"
+ },
+ "redbull": {
+  "src": "https://world.openfoodfacts.org/product/90162602",
+  "name": "Red Bull Energy Drink"
+ },
+ "juiceorange": {
+  "src": "https://world.openfoodfacts.org/product/6111251751888",
+  "name": "Juper orange 1l"
+ },
+ "lipton": {
+  "src": "https://world.openfoodfacts.org/product/8720608632633",
+  "name": "lipton yellow label tea x25"
+ },
+ "greentea": {
+  "src": "https://world.openfoodfacts.org/product/8901747002529",
+  "name": "Loose green tea"
+ },
+ "nescafe": {
+  "src": "https://world.openfoodfacts.org/product/8445290204417",
+  "name": "Nescafé Gold"
+ },
+ "cocoa": {
+  "src": "https://world.openfoodfacts.org/product/3033710065783",
+  "name": "Le Chocolat"
+ },
+ "kefir": {
+  "src": "https://world.openfoodfacts.org/product/6111266963207",
+  "name": "كيفير"
+ },
+ "tvorog": {
+  "src": "https://world.openfoodfacts.org/product/20002183",
+  "name": "Fiocchi di latte"
+ },
+ "smetana": {
+  "src": "https://world.openfoodfacts.org/product/20721077",
+  "name": "Crème fraîche (Sour Cream 20%)"
+ },
+ "cheese": {
+  "src": "https://world.openfoodfacts.org/product/8713734033825",
+  "name": "Queijo Gouda"
+ },
+ "mozzarella": {
+  "src": "https://world.openfoodfacts.org/product/8002710335047",
+  "name": "Mini Mozarella Italiana 125 grs"
+ },
+ "eggs": {
+  "src": "https://world.openfoodfacts.org/product/5000326010030",
+  "name": "10 Large Eggs"
+ },
+ "beef": {
+  "src": "https://world.openfoodfacts.org/product/7613033687983",
+  "name": "MAGGI Bouillon KUB Bœuf"
+ },
+ "mince": {
+  "src": "https://world.openfoodfacts.org/product/3270160609338",
+  "name": "4 Biftecks hachés pur bœuf 5%"
+ },
+ "salmon": {
+  "src": "https://world.openfoodfacts.org/product/20174552",
+  "name": "Pavés de saumon Rose du Pacifique"
+ },
+ "baguette": {
+  "src": "https://world.openfoodfacts.org/product/3760049790818",
+  "name": "4 Baguettes viennoises"
+ },
+ "toast": {
+  "src": "https://world.openfoodfacts.org/product/4056489007166",
+  "name": "Weizen Toast"
+ },
+ "oats": {
+  "src": "https://world.openfoodfacts.org/product/20003166",
+  "name": "FLOCONS D'AVOINE"
+ },
+ "oil": {
+  "src": "https://world.openfoodfacts.org/product/6420155000061",
+  "name": "Helios Ulei rafinat de floarea soarelui"
+ },
+ "ketchup": {
+  "src": "https://world.openfoodfacts.org/product/8715700407760",
+  "name": "Tomato Ketchup BIO"
+ },
+ "corn": {
+  "src": "https://world.openfoodfacts.org/product/3083680015394",
+  "name": "Maïs / Sweet Corn"
+ },
+ "kitkat": {
+  "src": "https://world.openfoodfacts.org/product/7613035365896",
+  "name": "KITKAT 4 Finger Barre au chocolat au Lait, 41,5g en lot de 6"
+ },
+ "pringles": {
+  "src": "https://world.openfoodfacts.org/product/5053990156009",
+  "name": "Pringles Original"
+ },
+ "nuts": {
+  "src": "https://world.openfoodfacts.org/product/20816445",
+  "name": "Mixed Nuts"
+ },
+ "popcorn": {
+  "src": "https://world.openfoodfacts.org/product/5060283760072",
+  "name": "SWEET & SALTY Popcorn"
+ },
+ "pelmeni": {
+  "src": "https://world.openfoodfacts.org/product/4036117012465",
+  "name": "Pelmeni Dumplings, Pork & Beef Meat"
+ },
+ "persil": {
+  "src": "https://world.openproductsfacts.org/product/5410091744373",
+  "name": "Professional Activ Gel Color"
+ },
+ "fairy": {
+  "src": "https://world.openproductsfacts.org/product/8006540169889",
+  "name": "Fairy Plus antibacterial dishwashing liquid"
+ },
+ "lenor": {
+  "src": "https://world.openproductsfacts.org/product/8001090389985",
+  "name": "Adoucissant Fleurs de soie"
+ },
+ "toiletpaper": {
+  "src": "https://world.openproductsfacts.org/product/3133200094856",
+  "name": "papier toilette confort extrait lotus Aqua tube"
+ },
+ "colgate": {
+  "src": "https://world.openbeautyfacts.org/product/6281001112013",
+  "name": "Colgate"
+ },
+ "shampoo": {
+  "src": "https://world.openbeautyfacts.org/product/8006540115886",
+  "name": "Supreme"
+ },
+ "soap": {
+  "src": "https://world.openbeautyfacts.org/product/8720182264664",
+  "name": "Beauty cream bar"
+ },
+ "gel": {
+  "src": "https://world.openbeautyfacts.org/product/3574661065427",
+  "name": "Pin & Criste Marine"
+ },
+ "deo": {
+  "src": "https://world.openbeautyfacts.org/product/8718114202372",
+  "name": "Rexona Stick Anti-Transpirant Maximum Protection Clean Scent 45ml"
+ },
+ "pampers": {
+  "src": "https://world.openproductsfacts.org/product/8700216665100",
+  "name": "Premium Protection 4 (9-14 kg)"
+ },
+ "whiskas": {
+  "src": "https://world.openpetfoodfacts.org/product/3065890153707",
+  "name": "Whiskas pâté chat"
+ },
+ "pedigree": {
+  "src": "https://world.openpetfoodfacts.org/product/5998749127322",
+  "name": "Biscrok Multi Mix"
+ }
+}
