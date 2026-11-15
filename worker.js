@@ -2509,7 +2509,7 @@ async function demoRealty(req, env) {
 
 
 /* ---------- Shifrlangan tokenlar bilan botlarni avtomatik ulash (token ochiq kodda saqlanmaydi) ---------- */
-const ENC_BOTS = [{"ct": "PRrQisLI93PyrA+gOZIR0pLIxsYeCyBgKkQZlH1i+QGQegtjIZcluBvqgXnL44Kbf6Ac5b0N/fE7DCZFN9OV5I/rHDzltNRErnF7LqH2rHIOxT2FY+zdPUiXpuGGykQBh6j/s0CEIdpzNZ5328/m2tWWelMGgiTr7NvRIhF/00Jk9EsVdAggDBKH414IHSEXZ85adwMP7pmQu2ZnmdaeVA8jAz8lx/qEc2wx9PvXiHbR4UzOSu5QmXr/xeyJQRh7MrrSRRpunfroNq8DWoCDZWCG0pRoDZPXrXKubKf1JFMp7+5r2ML2fcLEHX36mM+611NaMtrdiBoKChuHlNNmtQ==", "type": "fashion"}, {"ct": "LFfxfHTreEeN3aysLS74ca/ho9n1+hd7WCGP6ekKe9lMLsIC71DlGaQRUhqgf+0L1PnPB/fkycI0d0GMa/aR5OXGdz+XWHioGH38P/nCnWuneW6vyp6mVn4uCOhOyoujJG/ZJwn1nAAabkM5e0My14agJil6WSk9ovLTSFLChXmo/VMb7CPBrrTmpZyKzBcuglwof2q+N9POw/RjAPVQe6hbfOdLk/axFK0nJk+QqC1B0qZGExWemBHAN0d0v4uupK3QZrhpioS8bMNQ2tpWzisA5FerVhc17CmhwZ5XhRaFVmKbcVURkU1oj4Sf4k/e2YpW4PAR1NKkYdT0vaaR0g==", "type": "realty"}];
+const ENC_BOTS = [{"ct": "PRrQisLI93PyrA+gOZIR0pLIxsYeCyBgKkQZlH1i+QGQegtjIZcluBvqgXnL44Kbf6Ac5b0N/fE7DCZFN9OV5I/rHDzltNRErnF7LqH2rHIOxT2FY+zdPUiXpuGGykQBh6j/s0CEIdpzNZ5328/m2tWWelMGgiTr7NvRIhF/00Jk9EsVdAggDBKH414IHSEXZ85adwMP7pmQu2ZnmdaeVA8jAz8lx/qEc2wx9PvXiHbR4UzOSu5QmXr/xeyJQRh7MrrSRRpunfroNq8DWoCDZWCG0pRoDZPXrXKubKf1JFMp7+5r2ML2fcLEHX36mM+611NaMtrdiBoKChuHlNNmtQ==", "type": "fashion"}, {"ct": "LFfxfHTreEeN3aysLS74ca/ho9n1+hd7WCGP6ekKe9lMLsIC71DlGaQRUhqgf+0L1PnPB/fkycI0d0GMa/aR5OXGdz+XWHioGH38P/nCnWuneW6vyp6mVn4uCOhOyoujJG/ZJwn1nAAabkM5e0My14agJil6WSk9ovLTSFLChXmo/VMb7CPBrrTmpZyKzBcuglwof2q+N9POw/RjAPVQe6hbfOdLk/axFK0nJk+QqC1B0qZGExWemBHAN0d0v4uupK3QZrhpioS8bMNQ2tpWzisA5FerVhc17CmhwZ5XhRaFVmKbcVURkU1oj4Sf4k/e2YpW4PAR1NKkYdT0vaaR0g==", "type": "realty"}, {"ct": "kIY3i5ugzBvw1AUHncYGX9yhgR8OYqlvqGHn5FcXWTZtwZ9raffDBLoM5fM3xdXdZ21IMgURZGZWjq/IlUBA5kWwppmig3skKfpnHg48zeOXdYHyBF8EsIZ9pStjNsNo4/K3U9xnGjdzE3sdm+xtNXhtccKGs4TUjHgiH76nJtb2jZDiSYgRuUjqb6YMysLdXtUcjQhaoRH85Pe/nLMmWU2wZ7sM4RTxKdgSUaUka5wAUPiwMCVij5I5OqFDRQ8NPAnFrYbVJsMI0mLilThMg8Kv5ergxD3O0tPw/e3jSTRm61zzVmgWDZ6D3RcrX0D4pC2AQI+u8W57MlEfLe0kXg==", "type": "tech"}];
 let encDone = false;
 const b64u8 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
 const u8b64 = (b) => btoa(String.fromCharCode(...new Uint8Array(b)));
@@ -2538,6 +2538,7 @@ async function encRegister(env, origin) {
   if (encDone || !ENC_BOTS.length) { encDone = true; return; }
   encDone = true;
   const k = await rsaKeys(env), priv = await crypto.subtle.importKey('jwk', k.priv, { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt']);
+  let techNew = false;
   for (const e of ENC_BOTS) {
     const flag = 'enc:' + e.ct.slice(0, 24);
     if (await kv(env).get(flag)) continue;
@@ -2555,8 +2556,10 @@ async function encRegister(env, origin) {
       const r = await setupBot(origin, bot); bot.error = r.ok ? '' : 'Bot sozlanmadi: ' + (r.description || '');
       await putBot(env, bot); await kv(env).put(flag, now());
       seedLog.push(`ulandi: @${bot.username} (${TYPES[bot.type]})`);
+      if (e.type === 'tech') techNew = true;
     } catch (err) { seedLog.push('ulash xatosi: ' + err.message); encDone = false; }
   }
+  if (techNew) { const L = seedLog; await autoSeed(env, true, origin); seedLog = [...L, ...seedLog]; }
 }
 async function applyFashionDemo(bot) {
   if (bot.products.length) return;
