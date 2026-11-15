@@ -319,7 +319,11 @@ async function autoSeed(env, force, origin) {
     }
     if (sd.market) {
       try {
-        const d = await (await fetch(sd.market + '?' + Date.now(), { headers: { 'User-Agent': 'BotDokon' } })).json();
+        let d = null;
+        for (const u of [sd.market.replace('https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/', 'https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/'), sd.market]) {
+          try { const r = await fetch(u, { headers: { 'User-Agent': 'BotDokon' } }); const t = await r.text(); d = JSON.parse(t); break; } catch (e) { seedLog.push('market manba xato: ' + u.slice(8, 30)); }
+        }
+        if (!d) throw new Error('demo.json yuklanmadi');
         await kv(env).put('backup:' + bot.id, JSON.stringify({ at: now(), type: bot.type, categories: bot.categories, products: bot.products, banners: bot.banners }));
         bot.type = 'shop'; bot.categories = []; bot.products = []; bot.banners = [];
         const cid = {};
