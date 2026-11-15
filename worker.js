@@ -2104,7 +2104,7 @@ async function autoSeed(env, force, origin) {
 async function route(req, env) {
   if (new URL(req.url).pathname === '/seed') {
     await autoSeed(env, true); encDone = false; try { await encRegister(env, new URL(req.url).origin); } catch (e) { seedLog.push('enc: ' + e.message); }
-    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + '] — ' + b.products.length + ' ta taom · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + '] — ' + b.products.length + ' ta · banner: ' + b.banners.map((x) => String(x.image).split('/').pop()).join(',') + ' · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
     const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
     return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
