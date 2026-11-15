@@ -2086,8 +2086,8 @@ async function autoSeed(env, force, origin) {
 
 async function route(req, env) {
   if (new URL(req.url).pathname === '/seed') {
-    await autoSeed(env, true);
-    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' — ' + b.products.length + ' ta taom · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
+    await autoSeed(env, true); encDone = false; try { await encRegister(env, new URL(req.url).origin); } catch (e) { seedLog.push('enc: ' + e.message); }
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + '] — ' + b.products.length + ' ta taom · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
     const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
     return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
@@ -2484,7 +2484,7 @@ async function encRegister(env, origin) {
     if (await kv(env).get(flag)) continue;
     try {
       const token = new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, priv, b64u8(e.ct)));
-      const me = await tg(token, 'getMe'); if (!me.ok) continue;
+      const me = await tg(token, 'getMe'); if (!me.ok) { seedLog.push('token ishlamadi: ' + (me.description || '')); continue; }
       const ids = await botIds(env); let bot = (await allBots(env)).find((x) => x.tgId === me.result.id);
       if (!bot) {
         bot = { id: uid(), type: e.type, tgId: me.result.id, token, secret: uid() + uid(), username: me.result.username, name: me.result.first_name, ownerChatId: '', createdAt: now(), settings: newSettings(), categories: [], products: [], banners: [], listings: [] };
