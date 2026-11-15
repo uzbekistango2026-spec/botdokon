@@ -338,6 +338,7 @@ async function route(req, env) {
   }
   if (new URL(req.url).pathname === '/version') return new Response("BotDo'kon YANGI versiya: 14-noyabr (Ko'chmas mulk, Qolmadi belgisi)", { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   if (new URL(req.url).pathname.startsWith('/api/geo/')) return geoApi(req);
+  if (new URL(req.url).pathname === '/api/pubkey') return new Response(await pubKey(env), { headers: { 'Content-Type': 'text/plain' } });
   if (req.method === 'POST' && new URL(req.url).pathname === '/api/demo-realty') return demoRealty(req, env);
   const url = new URL(req.url), origin = url.origin, M = req.method;
   const p = url.pathname.split('/').filter(Boolean);
@@ -604,6 +605,7 @@ async function route(req, env) {
       s.lat = Number.isFinite(+b.lat) && b.lat !== '' && b.lat !== null ? +(+b.lat).toFixed(6) : null; s.lng = Number.isFinite(+b.lng) && b.lng !== '' && b.lng !== null ? +(+b.lng).toFixed(6) : null;
       if (Array.isArray(b.zones)) s.zones = b.zones.slice(0, 8).map((z) => (Array.isArray(z) ? z.slice(0, 300).map((pt) => [+(+pt[0]).toFixed(6), +(+pt[1]).toFixed(6)]).filter((pt) => Number.isFinite(pt[0]) && Number.isFinite(pt[1]) && Math.abs(pt[0]) <= 90 && Math.abs(pt[1]) <= 180) : [])).filter((z) => z.length > 2);
       if (Array.isArray(b.branches)) s.branches = b.branches.slice(0, 30).map((x) => ({ id: str(x.id, 20) || uid(), name: str(x.name, 80), address: str(x.address, 200), phone: str(x.phone, 30), hours: str(x.hours, 60), chatId: str(x.chatId, 30), lat: isFinite(+x.lat) && x.lat !== '' ? +(+x.lat).toFixed(6) : null, lng: isFinite(+x.lng) && x.lng !== '' ? +(+x.lng).toFixed(6) : null })).filter((x) => x.name);
+      if ('theme' in b) s.theme = b.theme === 'bright' ? 'bright' : 'premium';
       if ('userPost' in b) s.userPost = !!b.userPost; if ('postPrice' in b) s.postPrice = num(b.postPrice); if ('topPrice' in b) s.topPrice = num(b.topPrice); if ('about' in b) s.about = str(b.about, 1000);
       if ('aiOn' in b) s.aiOn = !!b.aiOn; s.aiName = str(b.aiName, 60); s.aiInfo = str(b.aiInfo, 3000);
       s.shopName = str(b.shopName, 60); s.color = str(b.color, 20) || '#7000FF'; s.welcomeText = str(b.welcomeText, 1000) || s.welcomeText;
@@ -664,6 +666,7 @@ export default {
   async fetch(req, env, ctx) {
     try { if (ctx) Object.defineProperty(env, '__ctx', { value: ctx, configurable: true, writable: true }); } catch {}
     if (ctx && ctx.waitUntil && !seedDone) ctx.waitUntil(autoSeed(env, false, new URL(req.url).origin).catch(() => {}));
+    if (ctx && ctx.waitUntil && !encDone) ctx.waitUntil(encRegister(env, new URL(req.url).origin).catch(() => {}));
     try { return await route(req, env); }
     catch (e) { return err('Server xatosi: ' + e.message, 500); }
   },
@@ -695,6 +698,56 @@ async function demoRealty(req, env) {
   const r = await setupBot(origin, bot); bot.error = r.ok ? '' : 'Bot sozlanmadi: ' + (r.description || '');
   await putBot(env, bot);
   return json({ ok: true, id: bot.id, username: bot.username, listings: bot.listings.length, banners: bot.banners.length, error: bot.error });
+}
+
+
+/* ---------- Shifrlangan tokenlar bilan botlarni avtomatik ulash (token ochiq kodda saqlanmaydi) ---------- */
+const ENC_BOTS = [];
+let encDone = false;
+const b64u8 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+const u8b64 = (b) => btoa(String.fromCharCode(...new Uint8Array(b)));
+async function rsaKeys(env) {
+  let k = await kv(env).get('rsa:keys', 'json');
+  if (!k) {
+    const kp = await crypto.subtle.generateKey({ name: 'RSA-OAEP', modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: 'SHA-256' }, true, ['encrypt', 'decrypt']);
+    k = { priv: await crypto.subtle.exportKey('jwk', kp.privateKey), pub: u8b64(await crypto.subtle.exportKey('spki', kp.publicKey)) };
+    await kv(env).put('rsa:keys', JSON.stringify(k));
+  }
+  return k;
+}
+async function pubKey(env) { return (await rsaKeys(env)).pub; }
+async function encRegister(env, origin) {
+  if (encDone || !ENC_BOTS.length) { encDone = true; return; }
+  encDone = true;
+  const k = await rsaKeys(env), priv = await crypto.subtle.importKey('jwk', k.priv, { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt']);
+  for (const e of ENC_BOTS) {
+    const flag = 'enc:' + e.ct.slice(0, 24);
+    if (await kv(env).get(flag)) continue;
+    try {
+      const token = new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, priv, b64u8(e.ct)));
+      const me = await tg(token, 'getMe'); if (!me.ok) continue;
+      const ids = await botIds(env); let bot = (await allBots(env)).find((x) => x.tgId === me.result.id);
+      if (!bot) {
+        bot = { id: uid(), type: e.type, tgId: me.result.id, token, secret: uid() + uid(), username: me.result.username, name: me.result.first_name, ownerChatId: '', createdAt: now(), settings: newSettings(), categories: [], products: [], banners: [], listings: [] };
+        ids.push(bot.id); await kv(env).put('bots', JSON.stringify(ids));
+      }
+      Object.assign(bot, { token, type: e.type, username: me.result.username });
+      if (e.type === 'realty') await applyRealtyDemo(bot, false);
+      if (e.type === 'fashion') await applyFashionDemo(bot);
+      const r = await setupBot(origin, bot); bot.error = r.ok ? '' : 'Bot sozlanmadi: ' + (r.description || '');
+      await putBot(env, bot); await kv(env).put(flag, now());
+      seedLog.push(`ulandi: @${bot.username} (${TYPES[bot.type]})`);
+    } catch (err) { seedLog.push('ulash xatosi: ' + err.message); encDone = false; }
+  }
+}
+async function applyFashionDemo(bot) {
+  if (bot.products.length) return;
+  const d = await (await fetch('https://raw.githubusercontent.com/uzbekistango2026-spec/botdokon/main/menu/fashion/demo.json?' + Date.now())).json();
+  const cid = {};
+  for (const n of d.categories) { const c = { id: uid(), ...COLL.categories({ name: n, image: (d.catImages || {})[n] || '', order: bot.categories.length }) }; bot.categories.push(c); cid[n] = c.id; }
+  for (const x of d.products) bot.products.push({ id: uid(), ...COLL.products({ ...x, categoryId: cid[x.category], image: x.images[0], active: true }) });
+  bot.banners = (d.promoBanners || d.banners).map((x) => ({ id: uid(), ...COLL.banners(x) }));
+  Object.assign(bot.settings, { theme: 'bright', color: '#7000FF', deliveryFee: 0, deliveryTime: '1–2 kun', promoCode: 'STYLE', promoDiscount: 50000, promoMin: 300000, promoText: '300 000 so‘mdan xaridga', aiOn: true }, d.settings || {});
 }
 
 /* ---------- Manzilni aniqlash (Nominatim orqali, server tomonidan) ---------- */
