@@ -3,10 +3,7 @@ on: workflow_dispatch
 jobs:
   c:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
       - run: |
-          cd menu/grocery && python3 fetch.py
-          cd ../.. && git add menu/grocery && git -c user.name=bot -c user.email=bot@x commit -qm "Oziq-ovqat katalogi rasmlari (Open Food Facts)" && git pull -q --rebase && git push -q
+          curl -s https://botdokon.oltinshoh2026.workers.dev/version >/dev/null; sleep 20
+          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1800; echo
