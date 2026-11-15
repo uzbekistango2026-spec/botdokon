@@ -1,0 +1,810 @@
+{
+ "categories": [
+  "Ko‘ylak va futbolkalar",
+  "Kostyumlar",
+  "Ustki kiyim",
+  "Shimlar",
+  "Ko‘ylaklar (ayollar)",
+  "Trikotaj",
+  "Aksessuarlar"
+ ],
+ "products": [
+  {
+   "name": "Oxford ko‘ylak, slim fit",
+   "brand": "Maison",
+   "price": 349000,
+   "oldPrice": 0,
+   "category": "Ko‘ylak va futbolkalar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/shirts.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Oq",
+     "hex": "#F5F5F2"
+    },
+    {
+     "name": "Havorang",
+     "hex": "#AFC6DE"
+    },
+    {
+     "name": "Bordo",
+     "hex": "#6D1A2A"
+    }
+   ],
+   "stock": {
+    "S|Oq": 3,
+    "S|Havorang": 2,
+    "S|Bordo": 5,
+    "M|Oq": 10,
+    "M|Havorang": 0,
+    "M|Bordo": 0,
+    "L|Oq": 8,
+    "L|Havorang": 0,
+    "L|Bordo": 3,
+    "XL|Oq": 8,
+    "XL|Havorang": 0,
+    "XL|Bordo": 8,
+    "XXL|Oq": 2,
+    "XXL|Havorang": 0,
+    "XXL|Bordo": 0
+   },
+   "label": "Yangi",
+   "desc": "Klassik oxford mato, ofis va kundalik uchun. Yoqasi tugmali, slim bichim.",
+   "composition": "100% paxta. 30° da yuving, o‘rtacha haroratda dazmollang."
+  },
+  {
+   "name": "Denim ko‘ylak",
+   "brand": "Atelier",
+   "price": 389000,
+   "oldPrice": 459000,
+   "category": "Ko‘ylak va futbolkalar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/denim.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Ko‘k",
+     "hex": "#4A6A8A"
+    }
+   ],
+   "stock": {
+    "S|Ko‘k": 5,
+    "M|Ko‘k": 5,
+    "L|Ko‘k": 0,
+    "XL|Ko‘k": 2,
+    "XXL|Ko‘k": 0
+   },
+   "label": "",
+   "desc": "Yengil denim, nuqtali naqsh. Ochiq yoki shim ichiga kiyiladi.",
+   "composition": "100% paxta denim."
+  },
+  {
+   "name": "Bazaviy futbolka",
+   "brand": "Maison",
+   "price": 149000,
+   "oldPrice": 0,
+   "category": "Ko‘ylak va futbolkalar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/tee.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/tee2.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Oq",
+     "hex": "#F5F5F2"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    },
+    {
+     "name": "Kulrang",
+     "hex": "#8E8E8E"
+    }
+   ],
+   "stock": {
+    "S|Oq": 8,
+    "S|Qora": 5,
+    "S|Kulrang": 0,
+    "M|Oq": 8,
+    "M|Qora": 0,
+    "M|Kulrang": 2,
+    "L|Oq": 10,
+    "L|Qora": 10,
+    "L|Kulrang": 8,
+    "XL|Oq": 0,
+    "XL|Qora": 8,
+    "XL|Kulrang": 8,
+    "XXL|Oq": 5,
+    "XXL|Qora": 0,
+    "XXL|Kulrang": 2
+   },
+   "label": "Hit",
+   "desc": "Zich trikotaj, shaklini yo‘qotmaydi. Har kuni uchun asosiy futbolka.",
+   "composition": "100% paxta, 220 g/m²."
+  },
+  {
+   "name": "Uch qismli kostyum, katakli",
+   "brand": "Atelier",
+   "price": 2490000,
+   "oldPrice": 2990000,
+   "category": "Kostyumlar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/suit_check.jpg"
+   ],
+   "sizes": [
+    "46",
+    "48",
+    "50",
+    "52",
+    "54"
+   ],
+   "colors": [
+    {
+     "name": "To‘q ko‘k",
+     "hex": "#1F2A44"
+    }
+   ],
+   "stock": {
+    "46|To‘q ko‘k": 0,
+    "48|To‘q ko‘k": 8,
+    "50|To‘q ko‘k": 2,
+    "52|To‘q ko‘k": 3,
+    "54|To‘q ko‘k": 5
+   },
+   "label": "Limited",
+   "desc": "Pidjak, jilet va shim. Italyan junidan, nozik katak naqsh.",
+   "composition": "70% jun, 30% poliester. Faqat quruq tozalash."
+  },
+  {
+   "name": "Klassik kostyum",
+   "brand": "Atelier",
+   "price": 1890000,
+   "oldPrice": 0,
+   "category": "Kostyumlar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/suit_navy.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/b_suit.jpg"
+   ],
+   "sizes": [
+    "46",
+    "48",
+    "50",
+    "52",
+    "54"
+   ],
+   "colors": [
+    {
+     "name": "To‘q ko‘k",
+     "hex": "#1F2A44"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "46|To‘q ko‘k": 2,
+    "46|Qora": 8,
+    "48|To‘q ko‘k": 0,
+    "48|Qora": 8,
+    "50|To‘q ko‘k": 3,
+    "50|Qora": 8,
+    "52|To‘q ko‘k": 10,
+    "52|Qora": 2,
+    "54|To‘q ko‘k": 0,
+    "54|Qora": 8
+   },
+   "label": "Yangi",
+   "desc": "Ikki tugmali pidjak va to‘g‘ri bichimli shim. To‘y va rasmiy tadbirlar uchun.",
+   "composition": "Jun aralash mato. Quruq tozalash."
+  },
+  {
+   "name": "Trench palto",
+   "brand": "Maison",
+   "price": 1290000,
+   "oldPrice": 1590000,
+   "category": "Ustki kiyim",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/trench.jpg"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "colors": [
+    {
+     "name": "Kemel",
+     "hex": "#B08350"
+    },
+    {
+     "name": "Bej",
+     "hex": "#CDB89A"
+    }
+   ],
+   "stock": {
+    "XS|Kemel": 8,
+    "XS|Bej": 10,
+    "S|Kemel": 2,
+    "S|Bej": 3,
+    "M|Kemel": 0,
+    "M|Bej": 8,
+    "L|Kemel": 10,
+    "L|Bej": 0,
+    "XL|Kemel": 8,
+    "XL|Bej": 0
+   },
+   "label": "",
+   "desc": "Kamarli klassik trench. Kuz va bahor uchun ideal.",
+   "composition": "Paxta va poliester, suv o‘tkazmaydi."
+  },
+  {
+   "name": "Charm kurtka",
+   "brand": "Atelier",
+   "price": 1690000,
+   "oldPrice": 0,
+   "category": "Ustki kiyim",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/leather.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "S|Qora": 8,
+    "M|Qora": 2,
+    "L|Qora": 5,
+    "XL|Qora": 10,
+    "XXL|Qora": 8
+   },
+   "label": "Hit",
+   "desc": "Tabiiy charm, kosoy zamok. Yillar davomida xizmat qiladi.",
+   "composition": "100% tabiiy charm. Maxsus tozalash."
+  },
+  {
+   "name": "Bomber kurtka",
+   "brand": "Maison",
+   "price": 699000,
+   "oldPrice": 0,
+   "category": "Ustki kiyim",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/bomber.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Terrakota",
+     "hex": "#A0522D"
+    },
+    {
+     "name": "Zaytun",
+     "hex": "#5E5F3B"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "S|Terrakota": 5,
+    "S|Zaytun": 3,
+    "S|Qora": 5,
+    "M|Terrakota": 8,
+    "M|Zaytun": 5,
+    "M|Qora": 3,
+    "L|Terrakota": 3,
+    "L|Zaytun": 2,
+    "L|Qora": 2,
+    "XL|Terrakota": 10,
+    "XL|Zaytun": 2,
+    "XL|Qora": 0,
+    "XXL|Terrakota": 8,
+    "XXL|Zaytun": 3,
+    "XXL|Qora": 8
+   },
+   "label": "Yangi",
+   "desc": "Yengil bomber, ichki cho‘ntak bilan.",
+   "composition": "Poliester, ichki qatlam viskoza."
+  },
+  {
+   "name": "Dala kurtkasi",
+   "brand": "Maison",
+   "price": 759000,
+   "oldPrice": 899000,
+   "category": "Ustki kiyim",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/field.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Zaytun",
+     "hex": "#5E5F3B"
+    }
+   ],
+   "stock": {
+    "S|Zaytun": 5,
+    "M|Zaytun": 3,
+    "L|Zaytun": 10,
+    "XL|Zaytun": 5,
+    "XXL|Zaytun": 3
+   },
+   "label": "",
+   "desc": "To‘rt cho‘ntakli utilitar kurtka, oversize bichim.",
+   "composition": "100% paxta."
+  },
+  {
+   "name": "Jun palto",
+   "brand": "Atelier",
+   "price": 1490000,
+   "oldPrice": 0,
+   "category": "Ustki kiyim",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/wool.jpg",
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/b_coat.jpg"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "colors": [
+    {
+     "name": "To‘q yashil",
+     "hex": "#1F3B33"
+    },
+    {
+     "name": "Kemel",
+     "hex": "#B08350"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "XS|To‘q yashil": 8,
+    "XS|Kemel": 0,
+    "XS|Qora": 0,
+    "S|To‘q yashil": 8,
+    "S|Kemel": 5,
+    "S|Qora": 2,
+    "M|To‘q yashil": 3,
+    "M|Kemel": 2,
+    "M|Qora": 5,
+    "L|To‘q yashil": 5,
+    "L|Kemel": 0,
+    "L|Qora": 10,
+    "XL|To‘q yashil": 0,
+    "XL|Kemel": 8,
+    "XL|Qora": 8
+   },
+   "label": "Limited",
+   "desc": "Katakli jun palto, issiq va yengil.",
+   "composition": "80% jun, 20% kashmir."
+  },
+  {
+   "name": "Klassik jinsi",
+   "brand": "Maison",
+   "price": 429000,
+   "oldPrice": 0,
+   "category": "Shimlar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/jeans.jpg"
+   ],
+   "sizes": [
+    "28",
+    "30",
+    "32",
+    "34",
+    "36"
+   ],
+   "colors": [
+    {
+     "name": "To‘q ko‘k",
+     "hex": "#1C2533"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "28|To‘q ko‘k": 3,
+    "28|Qora": 3,
+    "30|To‘q ko‘k": 10,
+    "30|Qora": 3,
+    "32|To‘q ko‘k": 8,
+    "32|Qora": 5,
+    "34|To‘q ko‘k": 8,
+    "34|Qora": 5,
+    "36|To‘q ko‘k": 0,
+    "36|Qora": 0
+   },
+   "label": "Hit",
+   "desc": "To‘g‘ri bichim, zich denim. Har qanday uslubga mos.",
+   "composition": "98% paxta, 2% elastan."
+  },
+  {
+   "name": "Chino shim",
+   "brand": "Maison",
+   "price": 369000,
+   "oldPrice": 0,
+   "category": "Shimlar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/chino.jpg"
+   ],
+   "sizes": [
+    "28",
+    "30",
+    "32",
+    "34",
+    "36"
+   ],
+   "colors": [
+    {
+     "name": "Bej",
+     "hex": "#CDB89A"
+    },
+    {
+     "name": "To‘q ko‘k",
+     "hex": "#1F2A44"
+    },
+    {
+     "name": "Zaytun",
+     "hex": "#5E5F3B"
+    }
+   ],
+   "stock": {
+    "28|Bej": 3,
+    "28|To‘q ko‘k": 5,
+    "28|Zaytun": 10,
+    "30|Bej": 10,
+    "30|To‘q ko‘k": 0,
+    "30|Zaytun": 0,
+    "32|Bej": 10,
+    "32|To‘q ko‘k": 10,
+    "32|Zaytun": 3,
+    "34|Bej": 10,
+    "34|To‘q ko‘k": 8,
+    "34|Zaytun": 10,
+    "36|Bej": 5,
+    "36|To‘q ko‘k": 3,
+    "36|Zaytun": 10
+   },
+   "label": "",
+   "desc": "Yumshoq chino, toraygan pastki qism.",
+   "composition": "97% paxta, 2% elastan."
+  },
+  {
+   "name": "Kechki ko‘ylak, ochiq yelka",
+   "brand": "Atelier",
+   "price": 1190000,
+   "oldPrice": 0,
+   "category": "Ko‘ylaklar (ayollar)",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "colors": [
+    {
+     "name": "Binafsha",
+     "hex": "#5B1F4B"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "XS|Binafsha": 5,
+    "XS|Qora": 10,
+    "S|Binafsha": 3,
+    "S|Qora": 0,
+    "M|Binafsha": 5,
+    "M|Qora": 3,
+    "L|Binafsha": 2,
+    "L|Qora": 8,
+    "XL|Binafsha": 0,
+    "XL|Qora": 5
+   },
+   "label": "Yangi",
+   "desc": "Ochiq yelkali, qomatga yopishib turuvchi kechki ko‘ylak.",
+   "composition": "Viskoza va elastan."
+  },
+  {
+   "name": "Uzun shifon ko‘ylak",
+   "brand": "Atelier",
+   "price": 1390000,
+   "oldPrice": 1690000,
+   "category": "Ko‘ylaklar (ayollar)",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/gown_red.jpg"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "colors": [
+    {
+     "name": "Qizil",
+     "hex": "#B3202A"
+    }
+   ],
+   "stock": {
+    "XS|Qizil": 0,
+    "S|Qizil": 2,
+    "M|Qizil": 3,
+    "L|Qizil": 2,
+    "XL|Qizil": 10
+   },
+   "label": "Limited",
+   "desc": "Yengil shifon, uchib turuvchi etak. Tantanalar uchun.",
+   "composition": "100% poliester shifon."
+  },
+  {
+   "name": "Gulli midi ko‘ylak",
+   "brand": "Maison",
+   "price": 590000,
+   "oldPrice": 0,
+   "category": "Ko‘ylaklar (ayollar)",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_red.jpg"
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "colors": [
+    {
+     "name": "Qizil",
+     "hex": "#B3202A"
+    }
+   ],
+   "stock": {
+    "XS|Qizil": 2,
+    "S|Qizil": 5,
+    "M|Qizil": 5,
+    "L|Qizil": 5,
+    "XL|Qizil": 0
+   },
+   "label": "",
+   "desc": "Kamar bilan, yozgi gulli midi ko‘ylak.",
+   "composition": "100% viskoza."
+  },
+  {
+   "name": "Svitshot",
+   "brand": "Maison",
+   "price": 329000,
+   "oldPrice": 0,
+   "category": "Trikotaj",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/sweat.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Oq",
+     "hex": "#F5F5F2"
+    },
+    {
+     "name": "Kulrang",
+     "hex": "#8E8E8E"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "S|Oq": 2,
+    "S|Kulrang": 5,
+    "S|Qora": 5,
+    "M|Oq": 8,
+    "M|Kulrang": 3,
+    "M|Qora": 2,
+    "L|Oq": 5,
+    "L|Kulrang": 8,
+    "L|Qora": 3,
+    "XL|Oq": 10,
+    "XL|Kulrang": 5,
+    "XL|Qora": 3,
+    "XXL|Oq": 10,
+    "XXL|Kulrang": 5,
+    "XXL|Qora": 2
+   },
+   "label": "Hit",
+   "desc": "Ichi yumshoq tukli, erkin bichim.",
+   "composition": "80% paxta, 20% poliester."
+  },
+  {
+   "name": "Kapyushonli hudi",
+   "brand": "Maison",
+   "price": 389000,
+   "oldPrice": 0,
+   "category": "Trikotaj",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/hoodie.jpg"
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+   ],
+   "colors": [
+    {
+     "name": "Kulrang",
+     "hex": "#8E8E8E"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "S|Kulrang": 2,
+    "S|Qora": 0,
+    "M|Kulrang": 2,
+    "M|Qora": 2,
+    "L|Kulrang": 2,
+    "L|Qora": 10,
+    "XL|Kulrang": 2,
+    "XL|Qora": 0,
+    "XXL|Kulrang": 5,
+    "XXL|Qora": 8
+   },
+   "label": "",
+   "desc": "Issiq hudi, kenguru cho‘ntak bilan.",
+   "composition": "80% paxta, 20% poliester."
+  },
+  {
+   "name": "To‘qilgan poncho",
+   "brand": "Atelier",
+   "price": 459000,
+   "oldPrice": 0,
+   "category": "Trikotaj",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/poncho.jpg"
+   ],
+   "sizes": [],
+   "colors": [
+    {
+     "name": "Sut rang",
+     "hex": "#EEE6D6"
+    }
+   ],
+   "stock": {
+    "|Sut rang": 2
+   },
+   "label": "Yangi",
+   "desc": "Qo‘lda to‘qilgandek ko‘rinish, popukli etak.",
+   "composition": "100% akril."
+  },
+  {
+   "name": "Charm sumka",
+   "brand": "Atelier",
+   "price": 990000,
+   "oldPrice": 0,
+   "category": "Aksessuarlar",
+   "images": [
+    "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/bag.jpg"
+   ],
+   "sizes": [],
+   "colors": [
+    {
+     "name": "Qizil",
+     "hex": "#B3202A"
+    },
+    {
+     "name": "Qora",
+     "hex": "#111111"
+    }
+   ],
+   "stock": {
+    "|Qizil": 3,
+    "|Qora": 3
+   },
+   "label": "Limited",
+   "desc": "Qattiq shaklli, yelka kamari bilan.",
+   "composition": "Tabiiy charm."
+  }
+ ],
+ "banners": [
+  {
+   "title": "Kuz–qish kolleksiyasi",
+   "subtitle": "Kolleksiyani ko‘rish",
+   "badge": "Yangi mavsum",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/b_store.jpg"
+  },
+  {
+   "title": "Klassika har doim zamonaviy",
+   "subtitle": "Kostyumlar",
+   "badge": "Erkaklar uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/b_suit.jpg"
+  },
+  {
+   "title": "−30% gacha chegirma",
+   "subtitle": "Xarid qilish",
+   "badge": "Sale",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/b_coat.jpg"
+  }
+ ],
+ "catImages": {
+  "Ko‘ylak va futbolkalar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/shirts.jpg",
+  "Kostyumlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/suit_navy.jpg",
+  "Ustki kiyim": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/trench.jpg",
+  "Shimlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/jeans.jpg",
+  "Ko‘ylaklar (ayollar)": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/dress_purple.jpg",
+  "Trikotaj": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/sweat.jpg",
+  "Aksessuarlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/fashion/bag.jpg"
+ }
+}
