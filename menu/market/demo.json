@@ -1,0 +1,276 @@
+{
+ "categories": [
+  "Elektronika",
+  "Smartfonlar",
+  "Kompyuterlar",
+  "Moda va aksessuarlar",
+  "Uy uchun",
+  "Sport"
+ ],
+ "catImages": {
+  "Elektronika": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/headphones.jpg",
+  "Smartfonlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/phone2.jpg",
+  "Kompyuterlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/laptop.jpg",
+  "Moda va aksessuarlar": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/backpack.jpg",
+  "Uy uchun": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/lamp.jpg",
+  "Sport": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/dumbbells.jpg"
+ },
+ "products": [
+  {
+   "name": "Smartfon 6.7\", 8/256 GB, 3 kamera",
+   "category": "Smartfonlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/phone2.jpg",
+   "price": 2229000,
+   "oldPrice": 3200000,
+   "unit": "1 dona",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Smartfon 6.1\", 6/128 GB",
+   "category": "Smartfonlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/phone1.jpg",
+   "price": 1651300,
+   "oldPrice": 2199000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Planshet 11\", 128 GB, Wi‑Fi",
+   "category": "Kompyuterlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/tablet.jpg",
+   "price": 3139040,
+   "oldPrice": 4500000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Noutbuk 14\", 16/512 GB SSD",
+   "category": "Kompyuterlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/laptop.jpg",
+   "price": 7490000,
+   "oldPrice": 8990000,
+   "unit": "1 dona",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Simsiz klaviatura",
+   "category": "Kompyuterlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/keyboard.jpg",
+   "price": 289000,
+   "oldPrice": 399000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Simsiz sichqoncha",
+   "category": "Kompyuterlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/mouse.jpg",
+   "price": 89000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Simsiz quloqchin, ANC",
+   "category": "Elektronika",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/headphones.jpg",
+   "price": 461180,
+   "oldPrice": 1675800,
+   "unit": "1 dona",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Aqlli soat, AMOLED",
+   "category": "Elektronika",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/smartwatch.jpg",
+   "price": 549000,
+   "oldPrice": 790000,
+   "unit": "1 dona",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Geympad, simsiz",
+   "category": "Elektronika",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/gamepad.jpg",
+   "price": 259000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Robot changyutgich",
+   "category": "Elektronika",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/vacuum.jpg",
+   "price": 2490000,
+   "oldPrice": 3900000,
+   "unit": "1 dona",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Krossovka, yugurish uchun",
+   "category": "Moda va aksessuarlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/shoes2.jpg",
+   "price": 459000,
+   "oldPrice": 690000,
+   "unit": "1 juft",
+   "label": "Hit",
+   "desc": ""
+  },
+  {
+   "name": "Shahar ryukzagi, 20 l",
+   "category": "Moda va aksessuarlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/backpack.jpg",
+   "price": 239000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Qo‘l soati, klassik",
+   "category": "Moda va aksessuarlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/watch.jpg",
+   "price": 399000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Charm hamyon",
+   "category": "Moda va aksessuarlar",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/wallet.jpg",
+   "price": 149000,
+   "oldPrice": 199000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Choynak, zanglamaydigan",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/kettle.jpg",
+   "price": 139000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Yostiq, gipoallergen 50×70",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/bedding.jpg",
+   "price": 99000,
+   "oldPrice": 159000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Stol lampasi, LED",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/lamp.jpg",
+   "price": 189000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Uy o‘simligi, aloe",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/plant.jpg",
+   "price": 59000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Uy hayvonlari uchun savat-to‘shak",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/towels.jpg",
+   "price": 129000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Yangi",
+   "desc": ""
+  },
+  {
+   "name": "Gantel, 2 × 10 kg",
+   "category": "Sport",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/dumbbells.jpg",
+   "price": 399000,
+   "oldPrice": 520000,
+   "unit": "1 juft",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Yoga gilamchasi",
+   "category": "Sport",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/yogamat.jpg",
+   "price": 119000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  },
+  {
+   "name": "Velosiped, shahar",
+   "category": "Sport",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/bicycle.jpg",
+   "price": 2890000,
+   "oldPrice": 0,
+   "unit": "1 dona",
+   "label": "Top",
+   "desc": ""
+  },
+  {
+   "name": "Akkumulyatorli drel",
+   "category": "Uy uchun",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/drill.jpg",
+   "price": 689000,
+   "oldPrice": 990000,
+   "unit": "1 dona",
+   "label": "",
+   "desc": ""
+  }
+ ],
+ "banners": [
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/promo1.jpg",
+   "color": "#7000FF"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/promo2.jpg",
+   "color": "#FF3C8C"
+  },
+  {
+   "title": "",
+   "image": "https://cdn.jsdelivr.net/gh/uzbekistango2026-spec/botdokon@main/menu/market/promo3.jpg",
+   "color": "#2A1470"
+  }
+ ],
+ "settings": {
+  "theme": "uzum",
+  "installMonths": 12,
+  "deliveryDays": 1,
+  "promoCode": "MARKET",
+  "promoDiscount": 50000,
+  "promoMin": 300000,
+  "promoText": "300 000 so‘mdan yuqori buyurtmaga"
+ }
+}
