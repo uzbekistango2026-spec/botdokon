@@ -179,6 +179,9 @@ svg{flex-shrink:0}
 .rs .im{width:56px;height:56px;border-radius:14px;background:var(--soft) center/cover;flex:0 0 56px}
 .rs b{font-size:14.5px;font-weight:600;display:block}.rs small{color:var(--t2);font-size:13px}
 .sk{background:linear-gradient(90deg,#EFF0F3 25%,#F7F8FA 50%,#EFF0F3 75%);background-size:200% 100%;animation:sk 1.2s infinite}@keyframes sk{to{background-position:-200% 0}}
+body.hm{--soft:#F4F2EE;--line:#ECE8E1}
+body.hm .pc .mo{background:#E7F3F0;color:#0F766E}
+body.hm .btn.c{background:var(--c)}
 </style>
 </head>
 <body>
@@ -213,9 +216,11 @@ const fmt = (n) => Math.round(n || 0).toLocaleString('ru-RU').replace(/[\s,]/g, 
 const hap = (t = 'light') => { try { TG.HapticFeedback.impactOccurred(t); } catch {} };
 let S = null, page = 'home', stack = [], cart = LS('cart', []), cmp = LS('cmp', []), me = LS('me', {}), geo = LS('geo', null), recent = LS('recent', []);
 let cur = null, curCat = '', q = '', F = { brands: [], min: '', max: '', stock: false, sale: false }, sort = 'pop', months = null, pay = 'cash', pickup = false, diffOnly = false, bnT = null;
-const plans = () => (S.settings.plans && S.settings.plans.length ? S.settings.plans : [{ m: 3, p: 0 }, { m: 6, p: 9 }, { m: 12, p: 19 }, { m: 24, p: 38 }]);
+const HM = () => S.type === 'home';
+const plans = () => (Array.isArray(S.settings.plans) ? S.settings.plans : HM() ? [] : [{ m: 3, p: 0 }, { m: 6, p: 9 }, { m: 12, p: 19 }, { m: 24, p: 38 }]);
+const hasPl = () => plans().length > 0;
 const monthly = (sum, pl) => Math.ceil((sum * (1 + pl.p / 100)) / pl.m / 1000) * 1000;
-const maxPlan = () => plans()[plans().length - 1];
+const maxPlan = () => plans()[plans().length - 1] || { m: 1, p: 0 };
 const inStock = (p) => p.qty == null || p.qty > 0;
 const imgs = (p) => (p.images && p.images.length ? p.images : p.image ? [p.image] : []);
 const catName = (id) => (S.categories.find((c) => c.id === id) || {}).name || '';
@@ -228,7 +233,7 @@ function render() { clearInterval(bnT); ({ home: renderHome, catalog: renderCat,
 const cartN = () => cart.reduce((a, x) => a + x.qty, 0);
 function renderNav() {
   const full = ['prod', 'checkout'].includes(page); $('#nav').style.display = full ? 'none' : '';
-  const n = cartN(), T = [['home', ic.home, 'Asosiy'], ['catalog', ic.grid, 'Katalog'], ['compare', ic.cmp, 'Solishtirish', cmp.length], ['cart', ic.cart, 'Savat', n], ['profile', ic.user, 'Profil']];
+  const n = cartN(), T = [['home', ic.home, 'Asosiy'], ['catalog', ic.grid, 'Katalog'], ...(HM() ? [] : [['compare', ic.cmp, 'Solishtirish', cmp.length]]), ['cart', ic.cart, 'Savat', n], ['profile', ic.user, 'Profil']];
   $('#nav').innerHTML = T.map(([k, i, t, c]) => `<button class="${page === k || (k === 'catalog' && page === 'search') ? 'on' : ''}" onclick="hap();show('${k}')">${i}${t}${c ? `<i>${c}</i>` : ''}</button>`).join('');
   const cb = $('#cbar'); const showBar = n && ['home', 'catalog', 'search'].includes(page);
   cb.classList.toggle('on', !!showBar); if (showBar) cb.innerHTML = `<span>${n} ta mahsulot · ${fmt(subtotal())}</span><button onclick="show('cart')">Savatga</button>`;
@@ -237,10 +242,10 @@ function renderNav() {
 function pcard(p) {
   const inC = cart.some((x) => x.id === p.id), so = !inStock(p), mp = maxPlan(), lab = p.oldPrice > p.price ? `−${Math.round((1 - p.price / p.oldPrice) * 100)}%` : p.label;
   return `<div class="pc"><div class="imw"><button class="im ${so ? 'so' : ''}" style="background-image:url('${esc(imgs(p)[0] || '')}')" onclick="openP('${p.id}')">${lab ? `<span class="lb ${p.oldPrice > p.price ? 's' : p.label === 'Mahalliy' ? 'l' : ''}">${esc(lab)}</span>` : ''}</button>
-    <button class="cmp ${cmp.includes(p.id) ? 'on' : ''}" onclick="togCmp('${p.id}',this)">${I('<path d="M8 3v18M16 3v18M3 8h5M16 16h5M3 16h5M16 8h5"/>', 16, 2)}</button>
+    ${HM() ? '' : `<button class="cmp ${cmp.includes(p.id) ? 'on' : ''}" onclick="togCmp('${p.id}',this)">${I('<path d="M8 3v18M16 3v18M3 8h5M16 16h5M3 16h5M16 8h5"/>', 16, 2)}</button>`}
     ${so ? '' : `<button class="add ${inC ? 'in' : ''}" onclick="quickAdd('${p.id}',this)">${inC ? ic.check : ic.plus}</button>`}</div>
     <div class="pr"><b>${fmt(p.price)}</b>${p.oldPrice > p.price ? `<s>${fmt(p.oldPrice)}</s>` : ''}</div>
-    ${so ? '<div class="lf" style="color:var(--t3)">Sotuvda yo‘q</div>' : `<span class="mo">${fmt(monthly(p.price, mp))} × ${mp.m} oy</span>`}
+    ${so ? '<div class="lf" style="color:var(--t3)">Sotuvda yo‘q</div>' : hasPl() ? `<span class="mo">${fmt(monthly(p.price, mp))} × ${mp.m} oy</span>` : ''}
     <div class="nm" onclick="openP('${p.id}')">${esc(p.name)}</div>
     ${p.rating ? `<div class="rt">${ic.star}<b style="color:var(--ink)">${p.rating.toFixed(1)}</b> · ${p.reviews} sharh</div>` : ''}${!so && p.qty != null && p.qty <= 3 ? `<div class="lf">Faqat ${p.qty} ta qoldi</div>` : ''}</div>`;
 }
@@ -260,11 +265,11 @@ function renderHome() {
   const s = S.settings, P = S.products, hit = P.filter((p) => p.label === 'Hit' || p.oldPrice > p.price).slice(0, 10), brands = [...new Set(P.map((p) => p.brand).filter(Boolean))];
   const mp = plans().find((x) => !x.p);
   $('#view').innerHTML = `<div class="fade"><div class="top"><div class="lg">${s.logo ? `<img src="${esc(s.logo)}">` : esc((s.shopName || 'T')[0])}</div><div class="nm"><b>${esc(s.shopName)}</b><small>${ic.truck.replace(/20/g, '14')}${s.freeFrom ? `${fmt(s.freeFrom).replace(' so‘m', '')} dan bepul yetkazish` : 'Tez yetkazib berish'}</small></div><button class="ib" onclick="show('profile')">${ic.user}</button></div>
-    <button class="sbar" onclick="show('search',true)">${ic.search}Televizor, muzlatkich, brend…</button>
+    <button class="sbar" onclick="show('search',true)">${ic.search}${HM() ? 'Qozon, idish, sochiq, savat…' : 'Televizor, muzlatkich, brend…'}</button>
     ${S.banners.length ? `<div class="bn" id="bn">${S.banners.map((b) => `<a class="${b.title ? 'tx' : ''}" style="background-image:url('${esc(b.image)}')">${b.badge ? `<em>${esc(b.badge)}</em>` : ''}<b>${esc(b.title)}</b><span>${esc(b.subtitle)}</span></a>`).join('')}</div><div class="dots" id="dots">${S.banners.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="sh"><h2>Kategoriyalar</h2><button onclick="curCat='';show('catalog')">Barchasi</button></div>
     <div class="cats">${S.categories.map((c) => `<button class="cat" style="background-image:url('${esc(c.image || (S.products.find((p) => p.categoryId === c.id) || {}).image || '')}')" onclick="hap();curCat='${c.id}';show('catalog')"><b>${esc(c.name)}</b><small>${P.filter((p) => p.categoryId === c.id).length}</small></button>`).join('')}</div>
-    <div class="adv"><div>${ic.shield}<b>Rasmiy kafolat</b><small>24 oygacha</small></div><div>${ic.card}<b>${mp ? '0% bo‘lib' : 'Bo‘lib to‘lash'}</b><small>${mp ? mp.m + ' oygacha' : maxPlan().m + ' oygacha'}</small></div><div>${ic.truck}<b>Yetkazish</b><small>o‘rnatish bepul</small></div></div>
+    ${HM() ? `<div class="adv"><div>${ic.shield}<b>Sifat kafolati</b><small>sertifikatlangan</small></div><div>${ic.truck}<b>Tez yetkazish</b><small>shu kuniyoq</small></div><div>${ic.ret}<b>Qaytarish</b><small>14 kun ichida</small></div></div>` : `<div class="adv"><div>${ic.shield}<b>Rasmiy kafolat</b><small>24 oygacha</small></div><div>${ic.card}<b>${mp ? '0% bo‘lib' : 'Bo‘lib to‘lash'}</b><small>${mp ? mp.m + ' oygacha' : maxPlan().m + ' oygacha'}</small></div><div>${ic.truck}<b>Yetkazish</b><small>o‘rnatish bepul</small></div></div>`}
     ${hit.length ? `<div class="sh"><h2>Hit va aksiyalar</h2><button onclick="F.sale=true;curCat='';show('catalog')">Barchasi</button></div><div class="hs">${hit.map(pcard).join('')}</div>` : ''}
     ${brands.length > 1 ? `<div class="sh"><h2>Brendlar</h2></div><div class="brands">${brands.map((b) => `<button onclick="F.brands=['${esc(b)}'];curCat='';show('catalog')">${esc(b)}</button>`).join('')}</div>` : ''}
     <div class="sh"><h2>Siz uchun</h2></div><div class="grid">${P.filter(inStock).slice(0, 12).map(pcard).join('')}</div>
@@ -312,29 +317,29 @@ function renderSearch() {
 function saveRecent() { const w = q.trim(); if (!w) return; recent = [w, ...recent.filter((x) => x !== w)].slice(0, 6); SS('recent', recent); }
 function srch() {
   const w = q.trim().toLowerCase(), el = $('#sr'); if (!el) return;
-  if (!w) { el.innerHTML = (recent.length ? `<div class="sh" style="padding-top:12px"><h2 style="font-size:17px">Oxirgi qidiruvlar</h2><button onclick="recent=[];SS('recent',[]);srch()">Tozalash</button></div><div class="chips" style="flex-wrap:wrap">${recent.map((r) => `<button class="chip" onclick="q='${esc(r)}';$('#q').value=q;srch()">${esc(r)}</button>`).join('')}</div>` : '') + `<div class="sh" style="padding-top:12px"><h2 style="font-size:17px">Ommabop</h2></div><div class="chips" style="flex-wrap:wrap">${['Televizor 55', 'Samsung', 'Muzlatkich No Frost', 'Kir yuvish 8 kg', 'Artel', 'Konditsioner'].map((r) => `<button class="chip" onclick="q='${r}';$('#q').value=q;srch()">${r}</button>`).join('')}</div>`; return; }
+  if (!w) { el.innerHTML = (recent.length ? `<div class="sh" style="padding-top:12px"><h2 style="font-size:17px">Oxirgi qidiruvlar</h2><button onclick="recent=[];SS('recent',[]);srch()">Tozalash</button></div><div class="chips" style="flex-wrap:wrap">${recent.map((r) => `<button class="chip" onclick="q='${esc(r)}';$('#q').value=q;srch()">${esc(r)}</button>`).join('')}</div>` : '') + `<div class="sh" style="padding-top:12px"><h2 style="font-size:17px">Ommabop</h2></div><div class="chips" style="flex-wrap:wrap">${(HM() ? ['Qozon', 'Tova', 'Choynak', 'Sochiq', 'Savat', 'Konteyner'] : ['Televizor 55', 'Samsung', 'Muzlatkich No Frost', 'Kir yuvish 8 kg', 'Artel', 'Konditsioner']).map((r) => `<button class="chip" onclick="q='${r}';$('#q').value=q;srch()">${r}</button>`).join('')}</div>`; return; }
   const ws = w.split(/\s+/), a = S.products.filter((p) => { const h = (p.name + ' ' + p.brand + ' ' + catName(p.categoryId) + ' ' + (p.key || []).join(' ') + ' ' + (p.specs || []).map((x) => x[1]).join(' ')).toLowerCase(); return ws.every((x) => h.includes(x)); });
   el.innerHTML = a.length ? `<div class="cnt" style="padding-top:6px">${a.length} ta natija</div>` + a.map((p) => `<button class="rs" onclick="saveRecent();openP('${p.id}')"><div class="im" style="background-image:url('${esc(imgs(p)[0])}')"></div><div style="flex:1;min-width:0"><b>${esc(p.name)}</b><small>${fmt(p.price)} · ${esc(catName(p.categoryId))}</small></div></button>`).join('') : `<div class="empty" style="padding-top:50px"><h3>Topilmadi</h3>Boshqa so‘z bilan qidirib ko‘ring</div>`;
 }
 /* ---------- mahsulot ---------- */
 function openP(id) { cur = S.products.find((p) => p.id === id); if (!cur) return; hap(); months = null; show('prod', true); }
 function renderProd() {
-  const p = cur, s = S.settings, G = imgs(p), so = !inStock(p), P = plans(); if (months == null) months = (P.find((x) => !x.p) || P[0]).m;
-  $('#view').innerHTML = `<div class="fade"><div class="gal"><button class="ib bk" onclick="back()">${ic.back}</button><button class="ib bk bk2 cmpb ${cmp.includes(p.id) ? 'on' : ''}" onclick="togCmp('${p.id}',this)">${ic.cmp}</button>
+  const p = cur, s = S.settings, G = imgs(p), so = !inStock(p), P = plans(); if (months == null && P.length) months = (P.find((x) => !x.p) || P[0]).m;
+  $('#view').innerHTML = `<div class="fade"><div class="gal"><button class="ib bk" onclick="back()">${ic.back}</button>${HM() ? '' : `<button class="ib bk bk2 cmpb ${cmp.includes(p.id) ? 'on' : ''}" onclick="togCmp('${p.id}',this)">${ic.cmp}</button>`}
       <div class="sl">${G.map((u) => `<div style="background-image:url('${esc(u)}')"></div>`).join('')}</div></div>
     <div class="pb"><div class="br">${esc(p.brand || catName(p.categoryId))}</div><h1>${esc(p.name)}</h1>
       <div class="rt">${p.rating ? `<b>${ic.star}${p.rating.toFixed(1)}</b><span>${p.reviews} ta sharh</span>·` : ''}<span>${so ? '<span style="color:var(--bad)">Sotuvda yo‘q</span>' : p.qty != null && p.qty <= 3 ? `<span style="color:var(--bad)">Faqat ${p.qty} ta qoldi</span>` : '<span style="color:var(--ok)">Sotuvda bor</span>'}</span>${p.sku ? `<span>· ${esc(p.sku)}</span>` : ''}</div>
       <div class="pp"><b>${fmt(p.price)}</b>${p.oldPrice > p.price ? `<s>${fmt(p.oldPrice)}</s><em>−${fmt(p.oldPrice - p.price).replace(' so‘m', '')}</em>` : ''}</div>
       ${(p.key || []).length ? `<div class="kc">${p.key.map((k) => `<span>${esc(k)}</span>`).join('')}</div>` : ''}</div>
-    <div class="box"><h3>${ic.card}Bo‘lib to‘lash kalkulyatori</h3><div class="mseg">${P.map((x) => `<button class="${months === x.m ? 'on' : ''}" onclick="hap();months=${x.m};calcDraw()">${x.m}<small>oy</small></button>`).join('')}</div><div id="calc"></div></div>
-    <div class="box"><div class="info"><i>${ic.shield}</i><div><b>${p.warranty ? `${p.warranty} oy rasmiy kafolat` : 'Rasmiy kafolat'}</b><small>${esc(s.warrantyInfo || 'Servis markazida bepul ta’mirlash yoki almashtirish.')}</small></div></div>
+    ${P.length ? `<div class="box"><h3>${ic.card}Bo‘lib to‘lash kalkulyatori</h3><div class="mseg">${P.map((x) => `<button class="${months === x.m ? 'on' : ''}" onclick="hap();months=${x.m};calcDraw()">${x.m}<small>oy</small></button>`).join('')}</div><div id="calc"></div></div>` : ''}
+    <div class="box"><div class="info"><i>${ic.shield}</i><div><b>${p.warranty ? `${p.warranty} oy rasmiy kafolat` : HM() ? 'Sifat kafolati' : 'Rasmiy kafolat'}</b><small>${esc(s.warrantyInfo || 'Servis markazida bepul ta’mirlash yoki almashtirish.')}</small></div></div>
       <div class="info"><i>${ic.truck}</i><div><b>Yetkazib berish${s.freeFrom && p.price >= s.freeFrom ? ' — bepul' : s.deliveryFee ? ' — ' + fmt(s.deliveryFee) : ''}</b><small>${esc(s.deliveryInfo || 'Tez va ehtiyotkorlik bilan yetkazamiz.')}</small></div></div>
       <div class="info"><i>${ic.store}</i><div><b>Do‘kondan olib ketish — bepul</b><small>${esc(s.address || 'Buyurtma tayyor bo‘lganda xabar beramiz')}${s.workHours ? ' · ' + esc(s.workHours) : ''}</small></div></div></div>
     ${(p.specs || []).length ? `<div class="box"><h3 style="margin-bottom:6px">Xususiyatlari</h3>${p.specs.map(([k, v]) => `<div class="spec"><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join('')}</div>` : ''}
     ${p.desc ? `<div class="box"><h3>Tavsif</h3><p style="white-space:pre-line">${esc(p.desc)}</p></div>` : ''}
     ${(() => { const sim = S.products.filter((x) => x.categoryId === p.categoryId && x.id !== p.id).slice(0, 8); return sim.length ? `<div class="sh"><h2>O‘xshash mahsulotlar</h2></div><div class="hs">${sim.map(pcard).join('')}</div>` : ''; })()}
     <div style="height:100px"></div></div><div class="foot" id="pfoot"></div>`;
-  calcDraw(); footDraw();
+  if (P.length) calcDraw(); footDraw();
 }
 function calcDraw() {
   const p = cur, pl = plans().find((x) => x.m === months) || plans()[0], mo = monthly(p.price, pl), tot = mo * pl.m;
@@ -381,13 +386,13 @@ function renderCart() {
   $('#view').innerHTML = `<div class="ph big"><h1>Savat</h1><button class="ib" onclick="cart=[];SS('cart',[]);renderCart();renderNav()">${I('<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>', 20)}</button></div>
     ${L.map((l) => `<div class="ln fade"><div class="im" style="background-image:url('${esc(imgs(l.p)[0])}')" onclick="openP('${l.p.id}')"></div><div class="in"><b>${esc(l.p.name)}</b><small>${l.p.warranty ? `Kafolat ${l.p.warranty} oy` : ''}${inStock(l.p) ? '' : ' · <span style="color:var(--bad)">tugagan</span>'}</small><div class="rw"><span class="p">${fmt(l.p.price * l.qty)}</span><div class="q"><button onclick="cq('${l.p.id}',-1)">−</button><b>${l.qty}</b><button onclick="cq('${l.p.id}',1)">+</button></div></div></div></div>`).join('')}
     <div class="sum"><div class="r"><span>Mahsulotlar (${cartN()})</span><span>${fmt(sub)}</span></div><div class="r ${fee ? '' : 'g'}"><span>Yetkazib berish</span><span>${fee ? fmt(fee) : 'Bepul'}</span></div>${S.settings.freeFrom && sub < S.settings.freeFrom ? `<div class="r" style="font-size:13px"><span>Bepul yetkazishgacha yana ${fmt(S.settings.freeFrom - sub)}</span><span></span></div>` : ''}
-      <div class="r t"><span>Jami</span><span>${fmt(sub + fee)}</span></div><div class="r" style="font-size:13px"><span>yoki bo‘lib to‘lash</span><span style="color:#C2410C">${fmt(monthly(sub + fee, mp))} × ${mp.m} oy</span></div></div>
+      <div class="r t"><span>Jami</span><span>${fmt(sub + fee)}</span></div>${hasPl() ? `<div class="r" style="font-size:13px"><span>yoki bo‘lib to‘lash</span><span style="color:#C2410C">${fmt(monthly(sub + fee, mp))} × ${mp.m} oy</span></div>` : ''}</div>
     <div style="height:150px"></div><div class="foot" style="bottom:calc(62px + env(safe-area-inset-bottom));border:0;background:none;backdrop-filter:none"><button class="btn" onclick="show('checkout',true)">Rasmiylashtirish<small>· ${fmt(sub + fee)}</small></button></div>`;
 }
 /* ---------- rasmiylashtirish ---------- */
 function renderCheckout() {
   const u = (TG && TG.initDataUnsafe && TG.initDataUnsafe.user) || {}, s = S.settings, sub = subtotal(), fee = feeFor(sub), tot = sub + fee, P = plans();
-  if (pay === 'installment' && !months) months = (P.find((x) => x.m >= 12) || P[P.length - 1]).m; const pl = P.find((x) => x.m === months) || P[0];
+  if (!P.length && pay === 'installment') pay = 'cash'; if (pay === 'installment' && !months) months = (P.find((x) => x.m >= 12) || P[P.length - 1]).m; const pl = P.find((x) => x.m === months) || P[0] || { m: 1, p: 0 };
   $('#view').innerHTML = `<div class="ph"><button class="ib" onclick="back()">${ic.back}</button><h1>Rasmiylashtirish</h1></div><div class="fs fade">
     <div class="f"><span>Qabul qilish</span><div class="seg"><button class="${!pickup ? 'on' : ''}" onclick="saveMe();pickup=false;renderCheckout()">Yetkazib berish<small>${s.freeFrom && sub >= s.freeFrom ? 'bepul' : s.deliveryFee ? fmt(s.deliveryFee) : 'bepul'}</small></button><button class="${pickup ? 'on' : ''}" onclick="saveMe();pickup=true;renderCheckout()">Olib ketish<small>bepul</small></button></div></div>
     <div class="f"><span>Ism</span><input id="cn" value="${esc(me.name || [u.first_name, u.last_name].filter(Boolean).join(' '))}" autocomplete="name"></div>
@@ -396,7 +401,7 @@ function renderCheckout() {
       : `<div class="f"><span>Yetkazib berish joyi</span><button class="locb ${geo ? 'ok' : ''}" id="lb" onclick="sendLoc()">${ic.pin}<span>${geo ? 'Joylashuv aniqlandi ✓' : 'Joylashuvni yuborish'}<small>${geo ? 'Qayta bosib yangilashingiz mumkin' : 'Majburiy — manzil avtomatik aniqlanadi'}</small></span></button></div>
       <div class="f"><span>Manzil</span><input id="ca" value="${esc(me.address || '')}" placeholder="Ko‘cha, uy, xonadon, qavat"></div>`}
     <div class="f"><span>Izoh</span><input id="cc" placeholder="Masalan: lift yo‘q, 4-qavat"></div>
-    <div class="f"><span>To‘lov usuli</span><div class="seg"><button class="${pay === 'cash' ? 'on' : ''}" onclick="saveMe();pay='cash';renderCheckout()">Naqd</button><button class="${pay === 'card' ? 'on' : ''}" onclick="saveMe();pay='card';renderCheckout()">Karta</button><button class="${pay === 'installment' ? 'on' : ''}" onclick="saveMe();pay='installment';renderCheckout()">Bo‘lib</button></div></div>
+    <div class="f"><span>To‘lov usuli</span><div class="seg"><button class="${pay === 'cash' ? 'on' : ''}" onclick="saveMe();pay='cash';renderCheckout()">Naqd</button><button class="${pay === 'card' ? 'on' : ''}" onclick="saveMe();pay='card';renderCheckout()">Karta</button>${P.length ? `<button class="${pay === 'installment' ? 'on' : ''}" onclick="saveMe();pay='installment';renderCheckout()">Bo‘lib</button>` : ''}</div></div>
     ${pay === 'installment' ? `<div class="box" style="margin:0 0 14px"><h3>${ic.card}Muddatni tanlang</h3><div class="mseg">${P.map((x) => `<button class="${pl.m === x.m ? 'on' : ''}" onclick="saveMe();months=${x.m};renderCheckout()">${x.m}<small>${x.p ? '+' + x.p + '%' : '0%'}</small></button>`).join('')}</div>
       <div class="calc"><div><small style="color:var(--t2);font-size:13px;display:block">Har oy</small><b>${fmt(monthly(tot, pl)).replace(' so‘m', '')}<small> so‘m</small></b></div><div>Jami: <b style="color:var(--ink)">${fmt(monthly(tot, pl) * pl.m)}</b><br>Pasport va karta kerak bo‘ladi</div></div></div>` : ''}
     <div class="sum" style="margin:6px 0 0"><div class="r"><span>Mahsulotlar (${cartN()})</span><span>${fmt(sub)}</span></div><div class="r ${fee ? '' : 'g'}"><span>${pickup ? 'Olib ketish' : 'Yetkazib berish'}</span><span>${fee ? fmt(fee) : 'Bepul'}</span></div><div class="r t"><span>Jami</span><span>${fmt(tot)}</span></div></div>
@@ -434,7 +439,7 @@ async function renderProfile() {
   $('#view').innerHTML = `<div class="ph big"><h1>Profil</h1></div>
     <div style="padding:2px 16px 18px;display:flex;gap:14px;align-items:center"><div style="width:60px;height:60px;border-radius:20px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:700">${esc((u.first_name || me.name || 'M')[0])}</div><div><b style="font-size:19px;letter-spacing:-.4px">${esc([u.first_name, u.last_name].filter(Boolean).join(' ') || me.name || 'Mehmon')}</b><div style="color:var(--t2)">${esc(me.phone || (u.username ? '@' + u.username : ''))}</div></div></div>
     <div class="sh" style="padding-top:4px"><h2>Buyurtmalarim</h2></div><div id="ol"><div class="oc sk" style="height:96px;border:0"></div></div>
-    <div class="box"><div class="info"><i>${ic.shield}</i><div><b>Kafolat</b><small>${esc(s.warrantyInfo || 'Barcha mahsulotlarga rasmiy kafolat.')}</small></div></div><div class="info"><i>${ic.truck}</i><div><b>Yetkazib berish</b><small>${esc(s.deliveryInfo || 'Tez yetkazib beramiz.')}</small></div></div><div class="info"><i>${ic.card}</i><div><b>Bo‘lib to‘lash</b><small>${plans().map((x) => `${x.m} oy — ${x.p ? '+' + x.p + '%' : '0%'}`).join(' · ')}</small></div></div>
+    <div class="box"><div class="info"><i>${ic.shield}</i><div><b>Kafolat</b><small>${esc(s.warrantyInfo || 'Barcha mahsulotlarga rasmiy kafolat.')}</small></div></div><div class="info"><i>${ic.truck}</i><div><b>Yetkazib berish</b><small>${esc(s.deliveryInfo || 'Tez yetkazib beramiz.')}</small></div></div>${hasPl() ? `<div class="info"><i>${ic.card}</i><div><b>Bo‘lib to‘lash</b><small>${plans().map((x) => `${x.m} oy — ${x.p ? '+' + x.p + '%' : '0%'}`).join(' · ')}</small></div></div>` : ''}
       ${s.phone || s.address ? `<div class="info"><i>${ic.store}</i><div><b>Aloqa</b><small>${s.phone ? esc(s.phone) + '<br>' : ''}${esc(s.address || '')}${s.workHours ? '<br>' + esc(s.workHours) : ''}</small></div></div>` : ''}</div><div style="height:20px"></div>`;
   try {
     const a = await (await fetch(`/api/shop/${BOT_ID}/orders`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ initData: TG ? TG.initData : '' }) })).json();
@@ -448,8 +453,9 @@ async function init() {
   $('#view').innerHTML = `<div style="padding:60px 16px"><div class="sk" style="height:48px;border-radius:15px"></div><div class="sk" style="height:176px;border-radius:22px;margin-top:14px"></div><div class="grid" style="padding:0;margin-top:18px">${'<div class="sk" style="aspect-ratio:1;border-radius:18px"></div>'.repeat(4)}</div></div>`;
   try { const r = await fetch('/api/shop/' + BOT_ID); if (!r.ok) throw 0; S = await r.json(); }
   catch { $('#view').innerHTML = '<div class="empty"><h3>Yuklanmadi</h3>Internetni tekshirib, qayta oching<button class="btn" onclick="init()">Qayta urinish</button></div>'; return; }
+  if (HM()) { document.body.classList.add('hm'); document.documentElement.style.setProperty('--c', '#0F766E'); }
   if (S.settings.color && !['#7000FF', '#0E7C66'].includes(S.settings.color)) document.documentElement.style.setProperty('--c', S.settings.color);
-  document.title = S.settings.shopName || 'Maishiy texnika';
+  document.title = S.settings.shopName || (HM() ? 'Uy-ro‘zg‘or' : 'Maishiy texnika');
   cart = cart.filter((x) => S.products.some((p) => p.id === x.id)); cmp = cmp.filter((id) => S.products.some((p) => p.id === id));
   const sp = new URLSearchParams(location.search).get('p') || (TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param);
   render(); if (sp && S.products.find((p) => p.id === sp)) openP(sp);
