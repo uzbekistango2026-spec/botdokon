@@ -3,7 +3,12 @@ on: workflow_dispatch
 jobs:
   c:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - run: |
-          curl -s -o /dev/null -w "admin: %{http_code}\n" https://botdokon.oltinshoh2026.workers.dev/admin; curl -s https://botdokon.oltinshoh2026.workers.dev/version; echo
-          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 1500; echo
+          mkdir t && cd t
+          for id in 1490481651871-ab68de25d43d 1441986300917-64674bd600d8 1445205170230-053b83016050 1483985988355-763728e1935b 1515886657613-9f3515b0c78f 1434389677669-e08b4cac3105 1523381210434-271e8be1f52b 1489987707025-afc232f7ea0f 1516762689617-e1cffcef479d 1521572163474-6864f9cf17ab 1581655353564-df123a1eb820 1596755094514-f87e34085b2c 1602810318383-e386cc2a3ccf 1624378439575-d8705ad7ae80 1473966968600-fa801b869a1a 1542272604-787c3835535d 1539533018447-63fcce2678e3 1591047139829-d91aecb6caea 1551028719-00167b16eac5 1549298916-b41d501d3772 1595950653106-6c9ebd614d3a 1556821840-3a63f95609a7 1620799140408-edc6dcb6d633 1617137968427-85924c800a22 1594938298603-c8148c4dae35 1507679799987-c73779587ccf 1490114538077-0a7f8cb49891 1487222477894-8943e31ef7b7 1469334031218-e382a71b716b 1485968579580-b6d095142e6e 1509631179647-0177331693ae 1572804013309-59a88b7e92f1 1595777457583-95e059d581b8 1566174053879-31528523f8ae 1548036328-c9fa89d128fa 1584917865442-de89df76afd3 1576566588028-4147f3842f27 1525507119028-ed4c629a60a3 1503342217505-b0a15ec3261c 1544022613-e87ca75a784a; do
+            curl -sf -o "t_$id.jpg" "https://images.unsplash.com/photo-$id?w=240&h=300&fit=crop&q=60" || echo "MISS $id"
+          done
+          git init -q && git add . && git -c user.name=bot -c user.email=bot@x commit -qm thumbs && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:refs/heads/thumbs2
