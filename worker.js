@@ -1817,6 +1817,8 @@ async function billExtend(env, b, days, rec) {
   if (b.ownerChatId) await tgOwners(b, 'sendMessage', { text: `✅ To‘lov qabul qilindi! Obuna ${new Date(b.paidUntil).toLocaleDateString('ru-RU')} gacha faol. Botingiz ishlayapti.` });
 }
 async function fixWebhooks(env, origin) {
+  try { const ids = await botIds(env), miss = []; let cur; do { const r = await kv(env).list({ prefix: 'bot:', cursor: cur }); for (const k of r.keys) { const id = k.name.slice(4); if (!ids.includes(id)) miss.push(id); } cur = r.list_complete ? null : r.cursor; } while (cur);
+    if (miss.length) { const now2 = await botIds(env); for (const id of miss) { const b = await getBot(env, id); if (b && b.token && !now2.includes(id)) { now2.push(id); seedLog.push('tiklandi: @' + b.username); await setupBot(origin, b); } } await kv(env).put('bots', JSON.stringify(now2)); } } catch (e) { seedLog.push('tiklash: ' + e.message); }
   for (const b of await allBots(env)) { if (!b.error) continue; const r = await setupBot(origin, b); if (r.ok) { b.error = ''; await putBot(env, b); } }
 }
 async function billNotify(env, origin) {
