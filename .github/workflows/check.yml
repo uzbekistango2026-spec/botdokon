@@ -6,4 +6,4 @@ jobs:
     steps:
       - run: |
           curl -s https://botdokon.oltinshoh2026.workers.dev/version >/dev/null; sleep 25
-          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 2500; echo
+          curl -s https://botdokon.oltinshoh2026.workers.dev/seed | sed "s/<[^>]*>/ /g" | tr -s " " | head -c 9000; echo
