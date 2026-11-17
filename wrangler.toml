@@ -16,6 +16,6 @@ binding = "AI"
 [observability]
 enabled = true
 
-# Har kuni 09:00 (Toshkent): obuna muddatini tekshirish va egalarga xabar
+# Har soatda: bot ulanishini tekshirish; obuna xabarlari kuniga bir marta
 [triggers]
-crons = ["0 4 * * *"]
+crons = ["0 * * * *"]

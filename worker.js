@@ -1775,7 +1775,12 @@ async function tg(token, method, params = {}) {
 }
 const appUrl = (origin, b) => `${origin}/app/${b.id}`;
 async function setupBot(origin, b) {
-  const w = await tg(b.token, 'setWebhook', { url: `${origin}/tg/${b.id}`, secret_token: b.secret, allowed_updates: ['message', 'callback_query', 'pre_checkout_query'], drop_pending_updates: true });
+  let w;
+  for (let i = 0; i < 4; i++) {
+    w = await tg(b.token, 'setWebhook', { url: `${origin}/tg/${b.id}`, secret_token: b.secret, allowed_updates: ['message', 'callback_query', 'pre_checkout_query'], drop_pending_updates: i === 0 });
+    if (w.ok || !/resolve host|name resolution|timed? ?out|Too Many|try again|Internal/i.test(w.description || '')) break;
+    await new Promise((r) => setTimeout(r, 1500 * (i + 1)));
+  }
   if (!w.ok) return w;
   await tg(b.token, 'setMyCommands', { commands: [
     { command: 'start', description: b.type === 'home' ? 'Uy-ro‘zg‘or buyumlari' : b.type === 'tech' ? 'Maishiy texnika katalogi' : b.type === 'bakery' ? "Tortlar va shirinliklar" : b.type === 'fashion' ? "Kiyimlarni ko'rish" : b.type === 'realty' ? "E'lonlarni ochish" : b.type === 'shop' ? "Do'konni ochish" : 'Menyuni ochish' },
@@ -1810,6 +1815,9 @@ async function billExtend(env, b, days, rec) {
   b.free = false; b.paidUntil = new Date(Math.max(Date.now(), new Date(b.paidUntil || 0).getTime()) + days * 864e5).toISOString(); await putBot(env, b);
   if (rec) { const R = (await kv(env).get('payreqs', 'json')) || []; R.push({ id: uid(), botId: b.id, bot: '@' + b.username, at: now(), doneAt: now(), amount: BILL.price, status: 'approved', ...rec }); await kv(env).put('payreqs', JSON.stringify(R.slice(-500))); }
   if (b.ownerChatId) await tgOwners(b, 'sendMessage', { text: `✅ To‘lov qabul qilindi! Obuna ${new Date(b.paidUntil).toLocaleDateString('ru-RU')} gacha faol. Botingiz ishlayapti.` });
+}
+async function fixWebhooks(env, origin) {
+  for (const b of await allBots(env)) { if (!b.error) continue; const r = await setupBot(origin, b); if (r.ok) { b.error = ''; await putBot(env, b); } }
 }
 async function billNotify(env, origin) {
   for (const b of await allBots(env)) {
@@ -2177,8 +2185,8 @@ async function autoSeed(env, force, origin) {
 
 async function route(req, env) {
   if (new URL(req.url).pathname === '/seed') {
-    await autoSeed(env, true, new URL(req.url).origin); encDone = false; try { await encRegister(env, new URL(req.url).origin); } catch (e) { seedLog.push('enc: ' + e.message); }
-    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + '] — ' + b.products.length + ' ta · banner: ' + b.banners.map((x) => String(x.image).split('/').pop()).join(',') + ' · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
+    await autoSeed(env, true, new URL(req.url).origin); encDone = false; try { await encRegister(env, new URL(req.url).origin); } catch (e) { seedLog.push('enc: ' + e.message); } try { await fixWebhooks(env, new URL(req.url).origin); } catch {}
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + ']' + (b.error ? ' XATO: ' + b.error : ' ok') + ' — ' + b.products.length + ' ta · banner: ' + b.banners.map((x) => String(x.image).split('/').pop()).join(',') + ' · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
     const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
     return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
@@ -2600,7 +2608,7 @@ async function route(req, env) {
 }
 
 export default {
-  async scheduled(ev, env, ctx) { ctx.waitUntil(billNotify(env, ORIGIN0).catch(() => {})); },
+  async scheduled(ev, env, ctx) { ctx.waitUntil(billNotify(env, ORIGIN0).catch(() => {})); ctx.waitUntil(fixWebhooks(env, ORIGIN0).catch(() => {})); },
   async fetch(req, env, ctx) {
     try { if (ctx) Object.defineProperty(env, '__ctx', { value: ctx, configurable: true, writable: true }); } catch {}
     if (ctx && ctx.waitUntil && !seedDone) ctx.waitUntil(autoSeed(env, false, new URL(req.url).origin).catch(() => {}));
