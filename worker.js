@@ -1941,10 +1941,10 @@ async function handleUpdate(env, origin, bot, u) {
   if (u.message) {
     const chatId = u.message.chat.id, text = (u.message.text || '').trim(), priv = (u.message.chat.type || 'private') === 'private';
     if (priv && u.message.from && !chatsOf(bot).includes(String(u.message.from.id))) {
-      const tu = await trackUser(env, bot, u.message.from);
+      const tu = await trackUser(env, bot, u.message.from).catch(() => null);
       if (tu && tu.blocked) return tg(bot.token, 'sendMessage', { chat_id: chatId, text: BLOCK_TXT, reply_markup: { remove_keyboard: true } });
     }
-    if (text.startsWith('/id')) return tg(bot.token, 'sendMessage', { chat_id: chatId, parse_mode: 'HTML', text: `Sizning Chat ID: <code>${chatId}</code>\n\nBuni admin paneldagi «Chat ID» maydoniga yozing.` });
+    if (/^\/(id|myid|chatid)\b/i.test(text) || /^(id|chat ?id)$/i.test(text)) return tg(bot.token, 'sendMessage', { chat_id: chatId, parse_mode: 'HTML', text: `Sizning Chat ID: <code>${chatId}</code>\n\nBuni admin paneldagi «Chat ID» maydoniga yozing.` });
     const kb = { inline_keyboard: [[{ text: OPEN_TXT(bot), web_app: { url: appUrl(origin, bot) } }]] };
     const ai = aiReady(env, bot);
     // Oddiy savol — sun'iy intellekt javob beradi
@@ -2196,7 +2196,7 @@ async function autoSeed(env, force, origin) {
 async function route(req, env) {
   if (new URL(req.url).pathname === '/seed') {
     await autoSeed(env, true, new URL(req.url).origin); encDone = false; try { await encRegister(env, new URL(req.url).origin); } catch (e) { seedLog.push('enc: ' + e.message); } try { await fixWebhooks(env, new URL(req.url).origin); } catch {}
-    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b) users.push('@' + (b.username || '?') + ' [' + b.type + ']' + (b.error ? ' XATO: ' + b.error : ' ok') + ' — ' + b.products.length + ' ta · banner: ' + b.banners.map((x) => String(x.image).split('/').pop()).join(',') + ' · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
+    const users = []; for (const id of await botIds(env)) { const b = await getBot(env, id); if (b && b.token) { try { const r = await (await fetch(`https://api.telegram.org/bot${b.token}/getWebhookInfo`)).json(); const w = r.result || {}; users.push(r.ok ? `#wh @${b.username}: ${w.url ? (w.url.includes('/tg/' + b.id) ? 'bizda' : 'BOSHQA ' + w.url.split('/')[2]) : 'YOQ'} navbat=${w.pending_update_count || 0}${w.last_error_message ? ' xato=' + w.last_error_message + ' ' + new Date(w.last_error_date * 1000).toISOString().slice(5, 16) : ''}` : `#wh @${b.username}: token ${r.description}`); } catch (e) { users.push('#wh ' + b.username + ' ?'); } } if (b) users.push('@' + (b.username || '?') + ' [' + b.type + ']' + (b.error ? ' XATO: ' + b.error : ' ok') + ' — ' + b.products.length + ' ta · banner: ' + b.banners.map((x) => String(x.image).split('/').pop()).join(',') + ' · hudud: ' + ((b.settings.zones || []).length) + ' ta · joy: ' + (b.settings.lat ? 'bor' : "yo'q") + ' · id: ' + id.slice(0, 4) + '…'); }
     const flags = []; for (const sd of SEEDS) flags.push(sd.user + ': ' + ((await kv(env).get(sd.key)) || "hali yo'q"));
     return new Response(['MENYU JOYLASH HOLATI', '', ...seedLog, '', 'Botlar:', ...users, '', ...flags].join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
